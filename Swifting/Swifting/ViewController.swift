@@ -14,14 +14,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
        subviews()
     }
     
     func subviews() {
         logoView()
         aboutCryptonLabel()
-        start_button_guester()
+        start_button()
     }
     
     func logoView() {
@@ -54,19 +54,51 @@ class ViewController: UIViewController {
         aboutTittle.widthAnchor.constraint(equalToConstant: view.frame.size.width - 50).isActive = true
     }
     
-    func start_button_guester() {
-        var start_button = UIButton()
+    func start_button() {
+        let start_button = UIButton()
         view.addSubview(start_button)
         start_button.setTitle("SWIP TO START", for: .normal)
         start_button.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         start_button.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         start_button.translatesAutoresizingMaskIntoConstraints = false
+        start_button.isUserInteractionEnabled = true
+        start_button.layer.cornerRadius = 10
+//        start_button.addTarget(self, action: #selector(start_button_swipe), for: .touchUpInside)
+        add_swipe_gesture(view: start_button)
         // constrant
-        start_button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        start_button.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -70).isActive = true
         start_button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70).isActive = true
         start_button.widthAnchor.constraint(equalToConstant: view.frame.size.width / 2).isActive = true
         start_button.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
+    
+    func add_swipe_gesture(view: UIButton) {
+        let swip_gesture = UISwipeGestureRecognizer(target: self, action: #selector((handle_swipe(sender:))))
+        swip_gesture.direction = .right
+//        swip_gesture.numberOfTouchesRequired =  1
+        
+        view.addGestureRecognizer(swip_gesture)
+    }
+    
+    @objc func handle_swipe(sender: UISwipeGestureRecognizer) {
+        let fileView = sender.view!
+        switch sender.state {
+        case .ended:
+            // perform segue & resent button x
+            print("Perfor segue to Home ViewController")
+            UIView.animate(withDuration: 0.2) {
+                fileView.transform = CGAffineTransform(translationX: 150, y: 0)
+            }
+           
+        default:
+            print("Pls swift left")
+        }
+        
+    }
+    
+//    @objc func start_button_swipe() {
+//        print("Button Swipe")
+//    }
     
    
     
