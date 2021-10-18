@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		773A0E5A271BD19400D82CCF /* LIVE.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 773A0E59271BD19400D82CCF /* LIVE.jpg */; };
+		773A0E5D271BD7A100D82CCF /* logocopy.png in Resources */ = {isa = PBXBuildFile; fileRef = 773A0E5C271BD7A100D82CCF /* logocopy.png */; };
 		7763B29D2718BE6B007229E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763B29C2718BE6B007229E1 /* AppDelegate.swift */; };
 		7763B29F2718BE6B007229E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763B29E2718BE6B007229E1 /* SceneDelegate.swift */; };
 		7763B2A12718BE6B007229E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763B2A02718BE6B007229E1 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		773A0E59271BD19400D82CCF /* LIVE.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LIVE.jpg; sourceTree = "<group>"; };
+		773A0E5C271BD7A100D82CCF /* logocopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logocopy.png; sourceTree = "<group>"; };
 		7763B2992718BE6B007229E1 /* Swifting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7763B29C2718BE6B007229E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7763B29E2718BE6B007229E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 				7763B2A02718BE6B007229E1 /* ViewController.swift */,
 				7763B2A22718BE6B007229E1 /* Main.storyboard */,
 				7763B2A52718BE73007229E1 /* Assets.xcassets */,
+				773A0E59271BD19400D82CCF /* LIVE.jpg */,
+				773A0E5C271BD7A100D82CCF /* logocopy.png */,
 				7763B2A72718BE73007229E1 /* LaunchScreen.storyboard */,
 				7763B2AA2718BE73007229E1 /* Info.plist */,
 			);
@@ -126,7 +132,9 @@
 			files = (
 				7763B2A92718BE73007229E1 /* LaunchScreen.storyboard in Resources */,
 				7763B2A62718BE73007229E1 /* Assets.xcassets in Resources */,
+				773A0E5D271BD7A100D82CCF /* logocopy.png in Resources */,
 				7763B2A42718BE6B007229E1 /* Main.storyboard in Resources */,
+				773A0E5A271BD19400D82CCF /* LIVE.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
