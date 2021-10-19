@@ -157,9 +157,11 @@ class OnboardingViewController: UIViewController {
                 let tabBarVC = CryptonTabBarViewController()
                 tabBarVC.modalTransitionStyle = .flipHorizontal
                 tabBarVC.modalPresentationStyle = .fullScreen
-//                self.setupViewControllers(vc: tabBarVC)
-                let tabBarVC_toNavVC = UINavigationController(rootViewController: tabBarVC)
-                self.present(tabBarVC_toNavVC, animated: true, completion: nil)
+                self.present(tabBarVC, animated: true, completion: nil)
+               
+                
+//                self.show(tabBarVC, sender: self)
+               
                 
             }
         default:
@@ -189,33 +191,6 @@ class OnboardingViewController: UIViewController {
     
    
     
-    
-    
-    
-    
-    // Set up viewControllers in TabBarController Code
-
-//    func setupViewControllers(vc: UITabBarController) {
-//        let cryptosDashboardVC = DashBoardVC()
-//        cryptosDashboardVC.title = "Cryptos"
-//        cryptosDashboardVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), selectedImage: nil)
-//        cryptosDashboardVC.tabBarItem = UITabBarItem(title: cryptosDashboardVC.title, image: nil, tag: 0)
-//        let dashboardVC = UINavigationController(rootViewController: cryptosDashboardVC)
-//
-//        let favCryptos = FavoritesVC()
-//        favCryptos.title = "Favorites"
-//        favCryptos.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "favorite"), selectedImage: UIImage(systemName: "favorite"))
-//        let favoriteCryptosVC = UINavigationController(rootViewController: favCryptos)
-//
-//        let atmVc = ATMsViewController()
-//        atmVc.title = "ATM"
-//        atmVc.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "cash"), selectedImage: UIImage(systemName: "cash"))
-//        let atmVC = UINavigationController(rootViewController: atmVc)
-//
-//    //        viewControllers = [dashboardVC, favoriteCryptosVC, atmVc]
-//        vc.setViewControllers([dashboardVC, favoriteCryptosVC, atmVc], animated: false)
-//    }
-
     
     
     
