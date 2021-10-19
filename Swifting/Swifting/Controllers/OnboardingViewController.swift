@@ -17,13 +17,13 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-       subviews()
+        subviews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         video_player()
     }
-    
+
     func subviews() {
 //        logoView()
         cryptonLabel()
@@ -158,7 +158,8 @@ class OnboardingViewController: UIViewController {
                 tabBarVC.modalTransitionStyle = .flipHorizontal
                 tabBarVC.modalPresentationStyle = .fullScreen
 //                self.setupViewControllers(vc: tabBarVC)
-                self.present(tabBarVC, animated: true, completion: nil)
+                let tabBarVC_toNavVC = UINavigationController(rootViewController: tabBarVC)
+                self.present(tabBarVC_toNavVC, animated: true, completion: nil)
                 
             }
         default:
