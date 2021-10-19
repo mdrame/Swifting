@@ -30,6 +30,8 @@ class OnboardingViewController: UIViewController {
         aboutCryptonLabel()
         start_button_parent_view()
         start_button()
+        swipe_instruction_label()
+        
     }
     // video logo
     func video_player() {
@@ -96,7 +98,7 @@ class OnboardingViewController: UIViewController {
         aboutTittle.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
     }
     
-    func start_button_parent_view() {
+    func start_button_parent_view()->UIView {
         let layout = UIView()
         view.addSubview(layout)
         layout.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -109,15 +111,16 @@ class OnboardingViewController: UIViewController {
         layout.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         layout.heightAnchor.constraint(equalToConstant: 90).isActive = true
         layout.widthAnchor.constraint(equalToConstant: view.frame.size.width - 30).isActive = true
-        
-        
+        return layout
     }
     
-    func start_button() {
+    func start_button()->UIButton {
         let start_button = UIButton()
         view.addSubview(start_button)
-        start_button.setTitle("> SWIP TO START >", for: .normal)
-        start_button.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        start_button.setTitle(" START ", for: .normal)
+        start_button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+        start_button.titleLabel?.font = UIFont(name: "Arial", size: 40)
+        start_button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
         start_button.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         start_button.translatesAutoresizingMaskIntoConstraints = false
         start_button.isUserInteractionEnabled = true
@@ -130,7 +133,7 @@ class OnboardingViewController: UIViewController {
         start_button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
         start_button.widthAnchor.constraint(equalToConstant: view.frame.size.width / 2 - 30).isActive = true
         start_button.heightAnchor.constraint(equalToConstant: 70).isActive = true
-    
+        return start_button
     }
     
     func add_swipe_gesture(view: UIButton) {
@@ -149,12 +152,34 @@ class OnboardingViewController: UIViewController {
             print("Perfor segue to Home ViewController")
             UIView.animate(withDuration: 0.2) {
                 fileView.transform = CGAffineTransform(translationX: 180, y: 0)
+            } completion: { (completed) in
+                // perform segue here
+                let tabBarVC = CryptonTabBarViewController()
+                tabBarVC.modalTransitionStyle = .flipHorizontal
+                tabBarVC.modalPresentationStyle = .fullScreen
+//                self.setupViewControllers(vc: tabBarVC)
+                self.present(tabBarVC, animated: true, completion: nil)
+                
             }
-           
         default:
             print("Pls swift left")
         }
         
+    }
+    
+    func swipe_instruction_label() {
+        let instruction_label = UILabel()
+        view.addSubview(instruction_label)
+        instruction_label.text = "Swipe to continue ->"
+        instruction_label.translatesAutoresizingMaskIntoConstraints = false
+        instruction_label.font = UIFont(name: "Arial", size: 15)
+        instruction_label.adjustsFontForContentSizeCategory = true
+        instruction_label.textAlignment = .center
+        instruction_label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.4840539384)
+        // constrant
+        instruction_label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        instruction_label.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -80).isActive = true
+        instruction_label.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
     }
     
 //    @objc func start_button_swipe() {
@@ -163,6 +188,46 @@ class OnboardingViewController: UIViewController {
     
    
     
+    
+    
+    
+    
+    // Set up viewControllers in TabBarController Code
+
+//    func setupViewControllers(vc: UITabBarController) {
+//        let cryptosDashboardVC = DashBoardVC()
+//        cryptosDashboardVC.title = "Cryptos"
+//        cryptosDashboardVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), selectedImage: nil)
+//        cryptosDashboardVC.tabBarItem = UITabBarItem(title: cryptosDashboardVC.title, image: nil, tag: 0)
+//        let dashboardVC = UINavigationController(rootViewController: cryptosDashboardVC)
+//
+//        let favCryptos = FavoritesVC()
+//        favCryptos.title = "Favorites"
+//        favCryptos.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "favorite"), selectedImage: UIImage(systemName: "favorite"))
+//        let favoriteCryptosVC = UINavigationController(rootViewController: favCryptos)
+//
+//        let atmVc = ATMsViewController()
+//        atmVc.title = "ATM"
+//        atmVc.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "cash"), selectedImage: UIImage(systemName: "cash"))
+//        let atmVC = UINavigationController(rootViewController: atmVc)
+//
+//    //        viewControllers = [dashboardVC, favoriteCryptosVC, atmVc]
+//        vc.setViewControllers([dashboardVC, favoriteCryptosVC, atmVc], animated: false)
+//    }
+
+    
+    
+    
+    
+    
+    
+    
 
 }
+
+
+
+
+
+
 

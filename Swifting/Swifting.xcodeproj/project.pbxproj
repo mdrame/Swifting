@@ -12,6 +12,10 @@
 		77417695271E0F3300CCEB5A /* crypton.png in Resources */ = {isa = PBXBuildFile; fileRef = 77417694271E0F3300CCEB5A /* crypton.png */; };
 		7741769D271E294D00CCEB5A /* crypton.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7741769C271E294D00CCEB5A /* crypton.mov */; };
 		774176A0271E6C4200CCEB5A /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741769F271E6C4200CCEB5A /* ButtonAnimation.swift */; };
+		774176A6271E722900CCEB5A /* DashBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774176A5271E722900CCEB5A /* DashBoardVC.swift */; };
+		774176AD271E89E700CCEB5A /* CryptonTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774176AC271E89E700CCEB5A /* CryptonTabBarViewController.swift */; };
+		774176B0271E8AB800CCEB5A /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774176AF271E8AB800CCEB5A /* FavoritesVC.swift */; };
+		774176B3271E8AF800CCEB5A /* ATMsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774176B2271E8AF800CCEB5A /* ATMsViewController.swift */; };
 		7763B29D2718BE6B007229E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763B29C2718BE6B007229E1 /* AppDelegate.swift */; };
 		7763B29F2718BE6B007229E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763B29E2718BE6B007229E1 /* SceneDelegate.swift */; };
 		7763B2A12718BE6B007229E1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763B2A02718BE6B007229E1 /* OnboardingViewController.swift */; };
@@ -26,6 +30,10 @@
 		77417694271E0F3300CCEB5A /* crypton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crypton.png; sourceTree = "<group>"; };
 		7741769C271E294D00CCEB5A /* crypton.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crypton.mov; sourceTree = "<group>"; };
 		7741769F271E6C4200CCEB5A /* ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
+		774176A5271E722900CCEB5A /* DashBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardVC.swift; sourceTree = "<group>"; };
+		774176AC271E89E700CCEB5A /* CryptonTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptonTabBarViewController.swift; sourceTree = "<group>"; };
+		774176AF271E8AB800CCEB5A /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		774176B2271E8AF800CCEB5A /* ATMsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMsViewController.swift; sourceTree = "<group>"; };
 		7763B2992718BE6B007229E1 /* Swifting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7763B29C2718BE6B007229E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7763B29E2718BE6B007229E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +55,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		774176A2271E71CE00CCEB5A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7763B2A02718BE6B007229E1 /* OnboardingViewController.swift */,
+				774176AC271E89E700CCEB5A /* CryptonTabBarViewController.swift */,
+				774176A5271E722900CCEB5A /* DashBoardVC.swift */,
+				774176AF271E8AB800CCEB5A /* FavoritesVC.swift */,
+				774176B2271E8AF800CCEB5A /* ATMsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		774176A3271E71DC00CCEB5A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7741769F271E6C4200CCEB5A /* ButtonAnimation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		774176A4271E71E900CCEB5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7763B2A22718BE6B007229E1 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7763B2902718BE6B007229E1 = {
 			isa = PBXGroup;
 			children = (
@@ -68,9 +104,9 @@
 			children = (
 				7763B29C2718BE6B007229E1 /* AppDelegate.swift */,
 				7763B29E2718BE6B007229E1 /* SceneDelegate.swift */,
-				7763B2A02718BE6B007229E1 /* OnboardingViewController.swift */,
-				7741769F271E6C4200CCEB5A /* ButtonAnimation.swift */,
-				7763B2A22718BE6B007229E1 /* Main.storyboard */,
+				774176A2271E71CE00CCEB5A /* Controllers */,
+				774176A3271E71DC00CCEB5A /* Extensions */,
+				774176A4271E71E900CCEB5A /* Views */,
 				7763B2A52718BE73007229E1 /* Assets.xcassets */,
 				7741769C271E294D00CCEB5A /* crypton.mov */,
 				773A0E59271BD19400D82CCF /* LIVE.jpg */,
@@ -158,8 +194,12 @@
 			files = (
 				774176A0271E6C4200CCEB5A /* ButtonAnimation.swift in Sources */,
 				7763B2A12718BE6B007229E1 /* OnboardingViewController.swift in Sources */,
+				774176AD271E89E700CCEB5A /* CryptonTabBarViewController.swift in Sources */,
+				774176A6271E722900CCEB5A /* DashBoardVC.swift in Sources */,
+				774176B0271E8AB800CCEB5A /* FavoritesVC.swift in Sources */,
 				7763B29D2718BE6B007229E1 /* AppDelegate.swift in Sources */,
 				7763B29F2718BE6B007229E1 /* SceneDelegate.swift in Sources */,
+				774176B3271E8AF800CCEB5A /* ATMsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
