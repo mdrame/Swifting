@@ -8,15 +8,21 @@
 import UIKit
 
 class DashBoardVC: UIViewController {
+    
+    // Instances / Objects
+    let networking = Networking()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        title = "Currencies"
+        title = "Cryptos Currencies"
         navigationController?.navigationBar.prefersLargeTitles = true
         //
         subviews()
-        
+        networking.fetch_cryptos()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
     }
     
