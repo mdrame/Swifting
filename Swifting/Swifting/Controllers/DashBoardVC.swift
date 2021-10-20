@@ -11,19 +11,40 @@ class DashBoardVC: UIViewController {
     
     // Instances / Objects
     let networking = Networking()
+    // Global Variabl
+    var cryptoCurrencies = [Crypto]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         title = "Cryptos Currencies"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+
         //
         subviews()
-        networking.fetch_cryptos()
+     
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+//        networking.fetch_cryptos { [self] (currency) in
+////            print("Data after completion handler: \(currency.data)")
+//            for cryptoCurrency in currency.data {
+//                print(cryptoCurrency["name"], "First Currency")
+//                // rewite code / handle optional
+//                let id = "randonNumber"
+//                let name = cryptoCurrency["name"]
+//                let priceUsd = cryptoCurrency["priceUsd"]
+//                let rank = cryptoCurrency["rank"]
+//                let maxSupply = cryptoCurrency["maxSupply"]
+//                let marketCapUsd = cryptoCurrency["marketCapUsd"]
+//                let volumUsd24hr = cryptoCurrency["volumeUsd24Hr"]
+//                let currency = currency
+//                self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!))
+//
+//            }
+//        }
     }
     
     func subviews() {
@@ -39,9 +60,9 @@ class DashBoardVC: UIViewController {
     let currencyTableView: UITableView = {
         let dashBoardTV = UITableView()
         dashBoardTV.translatesAutoresizingMaskIntoConstraints = false
-        dashBoardTV.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+//        dashBoardTV.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         dashBoardTV.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.cellIdentifier)
-        dashBoardTV.rowHeight = 100
+        dashBoardTV.rowHeight = 120
         dashBoardTV.separatorStyle = .none
         return dashBoardTV
     }()
