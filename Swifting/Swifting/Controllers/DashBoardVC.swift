@@ -13,6 +13,7 @@ class DashBoardVC: UIViewController {
     let networking = Networking()
     // Global Variabl
     var cryptoCurrencies = [Crypto]()
+    var isFavorite = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,8 @@ class DashBoardVC: UIViewController {
 //        dashBoardTV.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         dashBoardTV.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.cellIdentifier)
         dashBoardTV.rowHeight = 120
-        dashBoardTV.separatorStyle = .none
+//        dashBoardTV.separatorStyle = .none
+//        dashBoardTV.isUserInteractionEnabled = true
         return dashBoardTV
     }()
     

@@ -17,6 +17,7 @@
 		774176AD271E89E700CCEB5A /* CryptonTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774176AC271E89E700CCEB5A /* CryptonTabBarViewController.swift */; };
 		774176B0271E8AB800CCEB5A /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774176AF271E8AB800CCEB5A /* FavoritesVC.swift */; };
 		774176B3271E8AF800CCEB5A /* ATMsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774176B2271E8AF800CCEB5A /* ATMsViewController.swift */; };
+		77441FCE2720978300ECC784 /* CurrencyCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77441FCD2720978300ECC784 /* CurrencyCellDelegate.swift */; };
 		77584F7A271FBCC50055164D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77584F79271FBCC50055164D /* Networking.swift */; };
 		77584F80271FC8460055164D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77584F7F271FC8460055164D /* Currency.swift */; };
 		7763B29D2718BE6B007229E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763B29C2718BE6B007229E1 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 		774176AC271E89E700CCEB5A /* CryptonTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptonTabBarViewController.swift; sourceTree = "<group>"; };
 		774176AF271E8AB800CCEB5A /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		774176B2271E8AF800CCEB5A /* ATMsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMsViewController.swift; sourceTree = "<group>"; };
+		77441FCD2720978300ECC784 /* CurrencyCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCellDelegate.swift; sourceTree = "<group>"; };
 		77584F79271FBCC50055164D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		77584F7F271FC8460055164D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		7763B2992718BE6B007229E1 /* Swifting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		77441FCC2720973800ECC784 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				77441FCD2720978300ECC784 /* CurrencyCellDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		77584F78271FBCAA0055164D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				77584F7F271FC8460055164D /* Currency.swift */,
+				77441FCC2720973800ECC784 /* Protocols */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,6 +242,7 @@
 				774176A6271E722900CCEB5A /* DashBoardVC.swift in Sources */,
 				771FB164271F786B00A1B82D /* CurrencyTableView.swift in Sources */,
 				774176B0271E8AB800CCEB5A /* FavoritesVC.swift in Sources */,
+				77441FCE2720978300ECC784 /* CurrencyCellDelegate.swift in Sources */,
 				7763B29D2718BE6B007229E1 /* AppDelegate.swift in Sources */,
 				77584F80271FC8460055164D /* Currency.swift in Sources */,
 				771FB160271F77C100A1B82D /* CurrencyCell.swift in Sources */,

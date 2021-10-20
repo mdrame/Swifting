@@ -3,12 +3,17 @@
 //  Swifting
 //
 //  Created by Mohammed Drame on 10/19/21.
-//
+
+// Create constant class
 
 import UIKit
 
 class CurrencyCell: UITableViewCell {
     static var cellIdentifier: String = "currencyCell"
+    
+    // Global variables & Instances
+    var isFavorite: Bool = false
+    var currencyCellDelegate : CurrencyCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,13 +22,27 @@ class CurrencyCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        set_up_subviews()
+        //        set_up_subviews()
         // Configure the view for the selected state
+        
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        //init subviews, eg. self.switch = UISwitch()
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        set_up_subviews()
         contentView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+       
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
     func set_up_subviews() {
+        contentView.isUserInteractionEnabled = true
+//        self.isUserInteractionEnabled = true
         contentView.addSubview(rank)
         contentView.addSubview(currency_name)
         contentView.addSubview(name_label)
@@ -48,13 +67,16 @@ class CurrencyCell: UITableViewCell {
             price_label.centerXAnchor.constraint(equalTo: price.centerXAnchor, constant: 0),
             // Fav button
             favorite_button.leadingAnchor.constraint(equalTo: price.trailingAnchor, constant: 40),
-            favorite_button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0)
+            favorite_button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
+            favorite_button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25)
         ])
     }
     
-    func updateCellUI(with currency: Crypto) {
+    internal func updateCellUI(with currency: Crypto) {
         print("Cell UI UPDATED")
-        
+        rank.text = currency.name
+        currency_name.text = currency.name
+        price.text = currency.priceUsd
     }
     
     // UI
@@ -69,7 +91,7 @@ class CurrencyCell: UITableViewCell {
         rank.textAlignment = .center
         rank.adjustsFontSizeToFitWidth = true
         rank.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        //        rank.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+//        rank.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         return rank
     }()
     
@@ -85,7 +107,7 @@ class CurrencyCell: UITableViewCell {
         currency_name.textAlignment = .left
         currency_name.adjustsFontSizeToFitWidth = true
         currency_name.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        //        currency_name.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+//                currency_name.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         return currency_name
     }()
     
@@ -113,6 +135,7 @@ class CurrencyCell: UITableViewCell {
         price.textAlignment = .center
         price.adjustsFontSizeToFitWidth = true
         price.textColor = #colorLiteral(red: 0, green: 0.7711079121, blue: 0, alpha: 1)
+//        price.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         return price
     }()
     let price_label: UILabel = {
@@ -130,13 +153,21 @@ class CurrencyCell: UITableViewCell {
     }()
     let favorite_button: UIButton = {
         let favorite_button = UIButton()
-//        favorite_button.setTitle("⭐️", for: .normal)
-        favorite_button.setImage(UIImage(named: "favorite.png"), for: .normal)
-        favorite_button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-        favorite_button.titleLabel?.font = UIFont(name: "Arial", size: 25)
         favorite_button.translatesAutoresizingMaskIntoConstraints = false
+        favorite_button.setImage(UIImage(named: "clearstar.png"), for: .normal)
+        favorite_button.isUserInteractionEnabled = true
+//        favorite_button.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        favorite_button.layer.cornerRadius = 15
+//        favorite_button.addTarget(self, action: #selector(handle_favorite_button), for: .touchUpInside)
         return favorite_button
     }()
+    
+    @objc func handle_favorite_button() {
+        print("Handling favorite button")
+        currencyCellDelegate?.favorite_button_tap(sender: favorite_button)
+    }
+    
+    
     
     
     
