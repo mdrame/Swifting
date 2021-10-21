@@ -49,7 +49,11 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // perform segue to Detail view
         print("Cell Selected")
-        navigationController?.pushViewController(CurrencyDetailView(), animated: false)
+        let index = cryptoCurrencies[indexPath.row]
+        let detailVC = CurrencyDetailView()
+        detailVC.crypto = [index]
+        navigationController?.pushViewController(detailVC, animated: false)
+        
     }
     
     
