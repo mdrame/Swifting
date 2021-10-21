@@ -15,24 +15,12 @@ class CurrencyCell: UITableViewCell {
     var isFavorite: Bool = false
     var currencyCellDelegate : CurrencyCellDelegate?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        //        set_up_subviews()
-        // Configure the view for the selected state
-        
-    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         //init subviews, eg. self.switch = UISwitch()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         set_up_subviews()
         contentView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-       
+        
     }
     
     required init?(coder: NSCoder) {
@@ -42,7 +30,7 @@ class CurrencyCell: UITableViewCell {
     
     func set_up_subviews() {
         contentView.isUserInteractionEnabled = true
-//        self.isUserInteractionEnabled = true
+        //        self.isUserInteractionEnabled = true
         contentView.addSubview(rank)
         contentView.addSubview(currency_name)
         contentView.addSubview(name_label)
@@ -54,60 +42,63 @@ class CurrencyCell: UITableViewCell {
             rank.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
             rank.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
             // Currency name
-            currency_name.leadingAnchor.constraint(equalTo: rank.trailingAnchor, constant: 40),
+            currency_name.leadingAnchor.constraint(equalTo: rank.trailingAnchor, constant: 30),
             currency_name.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
+            currency_name.widthAnchor.constraint(equalToConstant: 110),
             // Currency name label
             name_label.topAnchor.constraint(equalTo: currency_name.bottomAnchor, constant: 7),
             name_label.centerXAnchor.constraint(equalTo: currency_name.centerXAnchor, constant: 0),
             // Price
-            price.leadingAnchor.constraint(equalTo: currency_name.trailingAnchor, constant: 50),
+            price.leadingAnchor.constraint(equalTo: currency_name.trailingAnchor, constant: 10),
             price.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
             // Price Label
             price_label.topAnchor.constraint(equalTo: price.bottomAnchor, constant: 7),
             price_label.centerXAnchor.constraint(equalTo: price.centerXAnchor, constant: 0),
             // Fav button
-            favorite_button.leadingAnchor.constraint(equalTo: price.trailingAnchor, constant: 40),
+            favorite_button.leadingAnchor.constraint(equalTo: price.trailingAnchor, constant: 25),
             favorite_button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
             favorite_button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25)
         ])
     }
     
-    internal func updateCellUI(with currency: Crypto) {
-        print("Cell UI UPDATED")
-        rank.text = currency.name
+    func updateCellUI(with currency: Crypto) {
+        print("Cell UI UPDATED ‼️")
+        rank.text = currency.rank
         currency_name.text = currency.name
-        price.text = currency.priceUsd
+        let convertedPrice = Float(currency.priceUsd)
+        let formatedPrice = String(format: "$%.2f", convertedPrice as! CVarArg)
+        price.text = formatedPrice
     }
     
     // UI
     let rank: UILabel = {
         let rank = UILabel()
-        rank.text = "1"
+//        rank.text = "1"
         rank.translatesAutoresizingMaskIntoConstraints = false
         rank.font = UIFont(name: "Arial", size: 25)
         rank.font = UIFont.boldSystemFont(ofSize: 25)
         rank.adjustsFontForContentSizeCategory = true
         rank.numberOfLines =  100
-        rank.textAlignment = .center
+        rank.textAlignment = .left
         rank.adjustsFontSizeToFitWidth = true
         rank.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//        rank.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        //        rank.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         return rank
     }()
     
     
     let currency_name: UILabel = {
         let currency_name = UILabel()
-        currency_name.text = "Crypton"
+//        currency_name.text = "Crypton"
         currency_name.translatesAutoresizingMaskIntoConstraints = false
-        currency_name.font = UIFont(name: "Arial", size: 25)
-        currency_name.font = UIFont.boldSystemFont(ofSize: 25)
+        currency_name.font = UIFont(name: "Arial", size: 23)
+        currency_name.font = UIFont.boldSystemFont(ofSize: 23)
         currency_name.adjustsFontForContentSizeCategory = true
         currency_name.numberOfLines =  100
         currency_name.textAlignment = .left
         currency_name.adjustsFontSizeToFitWidth = true
         currency_name.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//                currency_name.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+//                        currency_name.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         return currency_name
     }()
     
@@ -119,23 +110,23 @@ class CurrencyCell: UITableViewCell {
         name_label.font = UIFont.boldSystemFont(ofSize: 13)
         name_label.adjustsFontForContentSizeCategory = true
         name_label.numberOfLines =  100
-        name_label.textAlignment = .center
+        name_label.textAlignment = .left
         name_label.adjustsFontSizeToFitWidth = true
-        name_label.textColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
+        name_label.textColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         return name_label
     }()
     let price: UILabel = {
         let price = UILabel()
-        price.text = "54,000"
+//        price.text = "54,000"
         price.translatesAutoresizingMaskIntoConstraints = false
-        price.font = UIFont(name: "Arial", size: 24)
-        price.font = UIFont.boldSystemFont(ofSize: 24)
+        price.font = UIFont(name: "Arial", size: 20)
+        price.font = UIFont.boldSystemFont(ofSize: 20)
         price.adjustsFontForContentSizeCategory = true
         price.numberOfLines =  100
         price.textAlignment = .center
         price.adjustsFontSizeToFitWidth = true
         price.textColor = #colorLiteral(red: 0, green: 0.7711079121, blue: 0, alpha: 1)
-//        price.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+//                price.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         return price
     }()
     let price_label: UILabel = {
@@ -148,7 +139,7 @@ class CurrencyCell: UITableViewCell {
         price_label.numberOfLines =  100
         price_label.textAlignment = .center
         price_label.adjustsFontSizeToFitWidth = true
-        price_label.textColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
+        price_label.textColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         return price_label
     }()
     let favorite_button: UIButton = {
@@ -156,9 +147,9 @@ class CurrencyCell: UITableViewCell {
         favorite_button.translatesAutoresizingMaskIntoConstraints = false
         favorite_button.setImage(UIImage(named: "clearstar.png"), for: .normal)
         favorite_button.isUserInteractionEnabled = true
-//        favorite_button.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        //        favorite_button.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         favorite_button.layer.cornerRadius = 15
-//        favorite_button.addTarget(self, action: #selector(handle_favorite_button), for: .touchUpInside)
+        //        favorite_button.addTarget(self, action: #selector(handle_favorite_button), for: .touchUpInside)
         return favorite_button
     }()
     

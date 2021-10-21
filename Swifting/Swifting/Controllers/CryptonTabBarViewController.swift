@@ -12,12 +12,12 @@ class CryptonTabBarViewController: UITabBarController, UITabBarControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewControllers(vc: self)
+        setupViewControllers()
         self.delegate = self
         // Do any additional setup after loading the view.
     }
     
-    func setupViewControllers(vc: UITabBarController) {
+    func setupViewControllers() {
         let cryptosDashboardVC = DashBoardVC()
 //        cryptosDashboardVC.title = "DashBoard"
         cryptosDashboardVC.tabBarItem = UITabBarItem(title: "HOME", image: UIImage(named: "chart.png"), selectedImage: UIImage(named: "chart.png"))
@@ -35,7 +35,7 @@ class CryptonTabBarViewController: UITabBarController, UITabBarControllerDelegat
         let atmVC = UINavigationController(rootViewController: atmVc)
         
     //        viewControllers = [dashboardVC, favoriteCryptosVC, atmVc]
-        vc.setViewControllers([dashboardVC, favoriteCryptosVC, atmVC], animated: false)
+        self.setViewControllers([dashboardVC, favoriteCryptosVC, atmVC], animated: false)
         
        
     }

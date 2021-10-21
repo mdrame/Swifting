@@ -34,7 +34,7 @@ class Networking {
                     return
                 }
                 completion(data) // clsure capture it's value.
-                print(data.data)
+//                print(data.data)
             }catch  {
                 print("Error decoding json ")
             }
