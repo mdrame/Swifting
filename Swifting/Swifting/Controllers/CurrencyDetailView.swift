@@ -105,10 +105,10 @@ class CurrencyDetailView: UIViewController {
         maxSupply.font = UIFont(name: "Arial", size: 25)
         maxSupply.font = UIFont.boldSystemFont(ofSize: 25)
         maxSupply.textAlignment = .center
-        maxSupply.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+//        maxSupply.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         maxSupply.layer.cornerRadius = 3
-        maxSupply.layer.borderWidth = 5
-        maxSupply.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+//        maxSupply.layer.borderWidth = 5
+//        maxSupply.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         maxSupply.clipsToBounds = true
         maxSupply.adjustsFontSizeToFitWidth = true
         maxSupply.numberOfLines = 5
@@ -134,10 +134,10 @@ class CurrencyDetailView: UIViewController {
         marketCapUsd.font = UIFont(name: "Arial", size: 25)
         marketCapUsd.font = UIFont.boldSystemFont(ofSize: 25)
         marketCapUsd.textAlignment = .center
-        marketCapUsd.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+//        marketCapUsd.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         marketCapUsd.layer.cornerRadius = 3
-        marketCapUsd.layer.borderWidth = 5
-        marketCapUsd.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+//        marketCapUsd.layer.borderWidth = 5
+//        marketCapUsd.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         marketCapUsd.clipsToBounds = true
         marketCapUsd.numberOfLines = 5
         marketCapUsd.adjustsFontSizeToFitWidth = true
