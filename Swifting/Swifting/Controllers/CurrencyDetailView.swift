@@ -24,8 +24,8 @@ class CurrencyDetailView: UIViewController {
         view.addSubview(price_label)
         view.addSubview(maxSupply)
         view.addSubview(maxSup_label)
-        view.addSubview(marketCapUsd)
-        view.addSubview(marCap_label)
+//        view.addSubview(marketCapUsd)
+//        view.addSubview(marCap_label)
         NSLayoutConstraint.activate([
             // Price label
             price.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
@@ -42,12 +42,12 @@ class CurrencyDetailView: UIViewController {
             maxSup_label.topAnchor.constraint(equalTo: maxSupply.bottomAnchor, constant: 5),
             maxSup_label.centerXAnchor.constraint(equalTo: maxSupply.centerXAnchor),
             // Marketcap
-            marketCapUsd.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
-            marketCapUsd.topAnchor.constraint(equalTo: maxSupply.bottomAnchor, constant: 50),
-            marketCapUsd.widthAnchor.constraint(equalToConstant: view.frame.size.width - 50),
-            // market cap label
-            marCap_label.topAnchor.constraint(equalTo: marketCapUsd.bottomAnchor, constant: 5),
-            marCap_label.centerXAnchor.constraint(equalTo: marketCapUsd.centerXAnchor)
+//            marketCapUsd.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+//            marketCapUsd.topAnchor.constraint(equalTo: maxSupply.bottomAnchor, constant: 50),
+//            marketCapUsd.widthAnchor.constraint(equalToConstant: view.frame.size.width - 50),
+//            // market cap label
+//            marCap_label.topAnchor.constraint(equalTo: marketCapUsd.bottomAnchor, constant: 5),
+//            marCap_label.centerXAnchor.constraint(equalTo: marketCapUsd.centerXAnchor)
         ])
     }
     
