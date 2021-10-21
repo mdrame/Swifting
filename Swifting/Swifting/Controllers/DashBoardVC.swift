@@ -23,10 +23,8 @@ class DashBoardVC: UIViewController{
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         print("View didLoad")
-//        fetchMethod()
+        fetchMethod()
         subviews()
-        
-//        currencyTableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchMethod()
