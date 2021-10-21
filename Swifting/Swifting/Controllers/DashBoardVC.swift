@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashBoardVC: UIViewController{
+class DashBoardVC: UIViewController {
     
 
     // Instances / Objects
@@ -24,7 +24,6 @@ class DashBoardVC: UIViewController{
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         print("View didLoad")
         fetchMethod()
-        subviews()
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchMethod()
@@ -48,7 +47,7 @@ class DashBoardVC: UIViewController{
                     let volumUsd24hr = cryptoCurrency["volumeUsd24Hr"]
                     self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!))
                     print(cryptoCurrencies[0].name, "is in array")
-                    
+                    subviews()
                 }
             }
         }
