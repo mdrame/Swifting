@@ -123,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				77584F7F271FC8460055164D /* Currency.swift */,
-				77441FCC2720973800ECC784 /* Protocols */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,11 +148,12 @@
 			children = (
 				7763B29C2718BE6B007229E1 /* AppDelegate.swift */,
 				7763B29E2718BE6B007229E1 /* SceneDelegate.swift */,
-				774176A2271E71CE00CCEB5A /* Controllers */,
-				774176A3271E71DC00CCEB5A /* Extensions */,
-				774176A4271E71E900CCEB5A /* Views */,
-				77584F78271FBCAA0055164D /* Networking */,
 				77584F7E271FC7E40055164D /* Models */,
+				774176A4271E71E900CCEB5A /* Views */,
+				774176A2271E71CE00CCEB5A /* Controllers */,
+				77584F78271FBCAA0055164D /* Networking */,
+				77441FCC2720973800ECC784 /* Protocols */,
+				774176A3271E71DC00CCEB5A /* Extensions */,
 				7763B2A52718BE73007229E1 /* Assets.xcassets */,
 				7741769C271E294D00CCEB5A /* crypton.mov */,
 				77417694271E0F3300CCEB5A /* crypton.png */,

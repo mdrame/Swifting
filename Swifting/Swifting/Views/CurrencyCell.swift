@@ -7,6 +7,7 @@
 // Create constant class
 
 import UIKit
+import Foundation
 
 class CurrencyCell: UITableViewCell {
     static var cellIdentifier: String = "currencyCell"
@@ -29,7 +30,7 @@ class CurrencyCell: UITableViewCell {
     
     
     func set_up_subviews() {
-        contentView.isUserInteractionEnabled = true
+//        contentView.isUserInteractionEnabled = true
         //        self.isUserInteractionEnabled = true
         contentView.addSubview(rank)
         contentView.addSubview(currency_name)

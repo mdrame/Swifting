@@ -30,8 +30,8 @@
             filePath = "Swifting/Views/CurrencyCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "set_up_subviews()"
             landmarkType = "7">
          </BreakpointContent>

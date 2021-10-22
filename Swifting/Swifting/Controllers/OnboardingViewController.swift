@@ -85,7 +85,7 @@ class OnboardingViewController: UIViewController {
     func aboutCryptonLabel() {
         let aboutTittle = UILabel()
         view.addSubview(aboutTittle)
-        aboutTittle.text = "ONE STOP SHOP"
+        aboutTittle.text = "ALL IN ONE ⛓"
         aboutTittle.translatesAutoresizingMaskIntoConstraints = false
         aboutTittle.font = UIFont(name: "Arial", size: 25)
         aboutTittle.adjustsFontForContentSizeCategory = true
@@ -118,7 +118,7 @@ class OnboardingViewController: UIViewController {
     func start_button()->UIButton {
         let start_button = UIButton()
         view.addSubview(start_button)
-        start_button.setTitle(" START ", for: .normal)
+        start_button.setTitle(" SWIPE ", for: .normal)
         start_button.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
         start_button.titleLabel?.font = UIFont(name: "Arial", size: 40)
         start_button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
