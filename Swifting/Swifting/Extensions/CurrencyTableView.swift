@@ -11,10 +11,14 @@ import  UIKit
 extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellDelegate {
     
     @objc func favorite_button_tap(sender: UIButton, cell: UITableViewCell) {
-        let indexPath = cryptoUITableView.indexPath(for: cell)
-        print("Cell index path: \(indexPath)")
+        let indexPath = cryptoUITableView.indexPath(for: cell)!
+        print("Cell index path: \(indexPath.row)")
+        let isFav = cryptoCurrencies[indexPath.row].isFavorite
+        cryptoCurrencies[indexPath.row].isFavorite = !isFav //  updating Array
+        print("Is Favorite:", isFav)
+        
     }
-    
+//
     
     // Tableview delegate and Data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
