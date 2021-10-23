@@ -24,6 +24,7 @@ class DashBoardVC: UIViewController {
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         print("View didLoad")
         fetchMethod()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         fetchMethod()
@@ -46,9 +47,9 @@ class DashBoardVC: UIViewController {
                     let marketCapUsd = cryptoCurrency["marketCapUsd"]
                     let volumUsd24hr = cryptoCurrency["volumeUsd24Hr"]
                     
-                    self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!))
+                    self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!, isFavorite: false))
                     print(cryptoCurrencies[0].name, "is in array")
-                    subviews()
+//                    subviews()
                 }
             }
         }
@@ -56,14 +57,17 @@ class DashBoardVC: UIViewController {
     
     func subviews() {
         print("Subviews added")
-        view.addSubview(currencyTableView)
-        self.currencyTableView.delegate = self
-        self.currencyTableView.dataSource = self
-        currencyTableViewConstrant()
+//        view.addSubview(currencyTableView)
+//        cryptoUITableView.delegate = self
+//        cryptoUITableView.dataSource = self
+//        currencyTableViewConstrant()
     }
     
     
     // Create TableView
+    
+    @IBOutlet weak var cryptoUITableView: UITableView!
+    
     
     let currencyTableView: UITableView = {
         let dashBoardTV = UITableView()
@@ -72,7 +76,8 @@ class DashBoardVC: UIViewController {
         dashBoardTV.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.cellIdentifier)
         dashBoardTV.rowHeight = 120
                 dashBoardTV.separatorStyle = .none
-        //        dashBoardTV.isUserInteractionEnabled = true
+        dashBoardTV.allowsSelection = false
+                dashBoardTV.isUserInteractionEnabled = true
         return dashBoardTV
     }()
     

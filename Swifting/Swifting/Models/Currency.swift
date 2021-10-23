@@ -25,4 +25,5 @@ struct Crypto: Codable {
     var maxSupply: String
     var marketCapUsd: String
     var volumeUsd24Hr: String
+    var isFavorite: Bool
 }

@@ -10,5 +10,5 @@ import UIKit
 
 
 protocol CurrencyCellDelegate {
-    func favorite_button_tap(sender: UIButton)
+    func favorite_button_tap(sender: UIButton, cell: UITableViewCell)
 }
