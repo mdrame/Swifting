@@ -14,6 +14,8 @@
 ### Technology:
 * Swift
 * Coincap REST API: https://docs.coincap.io/
+* UIKit 
+* CoreData
 
 ### Design Pattern:
 * MVC
