@@ -10,6 +10,7 @@
 ### Usage:
 * Download xcode 👉🏾: https://developer.apple.com/xcode/.
 * Run app on IOS Simulator only.
+* Fell free to fork, amd go ham 😤.
 
 ### Technology:
 * Swift
