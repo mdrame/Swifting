@@ -37,8 +37,7 @@ class CurrencyCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+//        set_up_subviews()
     }
 //
 //    func set_up_subviews() {
@@ -73,18 +72,18 @@ class CurrencyCell: UITableViewCell {
 //        ])
 //    }
     
-//    func updateCellUI(with currency: Crypto) {
-//        print("Cell UI UPDATED ‼️")
-//        rank.text = currency.rank
-//        currency_name.text = currency.name
-//        let convertedPrice = Float(currency.priceUsd)
-//        let formatedPrice = String(format: "$%.2f", convertedPrice as! CVarArg)
-//        price.text = formatedPrice
-//    }
+    func updateCellUI(with currency: Crypto) {
+        print("Cell UI UPDATED ‼️")
+        currencyRank.text = currency.rank
+        name.text = currency.name
+        let convertedPrice = Float(currency.priceUsd)
+        let formatedPrice = String(format: "$%.2f", convertedPrice as! CVarArg)
+        price.text = formatedPrice
+    }
     
     // UI
     @IBOutlet weak var currencyRank: UILabel!
-    @IBOutlet weak var name: NSLayoutConstraint!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
     
     @IBOutlet weak var name_label: UILabel!

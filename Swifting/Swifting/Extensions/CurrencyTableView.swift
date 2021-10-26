@@ -14,24 +14,27 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
         let indexPath = cryptoUITableView.indexPath(for: cell)!
         print("Cell index path: \(indexPath.row)")
         let isFav = cryptoCurrencies[indexPath.row].isFavorite
-        cryptoCurrencies[indexPath.row].isFavorite = !isFav //  updating Array
-        print("Is Favorite:", isFav)
+        cryptoCurrencies[indexPath.row].isFavorite = !isFav //  updating
+        let is_favorite = cryptoCurrencies[indexPath.row].isFavorite
+        print("Is Favorite: \(is_favorite)")
+        cryptoUITableView.reloadRows(at: [indexPath], with: .none)
+        
         
     }
-//
+    //
     
     // Tableview delegate and Data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //        return cryptoCurrencies.count
-        return 20
+        print("Crypto Count", cryptoCurrencies.count)
+        return cryptoCurrencies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyCell.cellIdentifier, for: indexPath) as! CurrencyCell
-        //        cell.updateCellUI(with: cryptoCurrencies[indexPath.row])
+        cell.updateCellUI(with: cryptoCurrencies[indexPath.row])
         cell.currencyCellDelegate = self
-        //        cell.favorite_button.addTarget(self, action: #selector(favorite_button_tap(sender:cell:)), for: .touchUpInside)
-        //        cell.favorite_button.addTarget(self, action: #selector(favorite_button_tap(sender:cell:)), for: .touchUpInside) // add button target in CellForRow method. ‼️
+        cell.favorite_button.imageView?.image = cryptoCurrencies[indexPath.row].isFavorite ? UIImage(named: "yellowstar.png") : UIImage(named: "clearstar.png")
         print("Cell for row at method called")
         //        cell.selectionStyle = .blue
         return cell

@@ -9,7 +9,7 @@ import UIKit
 
 class DashBoardVC: UIViewController {
     
-
+    
     // Instances / Objects
     let networking = Networking()
     // Global Variabl
@@ -19,16 +19,18 @@ class DashBoardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        title = "Crypto Currencies"
+        self.title = "Crypto Currencies"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        print("View didLoad")
-        fetchMethod()
+//        fetchMethod()
+        print("View didLoad Finished")
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        print("View will appear called ")
         fetchMethod()
-        currencyTableView.reloadData()
+        
     }
     
     func fetchMethod() {
@@ -37,7 +39,7 @@ class DashBoardVC: UIViewController {
             print("Fetching Data")
             DispatchQueue.main.async {
                 for cryptoCurrency in currency.data {
-//                    print(cryptoCurrency["name"], "First Currency")
+                    //                    print(cryptoCurrency["name"], "First Currency")
                     // rewite code / handle optional
                     let id = "randonNumber"
                     let name = cryptoCurrency["name"]
@@ -49,18 +51,20 @@ class DashBoardVC: UIViewController {
                     
                     self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!, isFavorite: false))
                     print(cryptoCurrencies[0].name, "is in array")
-//                    subviews()
                 }
+                cryptoUITableView?.reloadData()
             }
+            
         }
+       
     }
     
     func subviews() {
         print("Subviews added")
-//        view.addSubview(currencyTableView)
-//        cryptoUITableView.delegate = self
-//        cryptoUITableView.dataSource = self
-//        currencyTableViewConstrant()
+        //        view.addSubview(currencyTableView)
+        //        cryptoUITableView.delegate = self
+        //        cryptoUITableView.dataSource = self
+        //        currencyTableViewConstrant()
     }
     
     
@@ -75,9 +79,8 @@ class DashBoardVC: UIViewController {
         //        dashBoardTV.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         dashBoardTV.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.cellIdentifier)
         dashBoardTV.rowHeight = 120
-                dashBoardTV.separatorStyle = .none
+        dashBoardTV.separatorStyle = .none
         dashBoardTV.allowsSelection = false
-                dashBoardTV.isUserInteractionEnabled = true
         return dashBoardTV
     }()
     
@@ -91,8 +94,8 @@ class DashBoardVC: UIViewController {
     }
     
     
-
-     
+    
+    
     
     
 }
