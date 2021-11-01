@@ -79,6 +79,7 @@ class CurrencyCell: UITableViewCell {
         let convertedPrice = Float(currency.priceUsd)
         let formatedPrice = String(format: "$%.2f", convertedPrice as! CVarArg)
         price.text = formatedPrice
+        favorite_button.imageView?.image = currency.isFavorite ? UIImage(named: "yellowstar.png") : UIImage(named: "clearstar.png")
     }
     
     // UI

@@ -21,11 +21,10 @@ class DashBoardVC: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.title = "Crypto Currencies"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 //        fetchMethod()
         print("View didLoad Finished")
-        
-        
+//        fetchMethod()
     }
     override func viewWillAppear(_ animated: Bool) {
         print("View will appear called ")
@@ -53,6 +52,7 @@ class DashBoardVC: UIViewController {
                     print(cryptoCurrencies[0].name, "is in array")
                 }
                 cryptoUITableView?.reloadData()
+                
             }
             
         }

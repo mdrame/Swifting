@@ -35,7 +35,7 @@ class CryptonTabBarViewController: UITabBarController, UITabBarControllerDelegat
         let atmVC = UINavigationController(rootViewController: atmVc)
         
     //        viewControllers = [dashboardVC, favoriteCryptosVC, atmVc]
-        self.setViewControllers([dashboardVC, favoriteCryptosVC, atmVC], animated: false)
+        self.setViewControllers([favoriteCryptosVC,dashboardVC, atmVC], animated: false)
         
        
     }

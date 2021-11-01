@@ -17,8 +17,8 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
         cryptoCurrencies[indexPath.row].isFavorite = !isFav //  updating
         let is_favorite = cryptoCurrencies[indexPath.row].isFavorite
         print("Is Favorite: \(is_favorite)")
-        cryptoUITableView.reloadRows(at: [indexPath], with: .none)
-        
+//        cryptoUITableView.reloadRows(at: [indexPath], with: .none)
+        cryptoUITableView.reloadData()
         
     }
     //
@@ -34,7 +34,7 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
         let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyCell.cellIdentifier, for: indexPath) as! CurrencyCell
         cell.updateCellUI(with: cryptoCurrencies[indexPath.row])
         cell.currencyCellDelegate = self
-        cell.favorite_button.imageView?.image = cryptoCurrencies[indexPath.row].isFavorite ? UIImage(named: "yellowstar.png") : UIImage(named: "clearstar.png")
+//        cell.favorite_button.imageView?.image = cryptoCurrencies[indexPath.row].isFavorite ? UIImage(named: "yellowstar.png") : UIImage(named: "clearstar.png")
         print("Cell for row at method called")
         //        cell.selectionStyle = .blue
         return cell
@@ -49,6 +49,9 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
         navigationController?.pushViewController(detailVC, animated: false)
         
     }
+    
+    
+    
     
     
     
