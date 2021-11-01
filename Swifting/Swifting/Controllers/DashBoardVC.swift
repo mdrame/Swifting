@@ -12,9 +12,11 @@ class DashBoardVC: UIViewController {
     
     // Instances / Objects
     let networking = Networking()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     // Global Variabl
     var cryptoCurrencies = [Crypto]()
     var isFavorite = false
+    var favoriteCurriencies = [Crypto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +51,7 @@ class DashBoardVC: UIViewController {
                     let volumUsd24hr = cryptoCurrency["volumeUsd24Hr"]
                     
                     self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!, isFavorite: false))
-                    print(cryptoCurrencies[0].name, "is in array")
+//                    print(cryptoCurrencies[0].name, "is in array")
                 }
                 cryptoUITableView?.reloadData()
                 

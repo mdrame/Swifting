@@ -17,6 +17,32 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
         cryptoCurrencies[indexPath.row].isFavorite = !isFav //  updating
         let is_favorite = cryptoCurrencies[indexPath.row].isFavorite
         print("Is Favorite: \(is_favorite)")
+//        switch is_favorite {
+//        case true:
+//            print("Save to core data")
+//            let favoriteCurrency =  cryptoCurrencies[indexPath.row]
+////            let newFavObject = CryptoCurrency(context: self.context)
+//            newFavObject.name = favoriteCurrency.name
+//            newFavObject.priceUsd = favoriteCurrency.priceUsd
+//            newFavObject.isFavorite = favoriteCurrency.isFavorite
+//            do {
+//               try self.context.save()
+//            } catch {
+//                print("Error while saving favorite crypto")
+//            }
+//        case false:
+//            print("Delete from core data")
+//            do {
+////                let fetchedFavoriteCurrency = try context.fetch(CryptoCurrency.fetchRequest())
+//                print(fetchedFavoriteCurrency)
+//            } catch {
+//                print("Error fetching data for core data ")
+//            }
+//        default:
+//            print("Unkknow state, on presisting data")
+//        }
+        
+        // save & unsave this to DB base on button state
 //        cryptoUITableView.reloadRows(at: [indexPath], with: .none)
         cryptoUITableView.reloadData()
         
@@ -26,7 +52,7 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
     // Tableview delegate and Data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //        return cryptoCurrencies.count
-        print("Crypto Count", cryptoCurrencies.count)
+//        print("Crypto Count", cryptoCurrencies.count)
         return cryptoCurrencies.count
     }
     
@@ -35,7 +61,7 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
         cell.updateCellUI(with: cryptoCurrencies[indexPath.row])
         cell.currencyCellDelegate = self
 //        cell.favorite_button.imageView?.image = cryptoCurrencies[indexPath.row].isFavorite ? UIImage(named: "yellowstar.png") : UIImage(named: "clearstar.png")
-        print("Cell for row at method called")
+//        print("Cell for row at method called")
         //        cell.selectionStyle = .blue
         return cell
     }

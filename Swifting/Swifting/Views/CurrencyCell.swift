@@ -73,7 +73,7 @@ class CurrencyCell: UITableViewCell {
 //    }
     
     func updateCellUI(with currency: Crypto) {
-        print("Cell UI UPDATED ‼️")
+//        print("Cell UI UPDATED ‼️")
         currencyRank.text = currency.rank
         name.text = currency.name
         let convertedPrice = Float(currency.priceUsd)
