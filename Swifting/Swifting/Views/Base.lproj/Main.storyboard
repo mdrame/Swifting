@@ -56,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="2881" y="-640"/>
         </scene>
-        <!--Item-->
+        <!--Dash BoardVC-->
         <scene sceneID="KBT-gJ-xCN">
             <objects>
                 <viewController id="TkH-ix-tAn" customClass="DashBoardVC" customModule="Swifting" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yzq-B1-JST">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="currencyCell" rowHeight="153" id="tE5-I4-g79" customClass="CurrencyCell" customModule="Swifting" customModuleProvider="target">
@@ -170,7 +170,7 @@
                             <constraint firstItem="Yzq-B1-JST" firstAttribute="top" secondItem="DM9-FT-CCs" secondAttribute="topMargin" id="xAg-t3-PG1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="chart" id="oy9-si-TdU"/>
+                    <navigationItem key="navigationItem" id="8gn-Hm-Hrp"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cryptoUITableView" destination="Yzq-B1-JST" id="PEs-eU-ors"/>
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RcS-kt-NU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2881.1594202898555" y="42.857142857142854"/>
+            <point key="canvasLocation" x="3791.3043478260875" y="42.857142857142854"/>
         </scene>
         <!--Item-->
         <scene sceneID="0DE-nQ-Pqk">
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uL5-7S-ETC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3748" y="43"/>
+            <point key="canvasLocation" x="4657.971014492754" y="42.857142857142854"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="j2C-pT-ymH">
@@ -225,7 +225,7 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="TkH-ix-tAn" kind="relationship" relationship="viewControllers" id="5OM-9D-14L"/>
+                        <segue destination="5a8-Ti-Pwn" kind="relationship" relationship="viewControllers" id="5OM-9D-14L"/>
                         <segue destination="OeJ-h3-Qoi" kind="relationship" relationship="viewControllers" id="6xU-sr-0lY"/>
                         <segue destination="KLa-6X-PUN" kind="relationship" relationship="viewControllers" id="UG0-Yk-17T"/>
                     </connections>
@@ -233,6 +233,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKa-o5-33p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1971.0144927536232" y="42.857142857142854"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="BCx-TJ-Luc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5a8-Ti-Pwn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="chart" id="oy9-si-TdU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UbS-hh-8NI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TkH-ix-tAn" kind="relationship" relationship="rootViewController" id="pHj-ik-CgC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sk-XD-J8y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2881.1594202898555" y="42.857142857142854"/>
         </scene>
     </scenes>
     <resources>

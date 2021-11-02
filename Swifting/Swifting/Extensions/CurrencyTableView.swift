@@ -73,7 +73,9 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
         let detailVC = CurrencyDetailView()
         detailVC.crypto = [index]
         navigationController?.pushViewController(detailVC, animated: false)
-        
+//        detailVC.modalTransitionStyle = .crossDissolve
+//        detailVC.modalPresentationStyle = .fullScreen
+//        present(detailVC, animated: false, completion: nil)
     }
     
     
