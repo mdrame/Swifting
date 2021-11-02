@@ -27,8 +27,8 @@
 		7763B2A62718BE73007229E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A52718BE73007229E1 /* Assets.xcassets */; };
 		7763B2A92718BE73007229E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A72718BE73007229E1 /* LaunchScreen.storyboard */; };
 		776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */; };
-		77D730B32723C0AA00304281 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D730B22723C0AA00304281 /* test.swift */; };
 		77E2172E2730F72C00762C8E /* Cryptoo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */; };
+		77E217302731101B00762C8E /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2172F2731101B00762C8E /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +55,7 @@
 		7763B2AA2718BE73007229E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		776EEF732730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteCurrencyDataBase.xcdatamodel; sourceTree = "<group>"; };
 		776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cryptoo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		77D730B22723C0AA00304281 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		77E2172F2731101B00762C8E /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				771FB15F271F77C100A1B82D /* CurrencyCell.swift */,
-				77D730B22723C0AA00304281 /* test.swift */,
+				77E2172F2731101B00762C8E /* FavoriteCell.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -259,8 +259,8 @@
 				7763B29F2718BE6B007229E1 /* SceneDelegate.swift in Sources */,
 				771FB167271F7AB500A1B82D /* CurrencyDetailView.swift in Sources */,
 				776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */,
-				77D730B32723C0AA00304281 /* test.swift in Sources */,
 				774176B3271E8AF800CCEB5A /* ATMsViewController.swift in Sources */,
+				77E217302731101B00762C8E /* FavoriteCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
