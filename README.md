@@ -1,14 +1,12 @@
 # Swifting
 
 <!-- # Read me Credit 💪🏾: [Erick Sanchez](https://github.com/mdrame/My-Simple-App) -->
-<!-- ### App store link: https://apps.apple.com/app/id1574544274  -->
 <!-- # Welcome to Crypton!
 <img src="/assets/V1.1.png" width="300px" height="600px" align="left">
 <img src="/assets/V1.1DarkMode.png" width="300px" height="600px" > -->
-### All in one Crpto Currency app.
+### All in one Crpto Currency app. Download Version 1 : https://apps.apple.com/app/id1574544274 
 
 ### Usage:
-* Download xcode 👉🏾: https://developer.apple.com/xcode/.
 * Run app on IOS Simulator only.
 * Fell free to fork, and go ham 😤.
 
@@ -18,8 +16,9 @@
 * UIKit 
 * CoreData
 
-### Design Pattern:
+### Development:
 * MVC
+* Skalenton VC
 
 ### Upcoming versions features:
 - create crypto detail view.
