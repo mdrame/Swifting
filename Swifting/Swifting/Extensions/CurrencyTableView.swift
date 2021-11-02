@@ -17,6 +17,7 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
         cryptoCurrencies[indexPath.row].isFavorite = !isFav //  updating
         let is_favorite = cryptoCurrencies[indexPath.row].isFavorite
         print("Is Favorite: \(is_favorite)")
+        // Re-write cordata methods CRUD
         switch is_favorite {
         case true:
             print("Save to core data")
@@ -32,12 +33,13 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
             }
         case false:
             print("Delete from core data")
-//            do {
-//                let fetchedFavoriteCurrency = try context.fetch(Cryptoo.fetchRequest())
-//                print(fetchedFavoriteCurrency)
-//            } catch {
-//                print("Error fetching data for core data ")
-//            }
+            do {
+                //
+                let fetchedFavoriteCurrency = try context.fetch(Cryptoo.fetchRequest())
+                print(fetchedFavoriteCurrency[indexPath.row].name)
+            } catch {
+                print("Error fetching data for core data ")
+            }
         default:
             print("Unkknow state, on presisting data")
         }

@@ -12,7 +12,7 @@ class CryptonTabBarViewController: UITabBarController, UITabBarControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewControllers()
+//        setupViewControllers()
         self.delegate = self
         // Do any additional setup after loading the view.
     }

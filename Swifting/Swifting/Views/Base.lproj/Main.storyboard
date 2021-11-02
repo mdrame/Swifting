@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="43"/>
         </scene>
-        <!--Crypton Tab Bar View Controller-->
+        <!--View Controller-->
         <scene sceneID="2VX-Ao-9P1">
             <objects>
-                <viewController storyboardIdentifier="Homevc" id="faR-bB-Xdz" customClass="CryptonTabBarViewController" customModule="Swifting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Homevc" id="faR-bB-Xdz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B7R-fL-kae">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQK-i0-7a3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="43"/>
+            <point key="canvasLocation" x="1099" y="-343"/>
         </scene>
         <!--Item-->
         <scene sceneID="UCf-hI-jfX">
@@ -215,9 +215,11 @@
         <!--Tab Bar Controller-->
         <scene sceneID="j2C-pT-ymH">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8G5-Af-mNU" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" automaticallyAdjustsScrollViewInsets="NO" id="8G5-Af-mNU" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="0VL-tM-ifc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HRt-B9-262">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
