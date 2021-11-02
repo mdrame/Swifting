@@ -17,30 +17,30 @@ extension DashBoardVC: UITableViewDelegate, UITableViewDataSource, CurrencyCellD
         cryptoCurrencies[indexPath.row].isFavorite = !isFav //  updating
         let is_favorite = cryptoCurrencies[indexPath.row].isFavorite
         print("Is Favorite: \(is_favorite)")
-//        switch is_favorite {
-//        case true:
-//            print("Save to core data")
-//            let favoriteCurrency =  cryptoCurrencies[indexPath.row]
-////            let newFavObject = CryptoCurrency(context: self.context)
-//            newFavObject.name = favoriteCurrency.name
-//            newFavObject.priceUsd = favoriteCurrency.priceUsd
-//            newFavObject.isFavorite = favoriteCurrency.isFavorite
+        switch is_favorite {
+        case true:
+            print("Save to core data")
+            var favoriteCurrency =  cryptoCurrencies[indexPath.row]
+            let newFavObject = Cryptoo(context: self.context)
+            newFavObject.name = favoriteCurrency.name
+            newFavObject.priceUsd = favoriteCurrency.priceUsd
+            newFavObject.isFavorite = favoriteCurrency.isFavorite
+            do {
+               try self.context.save()
+            } catch {
+                print("Error while saving favorite crypto")
+            }
+        case false:
+            print("Delete from core data")
 //            do {
-//               try self.context.save()
-//            } catch {
-//                print("Error while saving favorite crypto")
-//            }
-//        case false:
-//            print("Delete from core data")
-//            do {
-////                let fetchedFavoriteCurrency = try context.fetch(CryptoCurrency.fetchRequest())
+//                let fetchedFavoriteCurrency = try context.fetch(Cryptoo.fetchRequest())
 //                print(fetchedFavoriteCurrency)
 //            } catch {
 //                print("Error fetching data for core data ")
 //            }
-//        default:
-//            print("Unkknow state, on presisting data")
-//        }
+        default:
+            print("Unkknow state, on presisting data")
+        }
         
         // save & unsave this to DB base on button state
 //        cryptoUITableView.reloadRows(at: [indexPath], with: .none)

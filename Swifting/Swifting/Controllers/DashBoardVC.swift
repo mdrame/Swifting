@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DashBoardVC: UIViewController {
     
@@ -49,12 +50,9 @@ class DashBoardVC: UIViewController {
                     let maxSupply = cryptoCurrency["maxSupply"]
                     let marketCapUsd = cryptoCurrency["marketCapUsd"]
                     let volumUsd24hr = cryptoCurrency["volumeUsd24Hr"]
-                    
                     self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!, isFavorite: false))
-//                    print(cryptoCurrencies[0].name, "is in array")
                 }
                 cryptoUITableView?.reloadData()
-                
             }
             
         }

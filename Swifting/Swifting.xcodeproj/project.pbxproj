@@ -26,7 +26,9 @@
 		7763B2A42718BE6B007229E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A22718BE6B007229E1 /* Main.storyboard */; };
 		7763B2A62718BE73007229E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A52718BE73007229E1 /* Assets.xcassets */; };
 		7763B2A92718BE73007229E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A72718BE73007229E1 /* LaunchScreen.storyboard */; };
+		776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */; };
 		77D730B32723C0AA00304281 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D730B22723C0AA00304281 /* test.swift */; };
+		77E2172E2730F72C00762C8E /* Cryptoo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		7763B2A52718BE73007229E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7763B2A82718BE73007229E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7763B2AA2718BE73007229E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		776EEF732730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteCurrencyDataBase.xcdatamodel; sourceTree = "<group>"; };
+		776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cryptoo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		77D730B22723C0AA00304281 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +137,7 @@
 		7763B2902718BE6B007229E1 = {
 			isa = PBXGroup;
 			children = (
+				776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */,
 				7763B29B2718BE6B007229E1 /* Swifting */,
 				7763B29A2718BE6B007229E1 /* Products */,
 			);
@@ -157,6 +162,7 @@
 				77584F78271FBCAA0055164D /* Networking */,
 				77441FCC2720973800ECC784 /* Protocols */,
 				774176A3271E71DC00CCEB5A /* Extensions */,
+				776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */,
 				7763B2A52718BE73007229E1 /* Assets.xcassets */,
 				7741769C271E294D00CCEB5A /* crypton.mov */,
 				77417694271E0F3300CCEB5A /* crypton.png */,
@@ -245,12 +251,14 @@
 				774176A6271E722900CCEB5A /* DashBoardVC.swift in Sources */,
 				771FB164271F786B00A1B82D /* CurrencyTableView.swift in Sources */,
 				774176B0271E8AB800CCEB5A /* FavoritesVC.swift in Sources */,
+				77E2172E2730F72C00762C8E /* Cryptoo+CoreDataClass.swift in Sources */,
 				77441FCE2720978300ECC784 /* CurrencyCellDelegate.swift in Sources */,
 				7763B29D2718BE6B007229E1 /* AppDelegate.swift in Sources */,
 				77584F80271FC8460055164D /* Currency.swift in Sources */,
 				771FB160271F77C100A1B82D /* CurrencyCell.swift in Sources */,
 				7763B29F2718BE6B007229E1 /* SceneDelegate.swift in Sources */,
 				771FB167271F7AB500A1B82D /* CurrencyDetailView.swift in Sources */,
+				776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */,
 				77D730B32723C0AA00304281 /* test.swift in Sources */,
 				774176B3271E8AF800CCEB5A /* ATMsViewController.swift in Sources */,
 			);
@@ -454,6 +462,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				776EEF732730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodel */,
+			);
+			currentVersion = 776EEF732730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodel */;
+			path = FavoriteCurrencyDataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7763B2912718BE6B007229E1 /* Project object */;
 }
