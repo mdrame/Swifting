@@ -28,5 +28,8 @@
 - Implement atm near by feature.
 - Refactor Code ( handling optionals properly, write a generic neworking layout )
 
+### 🐞:
+- Handle Networking (RESPOND, ERROR) properly. 
+
 ### Got an idea for a project?
 Reach out to me on [LinkedIn](https://www.linkedin.com/in/mohammed-drame-273b17191/) 
