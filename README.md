@@ -30,6 +30,7 @@
 
 ### 🐞:
 - Handle Networking (RESPOND, ERROR) properly. 
+- Check user network connection before fetching data.
 
 ### Got an idea for a project?
 Reach out to me on [LinkedIn](https://www.linkedin.com/in/mohammed-drame-273b17191/) 
