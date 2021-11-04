@@ -32,7 +32,10 @@ class DashBoardVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("View will appear called ")
         fetchMethod()
-        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        cryptoCurrencies = []
     }
     
     func fetchMethod() {
