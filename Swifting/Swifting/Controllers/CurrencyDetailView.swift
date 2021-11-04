@@ -95,7 +95,7 @@ class CurrencyDetailView: UIViewController {
         price_label.adjustsFontForContentSizeCategory = true
         price_label.textAlignment = .center
         price_label.adjustsFontSizeToFitWidth = true
-        price_label.textColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        price_label.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         return price_label
     }()
     let maxSupply: UILabel = {
@@ -124,7 +124,7 @@ class CurrencyDetailView: UIViewController {
         maxSup_label.adjustsFontForContentSizeCategory = true
         maxSup_label.textAlignment = .center
         maxSup_label.adjustsFontSizeToFitWidth = true
-        maxSup_label.textColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        maxSup_label.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         return maxSup_label
     }()
     let marketCapUsd: UILabel = {

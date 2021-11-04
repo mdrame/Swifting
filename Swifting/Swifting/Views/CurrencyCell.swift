@@ -79,7 +79,7 @@ class CurrencyCell: UITableViewCell {
         let convertedPrice = Float(currency.priceUsd)
         let formatedPrice = String(format: "$%.2f", convertedPrice as! CVarArg)
         price.text = formatedPrice
-        favorite_button.imageView?.image = currency.isFavorite ? UIImage(named: "yellowstar.png") : UIImage(named: "clearstar.png")
+//        favorite_button.imageView?.image = currency.isFavorite ? UIImage(named: "yellowstar.png") : UIImage(named: "clearstar.png")
     }
     
     // UI
@@ -89,13 +89,13 @@ class CurrencyCell: UITableViewCell {
     
     @IBOutlet weak var name_label: UILabel!
     @IBOutlet weak var price_label: UILabel!
-    @IBOutlet weak var favorite_button: UIButton!
+//    @IBOutlet weak var favorite_button: UIButton!
     
    
-    @IBAction func fav_press(_ sender: Any) {
-        print("Fav button press")
-        currencyCellDelegate?.favorite_button_tap(sender: favorite_button, cell: self)
-    }
+//    @IBAction func fav_press(_ sender: Any) {
+//        print("Fav button press")
+//        currencyCellDelegate?.favorite_button_tap(sender: favorite_button, cell: self)
+//    }
     
     
 //
