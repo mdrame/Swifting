@@ -14,16 +14,24 @@
 * Swift
 * Coincap REST API: https://docs.coincap.io/
 * UIKit 
+* MapKit
+* URLSession
 * CoreData
 
 ### Development:
 * MVC
-* Skalenton VC
+* Skalenton Storyboard
 
-### Upcoming versions features:
-- create crypto detail view.
-- presist favorite crypto ( saving, retriving crypto to coredata and cloud ).
+### Upcoming:
+- create crypto detail view. 🟢
+- presist favorite crypto ( saving, retriving crypto to coredata and cloud ). 🟢
 - Implement atm near by feature.
+- Refactor Code ( handling optionals properly, write a generic neworking layout )
+
+### 🐞:
+- Handle Networking (RESPOND, ERROR) properly. 
+- Check user network connection before fetching data.
+- Group constants in New/Custom Class.
 
 ### Got an idea for a project?
 Reach out to me on [LinkedIn](https://www.linkedin.com/in/mohammed-drame-273b17191/) 
