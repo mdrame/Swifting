@@ -156,9 +156,10 @@ class OnboardingViewController: UIViewController {
             } completion: { (completed) in
                 // perform segue here
                 let tabBarVC = CryptonTabBarViewController()
+                let dashBoardVC = DashBoardVC()
                 tabBarVC.modalTransitionStyle = .flipHorizontal
                 tabBarVC.modalPresentationStyle = .fullScreen
-                self.present(tabBarVC, animated: true, completion: nil)
+                self.present(dashBoardVC, animated: true, completion: nil)
                
                 
 //                self.show(tabBarVC, sender: self)
