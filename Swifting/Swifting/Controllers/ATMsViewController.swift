@@ -21,16 +21,42 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         checkUserLocationSetting()
+        
         view.addSubview(mapView)
         mapConstraints()
+        // MARK: Zip code textfield bottom anchor is bound to MapView
+        view.addSubview(zipCode)
+        zipCodeConstraint()
     }
     
     
     // UI
+    let zipCode: UITextField = {
+       let zipCodeTextField = UITextField()
+        zipCodeTextField.translatesAutoresizingMaskIntoConstraints = false
+        zipCodeTextField.placeholder = "ZIP CODE"
+        zipCodeTextField.textColor = UIColor.black
+        zipCodeTextField.font = UIFont(name: "Arial", size: 25)
+        zipCodeTextField.textAlignment = .center
+        zipCodeTextField.layer.borderWidth =  3
+        zipCodeTextField.layer.cornerRadius = 7
+        zipCodeTextField.layer.borderColor = UIColor.gray.cgColor
+        return zipCodeTextField
+    }()
+    
+    func zipCodeConstraint() {
+        NSLayoutConstraint.activate([
+            zipCode.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            zipCode.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 110),
+            zipCode.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -110),
+            zipCode.bottomAnchor.constraint(equalTo: mapView.topAnchor, constant: -30)
+        ])
+    }
+    
     let mapView: MKMapView = {
     let map = MKMapView()
         map.translatesAutoresizingMaskIntoConstraints = false
-        map.showsUserLocation = true
+        map.isScrollEnabled = true
         return map
     }()
     
@@ -46,6 +72,11 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         ])
     }
     
+    func addAnnotation() {
+        let atm = MKPointAnnotation()
+        atm.coordinate = CLLocationCoordinate2D(latitude: 38.8977, longitude: -77.0356)
+        mapView.addAnnotations([atm])
+    }
     
     
 

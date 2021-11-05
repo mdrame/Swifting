@@ -28,6 +28,7 @@
 		7763B2A92718BE73007229E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A72718BE73007229E1 /* LaunchScreen.storyboard */; };
 		776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */; };
 		77789C8427348718001BB05D /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C8327348718001BB05D /* LocationDelegate.swift */; };
+		77789C862734D791001BB05D /* ATMNearBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C852734D791001BB05D /* ATMNearBy.swift */; };
 		77E2172E2730F72C00762C8E /* Cryptoo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */; };
 		77E217302731101B00762C8E /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2172F2731101B00762C8E /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		776EEF732730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteCurrencyDataBase.xcdatamodel; sourceTree = "<group>"; };
 		776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cryptoo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		77789C8327348718001BB05D /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
+		77789C852734D791001BB05D /* ATMNearBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMNearBy.swift; sourceTree = "<group>"; };
 		77E2172F2731101B00762C8E /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				77584F7F271FC8460055164D /* Currency.swift */,
+				77789C852734D791001BB05D /* ATMNearBy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			files = (
 				774176A0271E6C4200CCEB5A /* ButtonAnimation.swift in Sources */,
 				7763B2A12718BE6B007229E1 /* OnboardingViewController.swift in Sources */,
+				77789C862734D791001BB05D /* ATMNearBy.swift in Sources */,
 				774176AD271E89E700CCEB5A /* CryptonTabBarViewController.swift in Sources */,
 				77584F7A271FBCC50055164D /* Networking.swift in Sources */,
 				774176A6271E722900CCEB5A /* DashBoardVC.swift in Sources */,

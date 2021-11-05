@@ -41,4 +41,24 @@ class Networking {
             
         }.resume()
     }
+    
+    // Write generic function
+    func fetchATMNearBy() {
+        guard let url = URL(string: "https://coinmap.org/api/v1/venues/?limit=100") else {
+            print("ATM Nearby URL error")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        URLSession.shared.dataTask(with: request) { atmNearBy, respondStatus , error  in
+            if error != nil {
+                print("Error while fetching ATM Near by")
+                return
+            }
+            // check status code
+            // process data
+        }
+    }
+    
+    
 }
