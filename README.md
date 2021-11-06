@@ -4,7 +4,7 @@
 <!-- # Welcome to Crypton!
 <img src="/assets/V1.1.png" width="300px" height="600px" align="left">
 <img src="/assets/V1.1DarkMode.png" width="300px" height="600px" > -->
-### All in one Crpto Currency app. Download Version 1 : https://apps.apple.com/app/id1574544274 
+### All in one Crpto Currency app. Download Version 1.1 : Coming Soon ....
 
 ### Usage:
 * Run app on IOS Simulator only.
