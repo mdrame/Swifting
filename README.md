@@ -17,7 +17,7 @@
 * MapKit
 * URLSession
 * CoreData
-* Coinmap REST API: https://coinmap.org/api/v1/venues/?limit=100 ( Near by ATMs )
+* Coinmap REST API: https://coinmap.org/ ( Near by ATMs )
 
 ### Development:
 * MVC
