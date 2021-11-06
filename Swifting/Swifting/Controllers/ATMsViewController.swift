@@ -17,11 +17,12 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.title = "ATM"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
+        self.title = "ATM NEAR BY"
+        
         
         checkUserLocationSetting()
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "yellowstar"), style: .done, target: self, action: #selector(handleZipCode))
         view.addSubview(mapView)
         mapConstraints()
         // MARK: Zip code textfield bottom anchor is bound to MapView
@@ -29,8 +30,15 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         zipCodeConstraint()
     }
     
+    @objc func handleZipCode() {
+        print("And textfield and delegate etc")
+    }
+    
     
     // UI
+    
+   
+    
     let zipCode: UITextField = {
        let zipCodeTextField = UITextField()
         zipCodeTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -63,12 +71,12 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     func mapConstraints() {
         mapView.delegate = self
         NSLayoutConstraint.activate([
-//            mapView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-//            mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
-            mapView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            mapView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            mapView.heightAnchor.constraint(equalToConstant: 400),
-            mapView.widthAnchor.constraint(equalToConstant: 400)
+            mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+//            mapView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            mapView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
     }
     

@@ -44,7 +44,7 @@ class Networking {
     
     // Write generic function
     func fetchATMNearBy() {
-        guard let url = URL(string: "https://coinmap.org/api/v1/venues/?limit=100") else {
+        guard let url = URL(string: "https://coinmap.org/api/v1/venues/?limit=4") else {
             print("ATM Nearby URL error")
             return
         }
