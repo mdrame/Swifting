@@ -12,11 +12,12 @@
 
 ### Technology:
 * Swift
-* Coincap REST API: https://docs.coincap.io/
+* Coincap REST API: https://docs.coincap.io/ ( For Currencies )
 * UIKit 
 * MapKit
 * URLSession
 * CoreData
+* Coinmap REST API: https://coinmap.org/api/v1/venues/?limit=100 ( Near by ATMs )
 
 ### Development:
 * MVC
