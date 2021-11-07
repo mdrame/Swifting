@@ -48,9 +48,10 @@ class Networking {
             print("ATM Nearby URL error")
             return
         }
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "GET"
-        _ = URLSession.shared.dataTask(with: url) { data, response, error in
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.allowsCellularAccess = true
+        _ = URLSession.shared.dataTask(with: request) { data, response, error in
            if error != nil {
                print(error?.localizedDescription)
                return
@@ -61,7 +62,7 @@ class Networking {
            
            do {
                let result = try? JSONDecoder().decode(ATMsNearBy.self, from: data!)
-                print(result)
+//                print(result)
                guard let data = result else {
                    print("No data, after dercording ‼️")
                    return

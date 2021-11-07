@@ -18,8 +18,9 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        navigationController?.navigationBar.prefersLargeTitles = false
-        self.title = "ATM NEAR BY"
+//        self.title = "ATM NEAR BY"
+        navigationController?.navigationBar.prefersLargeTitles = true
+       
         
         checkUserLocationSetting()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "yellowstar"), style: .done, target: self, action: #selector(handleZipCode))
@@ -71,14 +72,17 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     let map = MKMapView()
         map.translatesAutoresizingMaskIntoConstraints = false
         map.isScrollEnabled = true
-        map.showsUserLocation = true
+        map.showsScale = true
+        map.showsCompass = true
+        map.showsTraffic = true
+        map.showsBuildings = true
         return map
     }()
     
     func mapConstraints() {
         mapView.delegate = self
         NSLayoutConstraint.activate([
-            mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
 //            mapView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
 //            mapView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
