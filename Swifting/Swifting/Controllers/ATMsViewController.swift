@@ -29,7 +29,10 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
 //        view.addSubview(zipCode)
 //        zipCodeConstraint()
         
-        networkingLayout.fetchATMNearBy()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        networkingLayout.fetchATMNearBy(withurl: .coinMap)
         
     }
     
