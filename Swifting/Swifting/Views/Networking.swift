@@ -44,20 +44,35 @@ class Networking {
     
     // Write generic function
     func fetchATMNearBy() {
-        guard let url = URL(string: "https://coinmap.org/api/v1/venues/?limit=4") else {
+        guard let url = URL(string: "https://coinmap.org/api/v1/venues/?limit=2") else {
             print("ATM Nearby URL error")
             return
         }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        URLSession.shared.dataTask(with: request) { atmNearBy, respondStatus , error  in
-            if error != nil {
-                print("Error while fetching ATM Near by")
-                return
-            }
-            // check status code
-            // process data
-        }
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "GET"
+        _ = URLSession.shared.dataTask(with: url) { data, response, error in
+           if error != nil {
+               print(error?.localizedDescription)
+               return
+           }
+//            print(response, "RESPOND")
+//            let data = try? JSONSerialization.jsonObject(with: data!, options: [])
+//            print(data)
+           
+           do {
+               let result = try? JSONDecoder().decode(ATMsNearBy.self, from: data!)
+                print(result)
+               guard let data = result else {
+                   print("No data, after dercording ‼️")
+                   return
+               }
+//               completion(data) // clsure capture it's value.
+//               print(data.venues)
+           }catch  {
+               print("Error decoding json ")
+           }
+           
+       }.resume()
     }
     
     

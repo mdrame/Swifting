@@ -13,6 +13,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: Instances
     let locationManager = CLLocationManager()
+    let networkingLayout = Networking()
     var message = "Look for eample online"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +21,16 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         navigationController?.navigationBar.prefersLargeTitles = false
         self.title = "ATM NEAR BY"
         
-        
         checkUserLocationSetting()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "yellowstar"), style: .done, target: self, action: #selector(handleZipCode))
         view.addSubview(mapView)
         mapConstraints()
         // MARK: Zip code textfield bottom anchor is bound to MapView
-        view.addSubview(zipCode)
-        zipCodeConstraint()
+//        view.addSubview(zipCode)
+//        zipCodeConstraint()
+        
+        networkingLayout.fetchATMNearBy()
+        
     }
     
     @objc func handleZipCode() {
@@ -65,6 +68,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     let map = MKMapView()
         map.translatesAutoresizingMaskIntoConstraints = false
         map.isScrollEnabled = true
+        map.showsUserLocation = true
         return map
     }()
     

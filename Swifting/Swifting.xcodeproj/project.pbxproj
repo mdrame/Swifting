@@ -26,6 +26,7 @@
 		7763B2A42718BE6B007229E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A22718BE6B007229E1 /* Main.storyboard */; };
 		7763B2A62718BE73007229E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A52718BE73007229E1 /* Assets.xcassets */; };
 		7763B2A92718BE73007229E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A72718BE73007229E1 /* LaunchScreen.storyboard */; };
+		7768D1942737A2DE003CDB26 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768D1932737A2DE003CDB26 /* URLs.swift */; };
 		776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */; };
 		77789C8427348718001BB05D /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C8327348718001BB05D /* LocationDelegate.swift */; };
 		77789C862734D791001BB05D /* ATMNearBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C852734D791001BB05D /* ATMNearBy.swift */; };
@@ -55,6 +56,7 @@
 		7763B2A52718BE73007229E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7763B2A82718BE73007229E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7763B2AA2718BE73007229E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7768D1932737A2DE003CDB26 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		776EEF732730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteCurrencyDataBase.xcdatamodel; sourceTree = "<group>"; };
 		776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cryptoo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		77789C8327348718001BB05D /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				77584F79271FBCC50055164D /* Networking.swift */,
+				7768D1932737A2DE003CDB26 /* URLs.swift */,
 			);
 			name = Networking;
 			path = Views;
@@ -265,6 +268,7 @@
 				771FB160271F77C100A1B82D /* CurrencyCell.swift in Sources */,
 				7763B29F2718BE6B007229E1 /* SceneDelegate.swift in Sources */,
 				77789C8427348718001BB05D /* LocationDelegate.swift in Sources */,
+				7768D1942737A2DE003CDB26 /* URLs.swift in Sources */,
 				771FB167271F7AB500A1B82D /* CurrencyDetailView.swift in Sources */,
 				776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */,
 				774176B3271E8AF800CCEB5A /* ATMsViewController.swift in Sources */,

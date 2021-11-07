@@ -32,6 +32,8 @@ class DashBoardVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("View will appear called ")
         fetchMethod()
+        
+//        networking.fetchATMNearBy()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
