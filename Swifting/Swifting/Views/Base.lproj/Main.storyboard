@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8G5-Af-mNU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OeJ-h3-Qoi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -271,15 +271,32 @@
                     <view key="view" contentMode="scaleToFill" id="5m0-HB-p3Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="m9p-ag-eq4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OeJ-h3-Qoi" id="PyY-J5-bto"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5Gd-Ir-sjY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="m9p-ag-eq4" secondAttribute="trailing" id="1hq-xI-hdY"/>
+                            <constraint firstItem="m9p-ag-eq4" firstAttribute="leading" secondItem="5m0-HB-p3Y" secondAttribute="leading" id="AvN-c0-dIs"/>
+                            <constraint firstAttribute="bottom" secondItem="m9p-ag-eq4" secondAttribute="bottom" id="fNq-XD-cVn"/>
+                            <constraint firstItem="m9p-ag-eq4" firstAttribute="top" secondItem="5m0-HB-p3Y" secondAttribute="top" id="rbG-HW-lY7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jHw-FA-05T"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="atmMap" destination="m9p-ag-eq4" id="3r7-oQ-CvP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJz-jJ-7dp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4700" y="772.76785714285711"/>
+            <point key="canvasLocation" x="4698.5507246376819" y="772.76785714285711"/>
         </scene>
         <!--Currency Detail View-->
         <scene sceneID="Vuu-AZ-mq0">

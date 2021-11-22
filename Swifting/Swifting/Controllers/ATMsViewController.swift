@@ -9,7 +9,9 @@ import UIKit
 import MapKit
 import CoreLocation
 
+
 class ATMsViewController: UIViewController, MKMapViewDelegate {
+    
     
     // MARK: Instances
     let locationManager = CLLocationManager()
@@ -20,12 +22,10 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 //        self.title = "ATM NEAR BY"
         navigationController?.navigationBar.prefersLargeTitles = true
-       
-        
         checkUserLocationSetting()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "yellowstar"), style: .done, target: self, action: #selector(handleZipCode))
-        view.addSubview(mapView)
-        mapConstraints()
+        atmMap.showsUserLocation = true
+//        view.addSubview(mapView)
+//        mapConstraints()
         // MARK: Zip code textfield bottom anchor is bound to MapView
 //        view.addSubview(zipCode)
 //        zipCodeConstraint()
@@ -37,12 +37,11 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         
     }
     
-    @objc func handleZipCode() {
-        print("And textfield and delegate etc")
-    }
+  
     
     
     // UI
+    @IBOutlet weak var atmMap: MKMapView!
     
    
     
@@ -64,11 +63,11 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
             zipCode.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             zipCode.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 110),
             zipCode.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -110),
-            zipCode.bottomAnchor.constraint(equalTo: mapView.topAnchor, constant: -30)
+            zipCode.bottomAnchor.constraint(equalTo: atmMap.topAnchor, constant: -30)
         ])
     }
     
-    let mapView: MKMapView = {
+    let atmsMap: MKMapView = {
     let map = MKMapView()
         map.translatesAutoresizingMaskIntoConstraints = false
         map.isScrollEnabled = true
@@ -80,21 +79,21 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     }()
     
     func mapConstraints() {
-        mapView.delegate = self
+        atmMap.delegate = self
         NSLayoutConstraint.activate([
-            mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+            atmMap.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            atmMap.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
 //            mapView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
 //            mapView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+            atmMap.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            atmMap.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
     }
     
     func addAnnotation() {
         let atm = MKPointAnnotation()
         atm.coordinate = CLLocationCoordinate2D(latitude: 38.8977, longitude: -77.0356)
-        mapView.addAnnotations([atm])
+        atmMap.addAnnotations([atm])
     }
     
     

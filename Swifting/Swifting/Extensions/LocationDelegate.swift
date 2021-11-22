@@ -14,6 +14,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
     func setuplocationmanager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
     }
     
     func checkUserLocationSetting() {
@@ -28,14 +29,17 @@ extension ATMsViewController: CLLocationManagerDelegate {
     
     func checkPermissionStatus() {
         switch locationManager.authorizationStatus {
-        case .authorized:
+        case .authorizedAlways:
             // fetch data
-            mapView.showsUserLocation = true
+            atmMap.showsUserLocation = true
             addAnnotation()
             centerViewOnUserLocation()
             print("Fetch data")
         case .authorizedWhenInUse:
             // fetch data
+            atmMap.showsUserLocation = true
+            addAnnotation()
+            centerViewOnUserLocation()
             print("Fetch data")
         case .denied:
             // diaplay reason/card.
@@ -43,16 +47,18 @@ extension ATMsViewController: CLLocationManagerDelegate {
         case .restricted:
             // display card
             print("Restricted")
+        case .notDetermined:
+            print("Denied")
         default:
             print("No permision selected")
-            centerViewOnUserLocation()
+//            centerViewOnUserLocation()
         }
     }
     
     func centerViewOnUserLocation() {
         if let userCurrentLocation = locationManager.location?.coordinate {
             let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 1000, longitudinalMeters: 1000)
-            mapView.setRegion(region, animated: true)
+            atmMap.setRegion(region, animated: true)
         }
     }
     
