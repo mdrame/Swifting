@@ -22,8 +22,6 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 //        self.title = "ATM NEAR BY"
         navigationController?.navigationBar.prefersLargeTitles = true
-        checkUserLocationSetting()
-        atmMap.showsUserLocation = true
 //        view.addSubview(mapView)
 //        mapConstraints()
         // MARK: Zip code textfield bottom anchor is bound to MapView
@@ -33,6 +31,8 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+       
+        checkUserLocationSetting()
         networkingLayout.fetchATMNearBy(withurl: .coinMap)
         
     }

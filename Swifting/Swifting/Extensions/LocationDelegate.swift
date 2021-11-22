@@ -32,14 +32,14 @@ extension ATMsViewController: CLLocationManagerDelegate {
         case .authorizedAlways:
             // fetch data
             atmMap.showsUserLocation = true
-            addAnnotation()
-            centerViewOnUserLocation()
+//            addAnnotation()
+//            centerViewOnUserLocation()
             print("Fetch data")
         case .authorizedWhenInUse:
             // fetch data
             atmMap.showsUserLocation = true
-            addAnnotation()
-            centerViewOnUserLocation()
+//            addAnnotation()
+//            centerViewOnUserLocation()
             print("Fetch data")
         case .denied:
             // diaplay reason/card.
@@ -54,23 +54,23 @@ extension ATMsViewController: CLLocationManagerDelegate {
 //            centerViewOnUserLocation()
         }
     }
-    
-    func centerViewOnUserLocation() {
-        if let userCurrentLocation = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 1000, longitudinalMeters: 1000)
-            atmMap.setRegion(region, animated: true)
-        }
-    }
-    
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        checkUserLocationSetting()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Location updated")
-        // create region and set user last location
-        
-    }
+//    
+//    func centerViewOnUserLocation() {
+//        if let userCurrentLocation = locationManager.location?.coordinate {
+//            let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 1000, longitudinalMeters: 1000)
+//            atmMap.setRegion(region, animated: true)
+//        }
+//    }
+//    
+//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+//        checkUserLocationSetting()
+//    }
+//    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        print("Location updated")
+//        // create region and set user last location
+//        
+//    }
     
     
     
