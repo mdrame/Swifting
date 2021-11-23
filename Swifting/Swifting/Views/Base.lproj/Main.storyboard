@@ -273,21 +273,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9p-ag-eq4">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="81" width="414" height="815"/>
                                 <connections>
                                     <outlet property="delegate" destination="OeJ-h3-Qoi" id="PyY-J5-bto"/>
                                 </connections>
                             </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="sBz-Ta-CHP">
+                                <rect key="frame" x="142" y="34" width="130" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="FGq-fC-bvH"/>
+                                    <constraint firstAttribute="width" constant="131" id="dFd-fp-nVh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Gd-Ir-sjY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="m9p-ag-eq4" secondAttribute="trailing" id="1hq-xI-hdY"/>
-                            <constraint firstItem="m9p-ag-eq4" firstAttribute="leading" secondItem="5m0-HB-p3Y" secondAttribute="leading" id="AvN-c0-dIs"/>
-                            <constraint firstAttribute="bottom" secondItem="m9p-ag-eq4" secondAttribute="bottom" id="fNq-XD-cVn"/>
-                            <constraint firstItem="m9p-ag-eq4" firstAttribute="top" secondItem="5m0-HB-p3Y" secondAttribute="top" id="rbG-HW-lY7"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="m9p-ag-eq4" secondAttribute="bottom" constant="-83" id="1ad-aM-hb9"/>
+                            <constraint firstItem="sBz-Ta-CHP" firstAttribute="centerX" secondItem="5m0-HB-p3Y" secondAttribute="centerX" id="Bym-tX-F0b"/>
+                            <constraint firstItem="m9p-ag-eq4" firstAttribute="top" secondItem="sBz-Ta-CHP" secondAttribute="bottom" constant="10" id="D70-Ph-MEe"/>
+                            <constraint firstItem="sBz-Ta-CHP" firstAttribute="top" secondItem="5m0-HB-p3Y" secondAttribute="topMargin" constant="-10" id="KBl-Jn-vW9"/>
+                            <constraint firstItem="m9p-ag-eq4" firstAttribute="leading" secondItem="5Gd-Ir-sjY" secondAttribute="leading" id="Lwb-Og-nqo"/>
+                            <constraint firstItem="sBz-Ta-CHP" firstAttribute="leading" secondItem="5Gd-Ir-sjY" secondAttribute="leading" constant="142" id="Ywl-CG-Foz"/>
+                            <constraint firstItem="sBz-Ta-CHP" firstAttribute="centerX" secondItem="m9p-ag-eq4" secondAttribute="centerX" id="cpE-6R-0JB"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="atm" selectedImage="atm" id="jkf-qF-0yq"/>
                     <navigationItem key="navigationItem" id="jHw-FA-05T"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -296,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJz-jJ-7dp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4698.5507246376819" y="772.76785714285711"/>
+            <point key="canvasLocation" x="3978" y="773"/>
         </scene>
         <!--Currency Detail View-->
         <scene sceneID="Vuu-AZ-mq0">
@@ -329,7 +342,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="5a8-Ti-Pwn" kind="relationship" relationship="viewControllers" id="5OM-9D-14L"/>
-                        <segue destination="52g-Tp-CrB" kind="relationship" relationship="viewControllers" id="6xU-sr-0lY"/>
+                        <segue destination="OeJ-h3-Qoi" kind="relationship" relationship="viewControllers" id="cSc-xL-Ow2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKa-o5-33p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -340,7 +353,7 @@
         <scene sceneID="BCx-TJ-Luc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5a8-Ti-Pwn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="chart" id="oy9-si-TdU"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="chart" selectedImage="chart" id="oy9-si-TdU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UbS-hh-8NI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -373,44 +386,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mzs-Xp-mBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2879.7101449275365" y="-640.17857142857144"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="J6e-2q-h8v">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="52g-Tp-CrB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="atm" id="zjJ-kO-692"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6ZL-6a-b3z">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="5Vj-Ak-d5J" kind="relationship" relationship="rootViewController" id="ZcI-5m-NkN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bYK-1O-HWN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2879.7101449275365" y="772.76785714285711"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="OHv-ge-utC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Vj-Ak-d5J" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="3ta-s9-mGS"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="is4-vx-f9T">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="OeJ-h3-Qoi" kind="relationship" relationship="rootViewController" id="zQE-Ri-45B"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J5p-w4-zkH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3789.8550724637685" y="772.76785714285711"/>
         </scene>
     </scenes>
     <resources>
