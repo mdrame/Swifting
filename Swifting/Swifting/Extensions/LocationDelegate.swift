@@ -52,25 +52,28 @@ extension ATMsViewController: CLLocationManagerDelegate {
             print("Denied")
         default:
             print("No permision selected")
-//            centerViewOnUserLocation()
+            //            centerViewOnUserLocation()
         }
     }
-//
+    //
     func centerMapOnUserLocation() {
         if let userCurrentLocation = locationManager.location?.coordinate {
             let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 3000, longitudinalMeters: 3000)
             atmMap.setRegion(region, animated: true)
         }
     }
-//
+    //
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkUserLocationSetting()
     }
-//
+    //
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Location updated")
         // create region and set user last location
-        locationManager.stopUpdatingLocation()
+ 
+            locationManager.stopUpdatingLocation()
+            
+        
     }
     
     

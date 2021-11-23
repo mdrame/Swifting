@@ -23,22 +23,22 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//        self.title = "ATM NEAR BY"
+        //        self.title = "ATM NEAR BY"
         navigationController?.navigationBar.prefersLargeTitles = true
-//        view.addSubview(mapView)
-//        mapConstraints()
+        //        view.addSubview(mapView)
+        //        mapConstraints()
         // MARK: Zip code textfield bottom anchor is bound to MapView
-//        view.addSubview(zipCode)
-//        zipCodeConstraint()
+        //        view.addSubview(zipCode)
+        //        zipCodeConstraint()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       print("Map vc appear")
+        print("Map vc appear")
         checkUserLocationSetting()
         networkingLayout.fetchATMNearBy(withurl: .coinMap) { atmsNearby in
             DispatchQueue.main.async {
-//                print("Atms data in VC: ",atmsNearby.venues)
+                //                print("Atms data in VC: ",atmsNearby.venues)
                 for i in atmsNearby.venues {
                     print("Name:", i.name)
                     print("Lat:", i.lat)
@@ -53,16 +53,16 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         
     }
     
-  
+    
     
     
     // UI
     @IBOutlet weak var atmMap: MKMapView!
     
-   
+    
     
     let zipCode: UITextField = {
-       let zipCodeTextField = UITextField()
+        let zipCodeTextField = UITextField()
         zipCodeTextField.translatesAutoresizingMaskIntoConstraints = false
         zipCodeTextField.placeholder = "ZIP CODE"
         zipCodeTextField.textColor = UIColor.black
@@ -84,7 +84,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     }
     
     let atmsMap: MKMapView = {
-    let map = MKMapView()
+        let map = MKMapView()
         map.translatesAutoresizingMaskIntoConstraints = false
         map.isScrollEnabled = true
         map.showsScale = true
@@ -99,20 +99,24 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         NSLayoutConstraint.activate([
             atmMap.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             atmMap.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
-//            mapView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            mapView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            //            mapView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            //            mapView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             atmMap.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             atmMap.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
         ])
     }
     
     func addAnnotation() {
-        let atm = MKPointAnnotation()
-        atm.coordinate = CLLocationCoordinate2D(latitude: 38.8977, longitude: -77.0356)
-        atmMap.addAnnotations([atm])
+        for location in listOfAtms {
+            let annotation = MKPointAnnotation()
+            annotation.title = location.name as? String
+            annotation.coordinate = CLLocationCoordinate2D(latitude: Double(location.lat), longitude: Double(location.lon))
+            print(location.lat, "Lat 📍")
+            atmMap.addAnnotation(annotation)
+        }
     }
     
     
-
-
+    
+    
 }
