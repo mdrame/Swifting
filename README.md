@@ -18,6 +18,7 @@
 * URLSession
 * CoreData
 * Coinmap REST API: https://coinmap.org/ ( Near by ATMs )
+* CoreLoction
 
 ### Development:
 * MVC
@@ -25,7 +26,6 @@
 
 ### Upcoming:
 - create crypto detail view. 🟢
-- presist favorite crypto ( saving, retriving crypto to coredata and cloud ). 🟢
 - Implement atm near by feature.
 - Refactor Code ( handling optionals properly, write a generic neworking layout )
 
