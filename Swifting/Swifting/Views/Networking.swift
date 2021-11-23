@@ -43,7 +43,7 @@ class Networking {
     }
     
     // Write generic function
-    func fetchATMNearBy(withurl endPoint: endPoints) {
+    func fetchATMNearBy(withurl endPoint: endPoints, completion: @escaping (ATMsNearBy)->Void) {
         guard let url = URL(string: endPoints.coinMap.rawValue) else {
             print("ATM Nearby URL error")
             return
@@ -56,6 +56,7 @@ class Networking {
                print(error?.localizedDescription)
                return
            }
+            
 //            print(response, "RESPOND")
 //            let data = try? JSONSerialization.jsonObject(with: data!, options: [])
 //            print(data)
@@ -67,7 +68,7 @@ class Networking {
                    print("No data, after dercording ‼️")
                    return
                }
-//               completion(data) // clsure capture it's value.
+               completion(data) // clsure capture it's value.
 //               print(data.venues)
            }catch  {
                print("Error decoding json ")

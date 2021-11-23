@@ -17,8 +17,11 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     let locationManager = CLLocationManager()
     let networkingLayout = Networking()
     var message = "Look for eample online"
+    // MARK: Global
+    var listOfAtms = [Venue]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 //        self.title = "ATM NEAR BY"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -31,9 +34,22 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       
+       print("Map vc appear")
         checkUserLocationSetting()
-        networkingLayout.fetchATMNearBy(withurl: .coinMap)
+        networkingLayout.fetchATMNearBy(withurl: .coinMap) { atmsNearby in
+            DispatchQueue.main.async {
+//                print("Atms data in VC: ",atmsNearby.venues)
+                for i in atmsNearby.venues {
+                    print("Name:", i.name)
+                    print("Lat:", i.lat)
+                    print("Lon:", i.lon)
+                    let name = i.name
+                    let lat = i.lat
+                    let lon = i.lon
+                    self.listOfAtms.append(Venue(id: i.id, lat: lat, lon: lon, category: i.category, name: name, created_on: i.created_on, geolocation_degrees: i.geolocation_degrees))
+                }
+            }
+        }
         
     }
     

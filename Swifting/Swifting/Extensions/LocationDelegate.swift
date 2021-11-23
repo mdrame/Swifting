@@ -33,13 +33,13 @@ extension ATMsViewController: CLLocationManagerDelegate {
         case .authorizedAlways:
             // fetch data
             atmMap.showsUserLocation = true
-//            addAnnotation()
+            addAnnotation()
             centerMapOnUserLocation()
             print("Fetch data")
         case .authorizedWhenInUse:
             // fetch data
             atmMap.showsUserLocation = true
-//            addAnnotation()
+            addAnnotation()
             centerMapOnUserLocation()
             print("Fetch data")
         case .denied:
