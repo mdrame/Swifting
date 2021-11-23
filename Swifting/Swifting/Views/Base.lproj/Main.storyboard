@@ -273,18 +273,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9p-ag-eq4">
-                                <rect key="frame" x="0.0" y="81" width="414" height="815"/>
+                                <rect key="frame" x="0.0" y="107" width="414" height="789"/>
                                 <connections>
                                     <outlet property="delegate" destination="OeJ-h3-Qoi" id="PyY-J5-bto"/>
                                 </connections>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="sBz-Ta-CHP">
-                                <rect key="frame" x="142" y="34" width="130" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="FGq-fC-bvH"/>
-                                    <constraint firstAttribute="width" constant="131" id="dFd-fp-nVh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="sBz-Ta-CHP">
+                                <rect key="frame" x="130" y="63" width="154" height="34"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -294,9 +290,9 @@
                             <constraint firstAttribute="bottomMargin" secondItem="m9p-ag-eq4" secondAttribute="bottom" constant="-83" id="1ad-aM-hb9"/>
                             <constraint firstItem="sBz-Ta-CHP" firstAttribute="centerX" secondItem="5m0-HB-p3Y" secondAttribute="centerX" id="Bym-tX-F0b"/>
                             <constraint firstItem="m9p-ag-eq4" firstAttribute="top" secondItem="sBz-Ta-CHP" secondAttribute="bottom" constant="10" id="D70-Ph-MEe"/>
-                            <constraint firstItem="sBz-Ta-CHP" firstAttribute="top" secondItem="5m0-HB-p3Y" secondAttribute="topMargin" constant="-10" id="KBl-Jn-vW9"/>
+                            <constraint firstItem="sBz-Ta-CHP" firstAttribute="top" secondItem="5m0-HB-p3Y" secondAttribute="topMargin" constant="19" id="KBl-Jn-vW9"/>
                             <constraint firstItem="m9p-ag-eq4" firstAttribute="leading" secondItem="5Gd-Ir-sjY" secondAttribute="leading" id="Lwb-Og-nqo"/>
-                            <constraint firstItem="sBz-Ta-CHP" firstAttribute="leading" secondItem="5Gd-Ir-sjY" secondAttribute="leading" constant="142" id="Ywl-CG-Foz"/>
+                            <constraint firstItem="sBz-Ta-CHP" firstAttribute="leading" secondItem="5Gd-Ir-sjY" secondAttribute="leading" constant="130" id="Ywl-CG-Foz"/>
                             <constraint firstItem="sBz-Ta-CHP" firstAttribute="centerX" secondItem="m9p-ag-eq4" secondAttribute="centerX" id="cpE-6R-0JB"/>
                         </constraints>
                     </view>
@@ -309,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJz-jJ-7dp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3978" y="773"/>
+            <point key="canvasLocation" x="3976.811594202899" y="772.76785714285711"/>
         </scene>
         <!--Currency Detail View-->
         <scene sceneID="Vuu-AZ-mq0">
