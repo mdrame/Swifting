@@ -70,7 +70,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Location updated")
         // create region and set user last location
-//        locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
     }
     
     
