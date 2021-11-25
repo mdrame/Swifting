@@ -77,7 +77,7 @@ class CurrencyDetailView: UIViewController {
     
     let price: UILabel = {
         let price = UILabel()
-        price.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        price.textColor = #colorLiteral(red: 0, green: 0.7124273181, blue: 1, alpha: 1)
 //        price.text = "$47,38.433"
         price.font = UIFont(name: "Arial", size: 47)
         price.font = UIFont.boldSystemFont(ofSize: 47)

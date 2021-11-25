@@ -34,13 +34,13 @@ extension ATMsViewController: CLLocationManagerDelegate {
             // fetch data
             atmMap.showsUserLocation = true
             addAnnotation()
-            centerMapOnUserLocation()
+//            centerMapOnUserLocation()
             print("Fetch data")
         case .authorizedWhenInUse:
             // fetch data
             atmMap.showsUserLocation = true
             addAnnotation()
-            centerMapOnUserLocation()
+//            centerMapOnUserLocation()
             print("Fetch data")
         case .denied:
             // diaplay reason/card.
@@ -58,7 +58,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
     //
     func centerMapOnUserLocation() {
         if let userCurrentLocation = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 3000, longitudinalMeters: 3000)
+            let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 6000, longitudinalMeters: 6000)
             atmMap.setRegion(region, animated: true)
         }
     }
@@ -76,6 +76,24 @@ extension ATMsViewController: CLLocationManagerDelegate {
         
     }
     
+//    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else { return nil }
+        var annotationView = atmMap.dequeueReusableAnnotationView(withIdentifier: "custom")
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom") as! MKAnnotationView
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+        annotationView?.image = UIImage(named: "atmblue.png")
+        annotationView?.c
+        
+        annotationView?.canShowCallout = true
+        return annotationView
+        
+        
+    }
     
     
     
