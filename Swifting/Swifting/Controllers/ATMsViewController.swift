@@ -30,6 +30,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         // MARK: Zip code textfield bottom anchor is bound to MapView
         //        view.addSubview(zipCode)
         //        zipCodeConstraint()
+        zipCodeShadow()
         getAtms()
         
     }
@@ -64,28 +65,14 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     // UI
     @IBOutlet weak var atmMap: MKMapView!
     
+    @IBOutlet weak var zipCode: UITextField!
     
     
-    let zipCode: UITextField = {
-        let zipCodeTextField = UITextField()
-        zipCodeTextField.translatesAutoresizingMaskIntoConstraints = false
-        zipCodeTextField.placeholder = "ZIP CODE"
-        zipCodeTextField.textColor = UIColor.black
-        zipCodeTextField.font = UIFont(name: "Arial", size: 25)
-        zipCodeTextField.textAlignment = .center
-        zipCodeTextField.layer.borderWidth =  3
-        zipCodeTextField.layer.cornerRadius = 7
-        zipCodeTextField.layer.borderColor = UIColor.gray.cgColor
-        return zipCodeTextField
-    }()
-    
-    func zipCodeConstraint() {
-        NSLayoutConstraint.activate([
-            zipCode.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            zipCode.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 110),
-            zipCode.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -110),
-            zipCode.bottomAnchor.constraint(equalTo: atmMap.topAnchor, constant: -30)
-        ])
+    private func zipCodeShadow() {
+        zipCode.layer.shadowOpacity = 10
+        zipCode.layer.shadowRadius = 6.0
+        zipCode.layer.shadowOffset = CGSize.zero // Use any CGSize
+        zipCode.layer.shadowColor = UIColor.gray.cgColor
     }
     
     let atmsMap: MKMapView = {
@@ -117,8 +104,8 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
             annotation.title = "Crypton"
             annotation.subtitle = "Business info"
             annotation.coordinate = CLLocationCoordinate2D(latitude: Double(location.lat), longitude: Double(location.lon))
-//            annotation.coordinate = CLLocationCoordinate2D(latitude: 40.718983, longitude: -74.190154)
-        
+            //            annotation.coordinate = CLLocationCoordinate2D(latitude: 40.718983, longitude: -74.190154)
+            
             atmMap.addAnnotation(annotation)
         }
     }
