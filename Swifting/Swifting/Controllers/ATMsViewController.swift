@@ -30,11 +30,16 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         // MARK: Zip code textfield bottom anchor is bound to MapView
         //        view.addSubview(zipCode)
         //        zipCodeConstraint()
+        getAtms()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print("Map vc appear")
+        getAtms()
+    }
+    
+    private func getAtms() {
         checkUserLocationSetting()
         networkingLayout.fetchATMNearBy(withurl: .coinMap) { atmsNearby in
             DispatchQueue.main.async {
@@ -107,15 +112,15 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     }
     
     func addAnnotation() {
-//        for location in listOfAtms {
+        for location in listOfAtms {
             let annotation = MKPointAnnotation()
             annotation.title = "Crypton"
             annotation.subtitle = "Business info"
-//            annotation.coordinate = CLLocationCoordinate2D(latitude: Double(location.lat), longitude: Double(location.lon))
-            annotation.coordinate = CLLocationCoordinate2D(latitude: 40.718983, longitude: -74.190154)
-
+            annotation.coordinate = CLLocationCoordinate2D(latitude: Double(location.lat), longitude: Double(location.lon))
+//            annotation.coordinate = CLLocationCoordinate2D(latitude: 40.718983, longitude: -74.190154)
+        
             atmMap.addAnnotation(annotation)
-//        }
+        }
     }
     
     

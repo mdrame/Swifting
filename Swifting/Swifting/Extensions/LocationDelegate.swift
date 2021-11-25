@@ -82,14 +82,17 @@ extension ATMsViewController: CLLocationManagerDelegate {
         var annotationView = atmMap.dequeueReusableAnnotationView(withIdentifier: "custom")
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom") as! MKAnnotationView
-            annotationView?.canShowCallout = true
+//            annotationView?.canShowCallout = true
         } else {
             annotationView?.annotation = annotation
         }
         annotationView?.image = UIImage(named: "atmblue.png")
-        annotationView?.c
+//        let leftView = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+//        leftView.backgroundColor = .red
+//        leftView.imageView?.image = UIImage(named: "atm.png")
+//        annotationView?.rightCalloutAccessoryView = leftView
         
-        annotationView?.canShowCallout = true
+//        annotationView?.canShowCallout = true
         return annotationView
         
         

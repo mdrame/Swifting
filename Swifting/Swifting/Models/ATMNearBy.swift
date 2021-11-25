@@ -25,7 +25,7 @@ struct Venue: Codable  {
 
 
 // MARK: - Welcome9
-struct Location: Codable {
+struct Id: Codable {
     let atm: ATM
 }
 
