@@ -89,18 +89,26 @@ extension ATMsViewController: CLLocationManagerDelegate {
             annotationView?.annotation = annotation
         }
         annotationView?.image = UIImage(named: "atmblue.png")
-//        let leftView = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-//        leftView.backgroundColor = .red
-//        leftView.imageView?.image = UIImage(named: "atm.png")
-//        annotationView?.rightCalloutAccessoryView = leftView
-        
-//        annotationView?.canShowCallout = true
         return annotationView
-        
-        
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped(sender:)))
+           view.addGestureRecognizer(gesture)
+    }
+    
+    @objc func calloutTapped(sender:UITapGestureRecognizer) {
+        guard let annotation = (sender.view as? MKAnnotationView)?.annotation else { return }
+        let selectedLocation: CLLocationCoordinate2D
+        selectedLocation = annotation.coordinate
+        print("Pop up view")
+//        performSegueWithIdentifier("mySegueIdentifier", sender: self)
     }
     
     
+    
+    
+  
     
     
 }
