@@ -25,6 +25,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
             checkPermissionStatus()
         } else {
             print("Please go to your phone setting and enable location service, to find ATM near by. ")
+//            show alert letting user know they have to turn location service on
         }
     }
     
@@ -34,19 +35,21 @@ extension ATMsViewController: CLLocationManagerDelegate {
             // fetch data
             atmMap.showsUserLocation = true
             addAnnotation()
-//            centerMapOnUserLocation()
+            centerMapOnUserLocation()
             print("Fetch data")
         case .authorizedWhenInUse:
             // fetch data
             atmMap.showsUserLocation = true
             addAnnotation()
-//            centerMapOnUserLocation()
+            centerMapOnUserLocation()
             print("Fetch data")
         case .denied:
             // diaplay reason/card.
+            locationManager.requestWhenInUseAuthorization()
             print("Denied")
         case .restricted:
             // display card
+            locationManager.requestWhenInUseAuthorization()
             print("Restricted")
         case .notDetermined:
             print("Denied")
@@ -57,8 +60,9 @@ extension ATMsViewController: CLLocationManagerDelegate {
     }
     //
     func centerMapOnUserLocation() {
+        print("Map centered on user current locationd")
         if let userCurrentLocation = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 6000, longitudinalMeters: 6000)
+            let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 10000, longitudinalMeters: 10000)
             atmMap.setRegion(region, animated: true)
         }
     }
@@ -72,8 +76,6 @@ extension ATMsViewController: CLLocationManagerDelegate {
         // create region and set user last location
  
             locationManager.stopUpdatingLocation()
-            
-        
     }
     
 //    

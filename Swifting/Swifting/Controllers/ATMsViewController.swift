@@ -42,7 +42,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     
     private func getAtms() {
         checkUserLocationSetting()
-        networkingLayout.fetchATMNearBy(withurl: .coinMap) { atmsNearby in
+        networkingLayout.fetchATMNearBy(withurl: .atmNearby) { atmsNearby in
             DispatchQueue.main.async {
                 //                print("Atms data in VC: ",atmsNearby.venues)
                 for i in atmsNearby.venues {
