@@ -102,7 +102,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
         let selectedLocation: CLLocationCoordinate2D
         selectedLocation = annotation.coordinate
         print("Pop up view")
-//        performSegueWithIdentifier("mySegueIdentifier", sender: self)
+        performSegue(withIdentifier: "atmDetail", sender: self)
     }
     
     

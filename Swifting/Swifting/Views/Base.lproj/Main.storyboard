@@ -302,11 +302,43 @@
                     <connections>
                         <outlet property="atmMap" destination="m9p-ag-eq4" id="3r7-oQ-CvP"/>
                         <outlet property="cityName" destination="sBz-Ta-CHP" id="ruy-lC-oAd"/>
+                        <segue destination="acq-Yg-iyA" kind="show" identifier="atmDetail" id="veO-uf-9zd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJz-jJ-7dp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3976.811594202899" y="772.76785714285711"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="WKM-3X-XUz">
+            <objects>
+                <viewController id="acq-Yg-iyA" customClass="ATMDetailVC" customModule="Swifting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4av-Il-sMc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnY-MP-O0b">
+                                <rect key="frame" x="31" y="247" width="353" height="480"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="scU-TU-45p"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VnY-MP-O0b" firstAttribute="top" secondItem="scU-TU-45p" secondAttribute="top" constant="247" id="TA2-F3-4oS"/>
+                            <constraint firstItem="VnY-MP-O0b" firstAttribute="leading" secondItem="scU-TU-45p" secondAttribute="leading" constant="31" id="VTW-M1-FFh"/>
+                            <constraint firstItem="scU-TU-45p" firstAttribute="bottom" secondItem="VnY-MP-O0b" secondAttribute="bottom" constant="81" id="Z2h-Nn-2b5"/>
+                            <constraint firstItem="VnY-MP-O0b" firstAttribute="centerX" secondItem="4av-Il-sMc" secondAttribute="centerX" id="eTY-5b-UW8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qfv-b8-ugJ"/>
+                    <connections>
+                        <outlet property="atmDetailsWrapView" destination="VnY-MP-O0b" id="fiM-Zv-wHO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mpn-pl-Vee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4853.6231884057979" y="771.42857142857144"/>
         </scene>
         <!--Currency Detail View-->
         <scene sceneID="Vuu-AZ-mq0">
