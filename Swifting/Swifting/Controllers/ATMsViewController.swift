@@ -32,6 +32,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         //        zipCodeConstraint()
         zipCodeShadow()
         getAtms()
+        dismissKeyboard()
         
     }
     
@@ -73,6 +74,15 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         zipCode.layer.shadowRadius = 6.0
         zipCode.layer.shadowOffset = CGSize.zero // Use any CGSize
         zipCode.layer.shadowColor = UIColor.gray.cgColor
+    }
+    
+    private func dismissKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(resignKeyboard))
+        atmMap.addGestureRecognizer(tap)
+    }
+    
+    @objc func resignKeyboard() {
+        zipCode.resignFirstResponder()
     }
     
     let atmsMap: MKMapView = {
