@@ -33,7 +33,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         zipCodeShadow()
         getAtms()
         dismissKeyboard()
-        
+        cityName.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +41,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         getAtms()
     }
     
-    private func getAtms() {
+     func getAtms() {
         checkUserLocationSetting()
         networkingLayout.fetchATMNearBy(withurl: .atmNearby) { atmsNearby in
             DispatchQueue.main.async {
@@ -66,14 +66,14 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     // UI
     @IBOutlet weak var atmMap: MKMapView!
     
-    @IBOutlet weak var zipCode: UITextField!
+    @IBOutlet weak var cityName: UITextField!
     
     
     private func zipCodeShadow() {
-        zipCode.layer.shadowOpacity = 10
-        zipCode.layer.shadowRadius = 6.0
-        zipCode.layer.shadowOffset = CGSize.zero // Use any CGSize
-        zipCode.layer.shadowColor = UIColor.gray.cgColor
+        cityName.layer.shadowOpacity = 10
+        cityName.layer.shadowRadius = 6.0
+        cityName.layer.shadowOffset = CGSize.zero // Use any CGSize
+        cityName.layer.shadowColor = UIColor.gray.cgColor
     }
     
     private func dismissKeyboard() {
@@ -82,7 +82,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     }
     
     @objc func resignKeyboard() {
-        zipCode.resignFirstResponder()
+        cityName.resignFirstResponder()
     }
     
     let atmsMap: MKMapView = {

@@ -301,7 +301,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="atmMap" destination="m9p-ag-eq4" id="3r7-oQ-CvP"/>
-                        <outlet property="zipCode" destination="sBz-Ta-CHP" id="ruy-lC-oAd"/>
+                        <outlet property="cityName" destination="sBz-Ta-CHP" id="ruy-lC-oAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJz-jJ-7dp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

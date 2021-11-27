@@ -30,6 +30,7 @@
 		776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */; };
 		77789C8427348718001BB05D /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C8327348718001BB05D /* LocationDelegate.swift */; };
 		77789C862734D791001BB05D /* ATMNearBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C852734D791001BB05D /* ATMNearBy.swift */; };
+		77A23E712751ECCC0054304D /* CityNameDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A23E702751ECCC0054304D /* CityNameDelegates.swift */; };
 		77E2172E2730F72C00762C8E /* Cryptoo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */; };
 		77E217302731101B00762C8E /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2172F2731101B00762C8E /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cryptoo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		77789C8327348718001BB05D /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
 		77789C852734D791001BB05D /* ATMNearBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMNearBy.swift; sourceTree = "<group>"; };
+		77A23E702751ECCC0054304D /* CityNameDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNameDelegates.swift; sourceTree = "<group>"; };
 		77E2172F2731101B00762C8E /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				7741769F271E6C4200CCEB5A /* ButtonAnimation.swift */,
 				771FB163271F786B00A1B82D /* CurrencyTableView.swift */,
 				77789C8327348718001BB05D /* LocationDelegate.swift */,
+				77A23E702751ECCC0054304D /* CityNameDelegates.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */,
 				774176B3271E8AF800CCEB5A /* ATMsViewController.swift in Sources */,
 				77E217302731101B00762C8E /* FavoriteCell.swift in Sources */,
+				77A23E712751ECCC0054304D /* CityNameDelegates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
