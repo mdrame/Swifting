@@ -25,7 +25,12 @@ extension ATMsViewController: CLLocationManagerDelegate {
             checkPermissionStatus()
         } else {
             print("Please go to your phone setting and enable location service, to find ATM near by. ")
-//            show alert letting user know they have to turn location service on
+            //            show alert letting user know they have to turn location service on
+            let alert = UIAlertController(title: "Location is off", message: "Please go to setting and turn on location service", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -74,17 +79,17 @@ extension ATMsViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Location updated")
         // create region and set user last location
- 
-            locationManager.stopUpdatingLocation()
+        
+        locationManager.stopUpdatingLocation()
     }
     
-//    
+    //
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else { return nil }
         var annotationView = atmMap.dequeueReusableAnnotationView(withIdentifier: "custom")
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom") as! MKAnnotationView
-//            annotationView?.canShowCallout = true
+            //            annotationView?.canShowCallout = true
         } else {
             annotationView?.annotation = annotation
         }
@@ -94,7 +99,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped(sender:)))
-           view.addGestureRecognizer(gesture)
+        view.addGestureRecognizer(gesture)
     }
     
     @objc func calloutTapped(sender:UITapGestureRecognizer) {
@@ -108,7 +113,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
     
     
     
-  
+    
     
     
 }
