@@ -12,7 +12,6 @@ import UIKit
 
 class Networking {
     
-    // using escaping closure to caputre Crypto object
     func fetch_cryptos(completion: @escaping (Currency)->Void) {
         guard let url = URL(string: "https://api.coincap.io/v2/assets") else {
             print("Check URL String, probaly missing or invalid")

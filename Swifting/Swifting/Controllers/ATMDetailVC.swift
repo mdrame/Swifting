@@ -61,8 +61,9 @@ class ATMDetailVC: UIViewController {
     
     let businessName: UILabel = {
         let businessName = UILabel()
-        businessName.text = "Sentia & Son"
+        businessName.text = "Crypto World"
         businessName.translatesAutoresizingMaskIntoConstraints = false
+        businessName.backgroundColor = UIColor.green
 //        NSLayoutConstraint.activate([
 //            tas
 //        ])

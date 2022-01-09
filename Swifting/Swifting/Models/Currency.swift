@@ -12,7 +12,11 @@ import Foundation
 struct Currency: Codable {
 //    var id =  UUID().uuidString
     let data: [[String: String?]]
-    let timestamp: Int
+    let time: Int
+    // Coding Keys
+    private enum CoingKeys: String, CodingKey {
+        case time = "timestamp"
+    }
 }
 
 struct Crypto: Codable {
