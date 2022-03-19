@@ -30,6 +30,8 @@
 - Implement atm near by feature. ䷫
 - Refactor Code ( handling optionals properly, write a generic neworking layout ).
 - Add UIActivity Indicator 🟢
+- Add Typing Animation to CRYPTON Lable in OnboardingVC
+
 
 ### 🐞:
 - Handle Networking (RESPOND, ERROR) properly. 🟢
