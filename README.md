@@ -30,13 +30,15 @@
 - Implement atm near by feature. ䷫
 - Refactor Code ( handling optionals properly, write a generic neworking layout ).
 - Add UIActivity Indicator. 🟢
-- Add Typing Animation to CRYPTON Lable in OnboardingVC.
+- Add Typing Animation to CRYPTON Lable in OnboardingVC. 🟢
 - Pull down TableView to refresh DashBoard.
 - Adopte MVVM pattern 
+- compress Logo/Video. 🟢
 
 
 ### 🐞:
 - Handle Networking (RESPOND, ERROR) properly. 🟢
+- Map don't center on first trigger of ViewDidAppear.
 - Check user network connection before fetching data.
 - Group constants in New/Custom Class.
 
