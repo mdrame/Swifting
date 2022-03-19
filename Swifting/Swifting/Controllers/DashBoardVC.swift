@@ -14,6 +14,7 @@ class DashBoardVC: UIViewController {
     // Instances / Objects
     let networking = Networking()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var timer: Timer!
     // Global Variabl
     var cryptoCurrencies = [Crypto]()
     var isFavorite = false
@@ -24,16 +25,22 @@ class DashBoardVC: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.title = "Crypto Currencies"
         navigationController?.navigationBar.prefersLargeTitles = true
-        //        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        //        fetchMethod()
         print("View didLoad Finished")
-        //        fetchMethod()
+        timer = Timer.scheduledTimer(timeInterval: 4.5, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
+    }
+    
+    @objc func refreshPrice() {
+        fetchMethod()
     }
     override func viewWillAppear(_ animated: Bool) {
         print("View will appear called ")
         fetchMethod()
         
         //        networking.fetchATMNearBy()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
