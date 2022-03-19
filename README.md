@@ -37,6 +37,7 @@
 
 ### 🐞:
 - Handle Networking (RESPOND, ERROR) properly. 🟢
+- Map don't center on first trigger of ViewDidAppear.
 - Check user network connection before fetching data.
 - Group constants in New/Custom Class.
 
