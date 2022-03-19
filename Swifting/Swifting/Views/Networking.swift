@@ -10,14 +10,16 @@ import UIKit
 
 public enum URLSessionError: String, Error {
     case badURL
+    case unableToDecodeJSON
     case noDataAfterDecoding
     case badRespond
     case errorDecodingJson
     case UnknowRespondCode
+    case clientError
 }
 
 public class Networking {
-     func fetch_cryptos(completion: @escaping (Result<Currency, URLSessionError>)->Void) {
+    func fetch_cryptos(completion: @escaping (Result<Currency, URLSessionError>)->Void) {
         guard let url = URL(string: "https://api.coincap.io/v2/assets") else {
             completion(.failure(.badURL))
             return
@@ -27,57 +29,38 @@ public class Networking {
                 print(error?.localizedDescription)
                 return
             }
-            do {
-                let decodedCurrencies = try? JSONDecoder().decode(Currency.self, from: data!)
-                guard let currencies = decodedCurrencies else {
-                    print("No data after decoding JSON")
-                    return
+            if let respond = response as? HTTPURLResponse {
+                switch respond.statusCode {
+                case 200:
+                    do {
+                        var data = currencyDecoder(data: data)
+                        completion(.success(data!))
+                    } catch {
+                        print("Unbale to decode JSON")
+                        completion(.failure(.unableToDecodeJSON))
+                    }
+                case 400...417:
+                    print("Client Error")
+                    completion(.failure(.clientError))
+                default:
+                    print("No response")
                 }
-                completion(.success(currencies))
-//                print("JSON: \(decodedCurrencies)")
-//                return decodedCurrencies
-            }catch  {
-                print("Unable to decode data")
             }
-//            guard let decodedCurrencies = self.currencyDecoder(data: data) else {
-//                completion(.failure(.noDataAfterDecoding))
-//                return
-//            }
-//            if let respond = response as? HTTPURLResponse {
-//                switch respond.statusCode {
-//                case 200:
-//                    guard let decodedCurrencies = self.currencyDecoder(data: data) else {
-//                        completion(.failure(.noDataAfterDecoding))
-//                        return
-//                    }
-//                    completion(.success(decodedCurrencies))
-//                default:
-//                    completion(.failure(.UnknowRespondCode))
-//                }
-//            }
         }.resume()
     }
+    
     /// Helper function for decoding JSON.
     private func currencyDecoder(data crypto: Data?)-> Currency? {
         do {
             let decodedCurrencies = try? JSONDecoder().decode(Currency.self, from: crypto!)
-//            guard let currencies = decodedCurrencies else {
-//                print("No data after decoding JSON")
-//                return nil
-//            }
-            print("JSON: \(decodedCurrencies)")
-            return decodedCurrencies
-        }catch  {
+            if let crypto = decodedCurrencies {
+                return crypto
+            }
+        } catch {
             print("Unable to decode data")
         }
+        return nil
     }
-    
-    
-    
-    
-    
-    
-    
     
     
     // Write generic function
@@ -114,6 +97,5 @@ public class Networking {
             
         }.resume()
     }
-    
-    
 }
+
