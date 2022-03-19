@@ -33,6 +33,7 @@
 - Add Typing Animation to CRYPTON Lable in OnboardingVC.
 - Pull down TableView to refresh DashBoard.
 - Adopte MVVM pattern 
+- compress Logo/Video 
 
 
 ### 🐞:
