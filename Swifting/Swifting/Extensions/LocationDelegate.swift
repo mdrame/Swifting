@@ -43,30 +43,34 @@ extension ATMsViewController: CLLocationManagerDelegate {
             addAnnotation()
             centerMapOnUserLocation()
             print("Fetch data")
+            
         case .authorizedWhenInUse:
             // fetch data
             atmMap.showsUserLocation = true
-            addAnnotation()
-            centerMapOnUserLocation()
+//            centerMapOnUserLocation()
+//            addAnnotation()
             print("Fetch data")
         case .denied:
             // diaplay reason/card.
             locationManager.requestWhenInUseAuthorization()
             print("Denied")
+            
         case .restricted:
             // display card
             locationManager.requestWhenInUseAuthorization()
             print("Restricted")
+            
         case .notDetermined:
             print("Denied")
+            
         default:
             print("No permision selected")
-            //            centerViewOnUserLocation()
+           
         }
     }
     //
     func centerMapOnUserLocation() {
-        print("Map centered on user current locationd")
+        print("Map centered on user current location")
         if let userCurrentLocation = locationManager.location?.coordinate {
             let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 10000, longitudinalMeters: 10000)
             atmMap.setRegion(region, animated: true)
@@ -77,13 +81,13 @@ extension ATMsViewController: CLLocationManagerDelegate {
         checkUserLocationSetting()
     }
     //
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Location updated")
-        // create region and set user last location
-        
-        locationManager.stopUpdatingLocation()
-    }
-    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        print("Location updated")
+//        // create region and set user last location
+//
+//        locationManager.stopUpdatingLocation()
+//    }
+//
     //
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else { return nil }

@@ -32,6 +32,7 @@
 		77789C862734D791001BB05D /* ATMNearBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C852734D791001BB05D /* ATMNearBy.swift */; };
 		77A23E712751ECCC0054304D /* CityNameDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A23E702751ECCC0054304D /* CityNameDelegates.swift */; };
 		77A23E732751F48C0054304D /* ATMDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A23E722751F48C0054304D /* ATMDetailVC.swift */; };
+		77D58C9927E67CD8007B4F38 /* CryptonLabelAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D58C9827E67CD8007B4F38 /* CryptonLabelAnimation.swift */; };
 		77E2172E2730F72C00762C8E /* Cryptoo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */; };
 		77E217302731101B00762C8E /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E2172F2731101B00762C8E /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		77789C852734D791001BB05D /* ATMNearBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMNearBy.swift; sourceTree = "<group>"; };
 		77A23E702751ECCC0054304D /* CityNameDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNameDelegates.swift; sourceTree = "<group>"; };
 		77A23E722751F48C0054304D /* ATMDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMDetailVC.swift; sourceTree = "<group>"; };
+		77D58C9827E67CD8007B4F38 /* CryptonLabelAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptonLabelAnimation.swift; sourceTree = "<group>"; };
 		77E2172F2731101B00762C8E /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				7741769F271E6C4200CCEB5A /* ButtonAnimation.swift */,
+				77D58C9827E67CD8007B4F38 /* CryptonLabelAnimation.swift */,
 				771FB163271F786B00A1B82D /* CurrencyTableView.swift */,
 				77789C8327348718001BB05D /* LocationDelegate.swift */,
 				77A23E702751ECCC0054304D /* CityNameDelegates.swift */,
@@ -271,6 +274,7 @@
 				77441FCE2720978300ECC784 /* CurrencyCellDelegate.swift in Sources */,
 				7763B29D2718BE6B007229E1 /* AppDelegate.swift in Sources */,
 				77584F80271FC8460055164D /* Currency.swift in Sources */,
+				77D58C9927E67CD8007B4F38 /* CryptonLabelAnimation.swift in Sources */,
 				771FB160271F77C100A1B82D /* CurrencyCell.swift in Sources */,
 				7763B29F2718BE6B007229E1 /* SceneDelegate.swift in Sources */,
 				77789C8427348718001BB05D /* LocationDelegate.swift in Sources */,

@@ -65,7 +65,7 @@ class OnboardingViewController: UIViewController {
     func cryptonLabel()->UILabel {
         let cryptonLabel = UILabel()
         view.addSubview(cryptonLabel)
-        cryptonLabel.text = "C R Y P T O N"
+//        cryptonLabel.text = "C R Y P T O N"
         cryptonLabel.translatesAutoresizingMaskIntoConstraints = false
         cryptonLabel.font = UIFont(name: "Arial", size: 50)
         cryptonLabel.adjustsFontForContentSizeCategory = true
@@ -74,12 +74,15 @@ class OnboardingViewController: UIViewController {
         cryptonLabel.adjustsFontSizeToFitWidth = true
         cryptonLabel.textColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         cryptonLabel.font = UIFont.boldSystemFont(ofSize: 55)
+        cryptonLabel.animate(newText: "C R Y P T O N", characterDelay: 0.1)
         // constrant
         cryptonLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         cryptonLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         cryptonLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
         return cryptonLabel
     }
+    
+    
     
     func aboutCryptonLabel() {
         let aboutTittle = UILabel()

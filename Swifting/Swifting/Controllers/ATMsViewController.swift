@@ -16,7 +16,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     // MARK: Instances
     let locationManager = CLLocationManager()
     let networkingLayout = Networking()
-    var message = "Look for eample online"
+//    var message = "Look for eample online"
     // MARK: Global
     var listOfAtms = [Venue]()
     override func viewDidLoad() {
@@ -29,20 +29,22 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         //        view.addSubview(zipCode)
         //        zipCodeConstraint()
         zipCodeShadow()
-//        getAtms()
 //        dismissKeyboard()
         cityName.delegate = self
+        print("Map vc didLoad")
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print("Map vc appear")
         getAtms()
+      
     }
     
      func getAtms() {
         checkUserLocationSetting()
-        networkingLayout.fetchATMNearBy(withurl: .atmNearby) { atmsNearby in
-            DispatchQueue.main.async {
+         DispatchQueue.main.async {
+             self.networkingLayout.fetchATMNearBy(withurl: .atmNearby) { atmsNearby in
                 //                print("Atms data in VC: ",atmsNearby.venues)
                 for i in atmsNearby.venues {
                     print("Name:", i.name)
@@ -53,7 +55,9 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
                     let lon = i.lon
                     self.listOfAtms.append(Venue(id: i.id, lat: lat, lon: lon, category: i.category, name: name, created_on: i.created_on, geolocation_degrees: i.geolocation_degrees))
                 }
+                
             }
+             self.addAnnotation()
         }
         
     }
@@ -109,8 +113,8 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     func addAnnotation() {
         for location in listOfAtms {
             let annotation = MKPointAnnotation()
-            annotation.title = "Crypton"
-            annotation.subtitle = "Business info"
+//            annotation.title = "Crypton"
+//            annotation.subtitle = "Business info"
             annotation.coordinate = CLLocationCoordinate2D(latitude: Double(location.lat), longitude: Double(location.lon))
             //            annotation.coordinate = CLLocationCoordinate2D(latitude: 40.718983, longitude: -74.190154)
             
