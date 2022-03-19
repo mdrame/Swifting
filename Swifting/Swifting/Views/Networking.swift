@@ -29,11 +29,12 @@ public class Networking {
             }
             do {
                 let decodedCurrencies = try? JSONDecoder().decode(Currency.self, from: data!)
-    //            guard let currencies = decodedCurrencies else {
-    //                print("No data after decoding JSON")
-    //                return nil
-    //            }
-                print("JSON: \(decodedCurrencies)")
+                guard let currencies = decodedCurrencies else {
+                    print("No data after decoding JSON")
+                    return
+                }
+                completion(.success(currencies))
+//                print("JSON: \(decodedCurrencies)")
 //                return decodedCurrencies
             }catch  {
                 print("Unable to decode data")

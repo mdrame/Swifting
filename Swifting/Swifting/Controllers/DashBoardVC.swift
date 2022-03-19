@@ -26,6 +26,7 @@ class DashBoardVC: UIViewController {
         self.title = "Crypto Currencies"
         navigationController?.navigationBar.prefersLargeTitles = true
         print("View didLoad Finished")
+//        fetchMethod()
         timer = Timer.scheduledTimer(timeInterval: 4.5, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
     }
     
@@ -39,12 +40,9 @@ class DashBoardVC: UIViewController {
         //        networking.fetchATMNearBy()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        timer.invalidate()
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
         cryptoCurrencies = []
+        timer.invalidate()
     }
     
     func fetchMethod() {
@@ -57,19 +55,20 @@ class DashBoardVC: UIViewController {
                     for cryptoCurrency in currency.data {
                         //                    print(cryptoCurrency["name"], "First Currency")
                         // rewite code / handle optional
-                        let id = "randonNumber"
+                        let id = cryptoCurrency["id"]
                         let name = cryptoCurrency["name"]
                         let priceUsd = cryptoCurrency["priceUsd"]
                         let rank = cryptoCurrency["rank"]
                         let maxSupply = cryptoCurrency["maxSupply"]
                         let marketCapUsd = cryptoCurrency["marketCapUsd"]
                         let volumUsd24hr = cryptoCurrency["volumeUsd24Hr"]
-                        self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!, isFavorite: false))
+                        self.cryptoCurrencies.append(Crypto(id: "randonNumber", name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!))
                     }
                     cryptoUITableView?.reloadData()
-            
+                    print("Name: \(currency.data[0]["name"]),Price: \(currency.data[0]["priceUsd"])")
                 case .failure(let error):
                     print(error.localizedDescription)
+                    print("Unable to bring data back to VC")
                 }
             }
             
