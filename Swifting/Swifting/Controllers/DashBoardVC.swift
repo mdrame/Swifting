@@ -27,7 +27,6 @@ class DashBoardVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         print("View didLoad Finished")
 //        fetchMethod()
-        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
         view.addSubview(spinner)
         spinnerConstraint()
         spinner.startAnimating()
@@ -41,7 +40,7 @@ class DashBoardVC: UIViewController {
         print("View will appear called ")
         fetchMethod()
         spinner.startAnimating()
-        //        networking.fetchATMNearBy()
+        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

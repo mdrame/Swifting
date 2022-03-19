@@ -155,15 +155,10 @@ class OnboardingViewController: UIViewController {
                 fileView.transform = CGAffineTransform(translationX: 180, y: 0)
             } completion: { (completed) in
                 // perform segue here
-                let tabBarVC = CryptonTabBarViewController()
-                let dashBoardVC = DashBoardVC()
-                tabBarVC.modalTransitionStyle = .flipHorizontal
-                tabBarVC.modalPresentationStyle = .fullScreen
-                self.present(dashBoardVC, animated: true, completion: nil)
-               
-                
-//                self.show(tabBarVC, sender: self)
-               
+                 let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    guard let destination = mainStoryBoard.instantiateViewController(withIdentifier: "tabBar") as? CryptonTabBarViewController else { return }
+                    destination.modalPresentationStyle = .fullScreen
+                    self.present(destination, animated: true, completion: nil)
                 
             }
         default:
