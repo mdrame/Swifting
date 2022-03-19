@@ -28,6 +28,9 @@ class DashBoardVC: UIViewController {
         print("View didLoad Finished")
 //        fetchMethod()
         timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
+        view.addSubview(spinner)
+        spinnerConstraint()
+        spinner.startAnimating()
     }
     
     @objc func refreshPrice() {
@@ -37,7 +40,7 @@ class DashBoardVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("View will appear called ")
         fetchMethod()
-        
+        spinner.startAnimating()
         //        networking.fetchATMNearBy()
     }
     
@@ -48,7 +51,7 @@ class DashBoardVC: UIViewController {
     
     func fetchMethod() {
         networking.fetch_cryptos { [self] (completed) in
-            //            print("Data after completion handler: \(currency.data)")
+            
             print("Fetching Data")
             DispatchQueue.main.async {
                 switch completed {
@@ -67,6 +70,7 @@ class DashBoardVC: UIViewController {
                     }
                     cryptoUITableView?.reloadData()
                     print("Name: \(currency.data[0]["name"]),Price: \(currency.data[0]["priceUsd"])")
+                    self.spinner.stopAnimating()
                 case .failure(let error):
                     print(error.localizedDescription)
                     print("Unable to bring data back to VC")
@@ -108,6 +112,20 @@ class DashBoardVC: UIViewController {
             currencyTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             currencyTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             currencyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+    
+    lazy var spinner : UIActivityIndicatorView = {
+        let spinner =  UIActivityIndicatorView(frame: .zero)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.style = .large
+        return spinner
+    }()
+    
+    func spinnerConstraint() {
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
