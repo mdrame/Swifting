@@ -27,10 +27,11 @@ class DashBoardVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         print("View didLoad Finished")
 //        fetchMethod()
-        timer = Timer.scheduledTimer(timeInterval: 4.5, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
     }
     
     @objc func refreshPrice() {
+        cryptoCurrencies = []
         fetchMethod()
     }
     override func viewWillAppear(_ animated: Bool) {
