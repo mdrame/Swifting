@@ -24,16 +24,16 @@ class DashBoardVC: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.title = "Crypto Currencies"
         navigationController?.navigationBar.prefersLargeTitles = true
-//        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//        fetchMethod()
+        //        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        //        fetchMethod()
         print("View didLoad Finished")
-//        fetchMethod()
+        //        fetchMethod()
     }
     override func viewWillAppear(_ animated: Bool) {
         print("View will appear called ")
         fetchMethod()
         
-//        networking.fetchATMNearBy()
+        //        networking.fetchATMNearBy()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -41,27 +41,33 @@ class DashBoardVC: UIViewController {
     }
     
     func fetchMethod() {
-        networking.fetch_cryptos { [self] (currency) in
+        networking.fetch_cryptos { [self] (completed) in
             //            print("Data after completion handler: \(currency.data)")
             print("Fetching Data")
             DispatchQueue.main.async {
-                for cryptoCurrency in currency.data {
-                    //                    print(cryptoCurrency["name"], "First Currency")
-                    // rewite code / handle optional
-                    let id = "randonNumber"
-                    let name = cryptoCurrency["name"]
-                    let priceUsd = cryptoCurrency["priceUsd"]
-                    let rank = cryptoCurrency["rank"]
-                    let maxSupply = cryptoCurrency["maxSupply"]
-                    let marketCapUsd = cryptoCurrency["marketCapUsd"]
-                    let volumUsd24hr = cryptoCurrency["volumeUsd24Hr"]
-                    self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!, isFavorite: false))
+                switch completed {
+                case .success(let currency):
+                    for cryptoCurrency in currency.data {
+                        //                    print(cryptoCurrency["name"], "First Currency")
+                        // rewite code / handle optional
+                        let id = "randonNumber"
+                        let name = cryptoCurrency["name"]
+                        let priceUsd = cryptoCurrency["priceUsd"]
+                        let rank = cryptoCurrency["rank"]
+                        let maxSupply = cryptoCurrency["maxSupply"]
+                        let marketCapUsd = cryptoCurrency["marketCapUsd"]
+                        let volumUsd24hr = cryptoCurrency["volumeUsd24Hr"]
+                        self.cryptoCurrencies.append(Crypto(id: id, name: name!!, priceUsd: priceUsd!!, rank: rank!!, maxSupply: ((maxSupply ?? "0") ?? "0"), marketCapUsd: marketCapUsd!!, volumeUsd24Hr: volumUsd24hr!!, isFavorite: false))
+                    }
+                    cryptoUITableView?.reloadData()
+            
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
-                cryptoUITableView?.reloadData()
             }
             
         }
-       
+        
     }
     
     func subviews() {

@@ -8,38 +8,76 @@
 import Foundation
 import UIKit
 
+public enum URLSessionError: String, Error {
+    case badURL
+    case noDataAfterDecoding
+    case badRespond
+    case errorDecodingJson
+    case UnknowRespondCode
+}
 
-
-class Networking {
-    
-    func fetch_cryptos(completion: @escaping (Currency)->Void) {
+public class Networking {
+     func fetch_cryptos(completion: @escaping (Result<Currency, URLSessionError>)->Void) {
         guard let url = URL(string: "https://api.coincap.io/v2/assets") else {
-            print("Check URL String, probaly missing or invalid")
+            completion(.failure(.badURL))
             return
         }
-        _ = URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { [self] data, response, error in
             if error != nil {
                 print(error?.localizedDescription)
                 return
             }
-//            let data = try? JSONSerialization.jsonObject(with: data!, options: [])
-//            print(data)
-            
             do {
-                let result = try? JSONDecoder().decode(Currency.self, from: data!)
-//                print(result?.data, "data right after decoding ")
-                guard let data = result else {
-                    print("No data, after dercording")
-                    return
-                }
-                completion(data) // clsure capture it's value.
-//                print(data.data)
+                let decodedCurrencies = try? JSONDecoder().decode(Currency.self, from: data!)
+    //            guard let currencies = decodedCurrencies else {
+    //                print("No data after decoding JSON")
+    //                return nil
+    //            }
+                print("JSON: \(decodedCurrencies)")
+//                return decodedCurrencies
             }catch  {
-                print("Error decoding json ")
+                print("Unable to decode data")
             }
-            
+//            guard let decodedCurrencies = self.currencyDecoder(data: data) else {
+//                completion(.failure(.noDataAfterDecoding))
+//                return
+//            }
+//            if let respond = response as? HTTPURLResponse {
+//                switch respond.statusCode {
+//                case 200:
+//                    guard let decodedCurrencies = self.currencyDecoder(data: data) else {
+//                        completion(.failure(.noDataAfterDecoding))
+//                        return
+//                    }
+//                    completion(.success(decodedCurrencies))
+//                default:
+//                    completion(.failure(.UnknowRespondCode))
+//                }
+//            }
         }.resume()
     }
+    /// Helper function for decoding JSON.
+    private func currencyDecoder(data crypto: Data?)-> Currency? {
+        do {
+            let decodedCurrencies = try? JSONDecoder().decode(Currency.self, from: crypto!)
+//            guard let currencies = decodedCurrencies else {
+//                print("No data after decoding JSON")
+//                return nil
+//            }
+            print("JSON: \(decodedCurrencies)")
+            return decodedCurrencies
+        }catch  {
+            print("Unable to decode data")
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     // Write generic function
     func fetchATMNearBy(withurl endPoint: endPoints, completion: @escaping (ATMsNearBy)->Void) {
@@ -51,29 +89,29 @@ class Networking {
         request.httpMethod = "GET"
         request.allowsCellularAccess = true
         _ = URLSession.shared.dataTask(with: request) { data, response, error in
-           if error != nil {
-               print(error?.localizedDescription)
-               return
-           }
+            if error != nil {
+                print(error?.localizedDescription)
+                return
+            }
             
-//            print(response, "RESPOND")
-//            let data = try? JSONSerialization.jsonObject(with: data!, options: [])
-//            print(data)
-           
-           do {
-               let result = try? JSONDecoder().decode(ATMsNearBy.self, from: data!)
-//                print(result)
-               guard let data = result else {
-                   print("No data, after dercording ‼️")
-                   return
-               }
-               completion(data) // clsure capture it's value.
-//               print(data.venues)
-           }catch  {
-               print("Error decoding json ")
-           }
-           
-       }.resume()
+            //            print(response, "RESPOND")
+            //            let data = try? JSONSerialization.jsonObject(with: data!, options: [])
+            //            print(data)
+            
+            do {
+                let result = try? JSONDecoder().decode(ATMsNearBy.self, from: data!)
+                //                print(result)
+                guard let data = result else {
+                    print("No data, after dercording ‼️")
+                    return
+                }
+                completion(data) // clsure capture it's value.
+                //               print(data.venues)
+            }catch  {
+                print("Error decoding json ")
+            }
+            
+        }.resume()
     }
     
     
