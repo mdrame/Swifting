@@ -4,7 +4,7 @@
 <!-- # Welcome to Crypton!
 <img src="/assets/V1.1.png" width="300px" height="600px" align="left">
 <img src="/assets/V1.1DarkMode.png" width="300px" height="600px" > -->
-### All in one Crpto Currency app. Download Version 1.1 : Coming Soon ....
+### All in one Crpto Currency app.( Trading |  ATM near by | Dashboard | Favorite | News  )
 
 ### Usage:
 * Run app on IOS Simulator only.
@@ -29,8 +29,7 @@
 - Auto Update prices ever 3 seconds. 🟢
 - Implement atm near by feature. ䷫
 - Refactor Code ( handling optionals properly, write a generic neworking layout ).
-- Write Generic Networking layout.
-- Add UIActivity Indicator
+- Add UIActivity Indicator 🟢
 
 ### 🐞:
 - Handle Networking (RESPOND, ERROR) properly. 🟢
