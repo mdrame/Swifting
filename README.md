@@ -26,12 +26,13 @@
 
 ### Upcoming:
 - create crypto detail view. 🟢
-- Auto Update prices ever 3 seconds 🟢
+- Auto Update prices ever 3 seconds. 🟢
 - Implement atm near by feature. ䷫
-- Refactor Code ( handling optionals properly, write a generic neworking layout )
+- Refactor Code ( handling optionals properly, write a generic neworking layout ).
+- Write Generic Networking layout.
 
 ### 🐞:
-- Handle Networking (RESPOND, ERROR) properly. 
+- Handle Networking (RESPOND, ERROR) properly. 🟢
 - Check user network connection before fetching data.
 - Group constants in New/Custom Class.
 
