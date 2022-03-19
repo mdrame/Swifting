@@ -34,6 +34,7 @@
 - Pull down TableView to refresh DashBoard.
 - Adopte MVVM pattern 
 - compress Logo/Video. 🟢
+- Set Dashboard as initialVC after onBoardingVC.
 
 
 ### 🐞:
