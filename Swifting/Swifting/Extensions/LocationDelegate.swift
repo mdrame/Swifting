@@ -24,9 +24,10 @@ extension ATMsViewController: CLLocationManagerDelegate {
             setuplocationmanager()
             checkPermissionStatus()
         } else {
-            print("Please go to your phone setting and enable location service, to find ATM near by. ")
+            print("Location Services Not enable on device ")
             //            show alert letting user know they have to turn location service on
             let alert = UIAlertController(title: "Location is off", message: "Please go to setting and turn on location service", preferredStyle: .alert)
+            // add setting button next to ok 📌
             let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(action)
             
@@ -106,8 +107,13 @@ extension ATMsViewController: CLLocationManagerDelegate {
         guard let annotation = (sender.view as? MKAnnotationView)?.annotation else { return }
         let selectedLocation: CLLocationCoordinate2D
         selectedLocation = annotation.coordinate
-        print("Pop up view")
-        performSegue(withIdentifier: "atmDetail", sender: self)
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let destination = storyBoard.instantiateViewController(withIdentifier: "atmDetail") as? ATMDetailVC else {
+            print("Can't find ATM DetailView to perferm segue")
+            return
+        }
+        self.present(destination, animated: true, completion: nil)
+    
     }
     
     

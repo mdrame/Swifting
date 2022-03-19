@@ -77,7 +77,6 @@ class DashBoardVC: UIViewController {
             }
             
         }
-        
     }
     
     func subviews() {
@@ -92,7 +91,6 @@ class DashBoardVC: UIViewController {
     // Create TableView
     
     @IBOutlet weak var cryptoUITableView: UITableView!
-    
     
     let currencyTableView: UITableView = {
         let dashBoardTV = UITableView()

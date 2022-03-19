@@ -14,14 +14,13 @@ class ATMDetailVC: UIViewController {
         atmDetailsWrapView.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
         dismissDetail()
-        subViewLayouts()
+//        subViewLayouts()
     }
     /// Ths func adds subviews to main view
     ///
     private func subViewLayouts() {
         view.addSubview(infoStackView)
         infoStackViewConstraint()
-        
         infoStackView.addSubview(businessName)
     }
     

@@ -23,16 +23,14 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        //        self.title = "ATM NEAR BY"
-        navigationController?.navigationBar.prefersLargeTitles = true
         //        view.addSubview(mapView)
         //        mapConstraints()
         // MARK: Zip code textfield bottom anchor is bound to MapView
         //        view.addSubview(zipCode)
         //        zipCodeConstraint()
         zipCodeShadow()
-        getAtms()
-        dismissKeyboard()
+//        getAtms()
+//        dismissKeyboard()
         cityName.delegate = self
     }
     

@@ -17,12 +17,11 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        video_player()
         subviews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        video_player()
     }
 
     func subviews() {
@@ -37,13 +36,13 @@ class OnboardingViewController: UIViewController {
     // video logo
     func video_player() {
         guard let url = URL(string: "crypton.mov") else {
-            print("Video not found")
+            print("Video file not found ")
             return
         }
         let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "crypton", ofType: "mov")!))
         let layer = AVPlayerLayer(player: player)
         layer.frame = CGRect(x: view.frame.size.width / 2 - 90, y: 120, width: view.frame.size.width / 2, height: view.frame.size.width / 2)
-        layer.videoGravity = .resizeAspectFill
+//        layer.videoGravity = .resizeAspectFill
         view.layer.addSublayer(layer)
         player.isMuted = true
         player.play()
