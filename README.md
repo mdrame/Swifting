@@ -30,6 +30,7 @@
 - Implement atm near by feature. ䷫
 - Refactor Code ( handling optionals properly, write a generic neworking layout ).
 - Write Generic Networking layout.
+- Add UIActivity Indicator
 
 ### 🐞:
 - Handle Networking (RESPOND, ERROR) properly. 🟢
