@@ -26,8 +26,8 @@
 
 ### Upcoming:
 - create crypto detail view. 🟢
-- Auto Update prices ever 3 seconds
-- Implement atm near by feature.
+- Auto Update prices ever 3 seconds 🟢
+- Implement atm near by feature. ䷫
 - Refactor Code ( handling optionals properly, write a generic neworking layout )
 
 ### 🐞:
