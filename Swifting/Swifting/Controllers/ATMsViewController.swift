@@ -55,7 +55,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
                     let lon = i.lon
                     self.listOfAtms.append(Venue(id: i.id, lat: lat, lon: lon, category: i.category, name: name, created_on: i.created_on, geolocation_degrees: i.geolocation_degrees))
                 }
-                
+                 
             }
              self.addAnnotation()
         }

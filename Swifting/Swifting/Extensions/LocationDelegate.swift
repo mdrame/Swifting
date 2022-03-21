@@ -40,15 +40,13 @@ extension ATMsViewController: CLLocationManagerDelegate {
         case .authorizedAlways:
             // fetch data
             atmMap.showsUserLocation = true
-            addAnnotation()
             centerMapOnUserLocation()
             print("Fetch data")
             
         case .authorizedWhenInUse:
             // fetch data
             atmMap.showsUserLocation = true
-//            centerMapOnUserLocation()
-//            addAnnotation()
+            centerMapOnUserLocation()
             print("Fetch data")
         case .denied:
             // diaplay reason/card.
@@ -70,10 +68,12 @@ extension ATMsViewController: CLLocationManagerDelegate {
     }
     //
     func centerMapOnUserLocation() {
-        print("Map centered on user current location")
         if let userCurrentLocation = locationManager.location?.coordinate {
             let region = MKCoordinateRegion(center: userCurrentLocation, latitudinalMeters: 10000, longitudinalMeters: 10000)
             atmMap.setRegion(region, animated: true)
+            print("Map centered on user current location")
+        } else {
+            checkUserLocationSetting()
         }
     }
     //
