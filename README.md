@@ -25,7 +25,7 @@
 * MVC
 * Skalenton Storyboard
 
-### Upcoming:
+### Upcoming: 
 - create crypto detail view. 🟢
 - Auto Update prices ever 3 seconds. 🟢
 - Implement atm near by feature. ䷫
@@ -40,7 +40,7 @@
 
 ### 🐞:
 - Handle Networking (RESPOND, ERROR) properly. 🟢
-- Map don't center on first trigger of ViewDidAppear.
+- Map don't center on first trigger of ViewDidAppear. 📌
 - Check user network connection before fetching data.
 - Group constants in New/Custom Class.
 
