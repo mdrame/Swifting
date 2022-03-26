@@ -47,7 +47,8 @@ extension ATMsViewController: CLLocationManagerDelegate {
             // fetch data
             atmMap.showsUserLocation = true
             centerMapOnUserLocation()
-            print("Fetch data")
+//            print("Fetch data")
+            break
         case .denied:
             // diaplay reason/card.
             locationManager.requestWhenInUseAuthorization()
@@ -88,19 +89,19 @@ extension ATMsViewController: CLLocationManagerDelegate {
 //        locationManager.stopUpdatingLocation()
 //    }
 //
-    //
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !(annotation is MKUserLocation) else { return nil }
-        var annotationView = atmMap.dequeueReusableAnnotationView(withIdentifier: "custom")
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom") as! MKAnnotationView
-            //            annotationView?.canShowCallout = true
-        } else {
-            annotationView?.annotation = annotation
-        }
-        annotationView?.image = UIImage(named: "atmblue.png")
-        return annotationView
-    }
+    /// Custom map annotation design
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        guard !(annotation is MKUserLocation) else { return nil }
+//        var annotationView = atmMap.dequeueReusableAnnotationView(withIdentifier: "custom")
+//        if annotationView == nil {
+//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom") as! MKAnnotationView
+//            //            annotationView?.canShowCallout = true
+//        } else {
+//            annotationView?.annotation = annotation
+//        }
+//        annotationView?.image = UIImage(named: "atmblue.png")
+//        return annotationView
+//    }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped(sender:)))

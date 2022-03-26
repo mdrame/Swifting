@@ -65,14 +65,14 @@ public class Networking {
     
     // Write generic function
     func fetchATMNearBy(withurl endPoint: endPoints, completion: @escaping (ATMsNearBy)->Void) {
-        guard let url = URL(string: endPoints.coinMap.rawValue) else {
+        guard let url = URL(string: endPoint.rawValue) else {
             print("ATM Nearby URL error")
             return
         }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.allowsCellularAccess = true
-        _ = URLSession.shared.dataTask(with: request) { data, response, error in
+//        request.allowsCellularAccess = true
+        URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
                 print(error?.localizedDescription)
                 return
@@ -97,5 +97,8 @@ public class Networking {
             
         }.resume()
     }
+    
+    
+    
 }
 

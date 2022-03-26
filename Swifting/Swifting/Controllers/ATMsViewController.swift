@@ -18,10 +18,14 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     let networkingLayout = Networking()
 //    var message = "Look for eample online"
     // MARK: Global
-    var listOfAtms = [Venue]()
+    var listOfAtms :[Venue] = [] {
+        willSet {
+            print("ATM Instance added to array")
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         //        view.addSubview(mapView)
         //        mapConstraints()
@@ -43,25 +47,28 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     
      func getAtms() {
         checkUserLocationSetting()
-         DispatchQueue.main.async {
-             self.networkingLayout.fetchATMNearBy(withurl: .atmNearby) { atmsNearby in
-                //                print("Atms data in VC: ",atmsNearby.venues)
+        
+             self.networkingLayout.fetchATMNearBy(withurl: .coinMap) { [self] atmsNearby in
+                 DispatchQueue.main.async {
+                print("Fetching atms near by")
                 for i in atmsNearby.venues {
-                    print("Name:", i.name)
-                    print("Lat:", i.lat)
-                    print("Lon:", i.lon)
+//                    print("Name:", i.name)
+//                    print("Lat:", i.lat)
+//                    print("Lon:", i.lon)
                     let name = i.name
                     let lat = i.lat
                     let lon = i.lon
                     self.listOfAtms.append(Venue(id: i.id, lat: lat, lon: lon, category: i.category, name: name, created_on: i.created_on, geolocation_degrees: i.geolocation_degrees))
                 }
-                 
-            }
-             self.addAnnotation()
+                 print("Done fitching atms near by")
+                     self.addAnnotation()
+                     self.atmMap.reloadInputViews()
+             }
+             
         }
-        
+         
     }
-    
+//
     
     
     
@@ -112,6 +119,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     
     func addAnnotation() {
         for location in listOfAtms {
+//            print(location)
             let annotation = MKPointAnnotation()
 //            annotation.title = "Crypton"
 //            annotation.subtitle = "Business info"
@@ -119,6 +127,8 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
             //            annotation.coordinate = CLLocationCoordinate2D(latitude: 40.718983, longitude: -74.190154)
             
             atmMap.addAnnotation(annotation)
+            atmMap.reloadInputViews()
+//            atmMap.ann
         }
     }
     
