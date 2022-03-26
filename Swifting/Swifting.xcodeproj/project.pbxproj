@@ -10,7 +10,6 @@
 		771FB160271F77C100A1B82D /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771FB15F271F77C100A1B82D /* CurrencyCell.swift */; };
 		771FB164271F786B00A1B82D /* CurrencyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771FB163271F786B00A1B82D /* CurrencyTableView.swift */; };
 		771FB167271F7AB500A1B82D /* CurrencyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771FB166271F7AB500A1B82D /* CurrencyDetailView.swift */; };
-		77417695271E0F3300CCEB5A /* crypton.png in Resources */ = {isa = PBXBuildFile; fileRef = 77417694271E0F3300CCEB5A /* crypton.png */; };
 		7741769D271E294D00CCEB5A /* crypton.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7741769C271E294D00CCEB5A /* crypton.mov */; };
 		774176A0271E6C4200CCEB5A /* ButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741769F271E6C4200CCEB5A /* ButtonAnimation.swift */; };
 		774176A6271E722900CCEB5A /* DashBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774176A5271E722900CCEB5A /* DashBoardVC.swift */; };
@@ -26,6 +25,7 @@
 		7763B2A42718BE6B007229E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A22718BE6B007229E1 /* Main.storyboard */; };
 		7763B2A62718BE73007229E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A52718BE73007229E1 /* Assets.xcassets */; };
 		7763B2A92718BE73007229E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A72718BE73007229E1 /* LaunchScreen.storyboard */; };
+		7766DB8A27EEDB8800FB51D5 /* cryptonmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 7766DB8927EEDB8800FB51D5 /* cryptonmap.png */; };
 		7768D1942737A2DE003CDB26 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768D1932737A2DE003CDB26 /* URLs.swift */; };
 		776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */; };
 		77789C8427348718001BB05D /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C8327348718001BB05D /* LocationDelegate.swift */; };
@@ -41,7 +41,6 @@
 		771FB15F271F77C100A1B82D /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		771FB163271F786B00A1B82D /* CurrencyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableView.swift; sourceTree = "<group>"; };
 		771FB166271F7AB500A1B82D /* CurrencyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailView.swift; sourceTree = "<group>"; };
-		77417694271E0F3300CCEB5A /* crypton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crypton.png; sourceTree = "<group>"; };
 		7741769C271E294D00CCEB5A /* crypton.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = crypton.mov; sourceTree = "<group>"; };
 		7741769F271E6C4200CCEB5A /* ButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimation.swift; sourceTree = "<group>"; };
 		774176A5271E722900CCEB5A /* DashBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardVC.swift; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		7763B2A52718BE73007229E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7763B2A82718BE73007229E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7763B2AA2718BE73007229E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7766DB8927EEDB8800FB51D5 /* cryptonmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cryptonmap.png; path = ../../../../../../../Desktop/cryptonmap.png; sourceTree = "<group>"; };
 		7768D1932737A2DE003CDB26 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		776EEF732730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteCurrencyDataBase.xcdatamodel; sourceTree = "<group>"; };
 		776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cryptoo+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -182,8 +182,8 @@
 				774176A3271E71DC00CCEB5A /* Extensions */,
 				776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */,
 				7763B2A52718BE73007229E1 /* Assets.xcassets */,
+				7766DB8927EEDB8800FB51D5 /* cryptonmap.png */,
 				7741769C271E294D00CCEB5A /* crypton.mov */,
-				77417694271E0F3300CCEB5A /* crypton.png */,
 				7763B2A72718BE73007229E1 /* LaunchScreen.storyboard */,
 				7763B2AA2718BE73007229E1 /* Info.plist */,
 			);
@@ -251,7 +251,7 @@
 				7763B2A92718BE73007229E1 /* LaunchScreen.storyboard in Resources */,
 				7763B2A62718BE73007229E1 /* Assets.xcassets in Resources */,
 				7763B2A42718BE6B007229E1 /* Main.storyboard in Resources */,
-				77417695271E0F3300CCEB5A /* crypton.png in Resources */,
+				7766DB8A27EEDB8800FB51D5 /* cryptonmap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

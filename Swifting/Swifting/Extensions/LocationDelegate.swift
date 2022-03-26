@@ -99,10 +99,10 @@ extension ATMsViewController: CLLocationManagerDelegate {
 //        } else {
 //            annotationView?.annotation = annotation
 //        }
-//        annotationView?.image = UIImage(named: "atmblue.png")
+//        annotationView?.image = UIImage(named: "cryptonmap.png")
 //        return annotationView
 //    }
-    
+//    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped(sender:)))
         view.addGestureRecognizer(gesture)
