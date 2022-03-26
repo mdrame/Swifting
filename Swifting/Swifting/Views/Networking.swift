@@ -77,11 +77,6 @@ public class Networking {
                 print(error?.localizedDescription)
                 return
             }
-            
-            //            print(response, "RESPOND")
-            //            let data = try? JSONSerialization.jsonObject(with: data!, options: [])
-            //            print(data)
-            
             do {
                 let result = try? JSONDecoder().decode(ATMsNearBy.self, from: data!)
                 //                print(result)
@@ -117,6 +112,7 @@ public class Networking {
             //                    print("Good respond")
             do {
                 let decodedData = try? JSONDecoder().decode(AtmVenue.self, from: atm!)
+                print(decodedData)
                 guard let atm = decodedData else {
                     print("No data after decoding")
                     return
