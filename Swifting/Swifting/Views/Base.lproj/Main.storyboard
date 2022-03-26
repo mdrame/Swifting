@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="43"/>
+            <point key="canvasLocation" x="1183" y="43"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2VX-Ao-9P1">
@@ -413,17 +413,24 @@
                                             <constraint firstAttribute="height" constant="61" id="Q9n-ig-Xcy"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Call">
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="📞">
+                                            <fontDescription key="titleFontDescription" name="ArialMT" family="Arial" pointSize="51"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="callAtmLocation:" destination="acq-Yg-iyA" eventType="touchUpInside" id="vpM-Lh-nRd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtS-VC-GKe">
                                         <rect key="frame" x="77" y="401" width="198" height="64"/>
                                         <color key="backgroundColor" red="0.46878095910000001" green="0.80107400340000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Direction">
+                                        <buttonConfiguration key="configuration" style="plain" title="🧭">
+                                            <fontDescription key="titleFontDescription" name="ArialMT" family="Arial" pointSize="51.5"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="getDirection:" destination="acq-Yg-iyA" eventType="touchUpInside" id="0Ss-lM-qzv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -486,7 +493,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="qfv-b8-ugJ"/>
                     <connections>
+                        <outlet property="address" destination="mLI-sw-UU5" id="OMQ-ek-jVK"/>
                         <outlet property="atmDetailsWrapView" destination="VnY-MP-O0b" id="fiM-Zv-wHO"/>
+                        <outlet property="atmOperator" destination="66Z-1F-UNm" id="eiU-hR-lEs"/>
+                        <outlet property="call" destination="9YB-1f-r1f" id="BhJ-5a-BVn"/>
+                        <outlet property="contact" destination="PzB-vO-cH2" id="gR7-Te-CCA"/>
+                        <outlet property="direction" destination="XtS-VC-GKe" id="cjp-zf-4Io"/>
+                        <outlet property="longitudeAndlatitude" destination="avf-M2-c9g" id="c0O-E6-zys"/>
+                        <outlet property="name" destination="cud-xC-ljd" id="GYm-AB-hNJ"/>
+                        <outlet property="operationHrs" destination="8s0-PU-klG" id="ZT0-J9-acw"/>
+                        <outlet property="operatorEmail" destination="tTJ-kQ-Fa5" id="kVi-Vq-V5z"/>
+                        <outlet property="operatorWebsite" destination="jPu-QO-UWD" id="rvZ-mz-t9I"/>
+                        <outlet property="since" destination="2Mf-fM-TTg" id="vVk-Yy-eBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpn-pl-Vee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

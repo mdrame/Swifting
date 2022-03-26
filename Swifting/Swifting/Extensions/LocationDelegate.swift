@@ -99,12 +99,13 @@ extension ATMsViewController: CLLocationManagerDelegate {
 //        } else {
 //            annotationView?.annotation = annotation
 //        }
-//        annotationView?.image = UIImage(named: "cryptonmap.png")
+//        annotationView?.image = UIImage(named: "cryptonMap.png")
 //        return annotationView
 //    }
-//    
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped(sender:)))
+        gesture.numberOfTapsRequired = 1
         view.addGestureRecognizer(gesture)
     }
     
@@ -112,6 +113,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
         guard let annotation = (sender.view as? MKAnnotationView)?.annotation else { return }
         let selectedLocation: CLLocationCoordinate2D
         selectedLocation = annotation.coordinate
+        print(selectedLocation.longitude, selectedLocation.latitude, "Did Select ATM")
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let destination = storyBoard.instantiateViewController(withIdentifier: "atmDetail") as? ATMDetailVC else {
             print("Can't find ATM DetailView to perferm segue")

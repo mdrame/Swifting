@@ -33,7 +33,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         //        view.addSubview(zipCode)
         //        zipCodeConstraint()
         zipCodeShadow()
-//        dismissKeyboard()
+        dismissKeyboard()
         cityName.delegate = self
         print("Map vc didLoad")
       
