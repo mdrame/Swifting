@@ -38,6 +38,9 @@
 - Check user network connection before fetching data.
 - Set Dashboard as initialVC after onBoardingVC.
 - Group constants in New/Custom Class.
+- handle locationDidUpdate method.
+- Nil data after atmVenue networking call.
+- add call & direction feature. 
   
 
 
