@@ -71,7 +71,7 @@ public class Networking {
         }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-//        request.allowsCellularAccess = true
+        //        request.allowsCellularAccess = true
         URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {
                 print(error?.localizedDescription)
@@ -98,6 +98,40 @@ public class Networking {
         }.resume()
     }
     
+    func fetchATM(with endpoint: endPoints, at coordinate: Int, completion: @escaping (Result<AtmVenue, Error>)->Void ) {
+        guard let url = URL(string: "\(endpoint.rawValue)\(coordinate)") else {
+            print("Badd URL")
+            return
+        }
+        print("URL 🕸: ",url)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        URLSession.shared.dataTask(with: request) { atm , networkRespond, networkError  in
+            if networkError != nil {
+                print(networkError?.localizedDescription)
+                return
+            }
+            //            if let respond = networkRespond as? HTTPURLResponse {
+            //                switch respond.statusCode {
+            //                case 200:
+            //                    print("Good respond")
+            do {
+                let decodedData = try? JSONDecoder().decode(AtmVenue.self, from: atm!)
+                guard let atm = decodedData else {
+                    print("No data after decoding")
+                    return
+                }
+                completion(.success(atm))
+            } catch {
+                print("Unable to decode JSON")
+            }
+            //                default:
+            //                    print("No respond")
+            //                }
+            //            }
+        }.resume()
+        
+    }
     
     
 }

@@ -8,13 +8,19 @@
 import UIKit
 
 class ATMDetailVC: UIViewController {
-
+    // Instances
+    var atmID: String?
+    fileprivate let networking = Networking()
     override func viewDidLoad() {
         super.viewDidLoad()
         atmDetailsWrapView.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
         viewLayerStuff()
         viewGesuture()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        fetchAtm()
     }
     private func viewGesuture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissAtmDetailView))
@@ -24,7 +30,7 @@ class ATMDetailVC: UIViewController {
     @objc func dismissAtmDetailView() {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     // MARK: UIKit Stuff
     @IBOutlet weak var atmDetailsWrapView: UIView!
     @IBOutlet weak var name: UILabel!
@@ -48,7 +54,7 @@ class ATMDetailVC: UIViewController {
     
     
     
-   
+    
     // Business Name
     // -------------------
     // Address
@@ -60,6 +66,26 @@ class ATMDetailVC: UIViewController {
     // Additional info
     // Trading coins - UIImage // in a stack view
     // get directiion button
+    func fetchAtm() {
+        print("Featching atm  📡")
+        guard let idInt = atmID else { return }
+        print("atmID :", idInt)
+        let converIdToDouble = Double(idInt) ?? 1.0
+        let convertIdToInt = Int(converIdToDouble) ?? 1
+        networking.fetchATM(with: .atm, at: convertIdToInt, completion: { (completed) in
+            DispatchQueue.main.async {
+                
+                switch completed {
+                case .success(let atm):
+                    print(atm)
+                    print("Suceeded ✅")
+                    
+                case .failure(let failed):
+                    print("Failed to fetch ")
+                }
+            }
+        })
+    }
     
     @IBAction func callAtmLocation(_ sender: UIButton) {
     }
@@ -67,6 +93,6 @@ class ATMDetailVC: UIViewController {
     @IBAction func getDirection(_ sender: UIButton) {
     }
     
-  
-
+    
+    
 }

@@ -104,6 +104,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
 //    }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped(sender:)))
         gesture.numberOfTapsRequired = 1
         view.addGestureRecognizer(gesture)
@@ -112,6 +113,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
     @objc func calloutTapped(sender:UITapGestureRecognizer) {
         guard let annotation = (sender.view as? MKAnnotationView)?.annotation else { return }
         let selectedLocation: CLLocationCoordinate2D
+        let atmIDString = annotation.title
         selectedLocation = annotation.coordinate
         print(selectedLocation.longitude, selectedLocation.latitude, "Did Select ATM")
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -119,6 +121,7 @@ extension ATMsViewController: CLLocationManagerDelegate {
             print("Can't find ATM DetailView to perferm segue")
             return
         }
+        destination.atmID = atmIDString!!
         self.present(destination, animated: true, completion: nil)
     
     }

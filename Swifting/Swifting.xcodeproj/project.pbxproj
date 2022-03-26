@@ -28,6 +28,7 @@
 		7766DB8A27EEDB8800FB51D5 /* cryptonmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 7766DB8927EEDB8800FB51D5 /* cryptonmap.png */; };
 		7768D1942737A2DE003CDB26 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768D1932737A2DE003CDB26 /* URLs.swift */; };
 		776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */; };
+		776F92B627EFC11100227104 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776F92B527EFC11100227104 /* Venue.swift */; };
 		77789C8427348718001BB05D /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C8327348718001BB05D /* LocationDelegate.swift */; };
 		77789C862734D791001BB05D /* ATMNearBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77789C852734D791001BB05D /* ATMNearBy.swift */; };
 		77A23E712751ECCC0054304D /* CityNameDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A23E702751ECCC0054304D /* CityNameDelegates.swift */; };
@@ -62,6 +63,7 @@
 		7768D1932737A2DE003CDB26 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		776EEF732730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteCurrencyDataBase.xcdatamodel; sourceTree = "<group>"; };
 		776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cryptoo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		776F92B527EFC11100227104 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		77789C8327348718001BB05D /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
 		77789C852734D791001BB05D /* ATMNearBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMNearBy.swift; sourceTree = "<group>"; };
 		77A23E702751ECCC0054304D /* CityNameDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNameDelegates.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				77584F7F271FC8460055164D /* Currency.swift */,
 				77789C852734D791001BB05D /* ATMNearBy.swift */,
+				776F92B527EFC11100227104 /* Venue.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				774176A0271E6C4200CCEB5A /* ButtonAnimation.swift in Sources */,
+				776F92B627EFC11100227104 /* Venue.swift in Sources */,
 				7763B2A12718BE6B007229E1 /* OnboardingViewController.swift in Sources */,
 				77789C862734D791001BB05D /* ATMNearBy.swift in Sources */,
 				774176AD271E89E700CCEB5A /* CryptonTabBarViewController.swift in Sources */,

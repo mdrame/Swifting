@@ -14,7 +14,7 @@ struct ATMsNearBy: Codable {
 
 // MARK: - Venue
 struct Venue: Codable  {
-    let id: Float
+    let id: Float?
     let lat: Float
     let lon: Float
     let category: String
