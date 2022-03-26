@@ -46,5 +46,5 @@
 - Map don't center on first trigger of ViewDidAppear.✅
 
 
-### Got an idea for a project?
+### Got an idea for the project?
 Reach out to me on [LinkedIn](https://www.linkedin.com/in/mohammed-drame-273b17191/) 
