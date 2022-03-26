@@ -28,11 +28,10 @@
 ### Upcoming: 
 - create crypto detail view. 🟢
 - Auto Update prices ever 3 seconds. 🟢
-- Implement atm near by feature. ䷫
+- Implement atm near by feature. 🟢
 - Refactor Code ( handling optionals properly, write a generic neworking layout ).
 - Add UIActivity Indicator. 🟢
 - Add Typing Animation to CRYPTON Lable in OnboardingVC. 🟢
-- Pull down TableView to refresh DashBoard.
 - Adopte MVVM pattern 
 - compress Logo/Video. 🟢
 - Handle Networking (RESPOND, ERROR) properly. 🟢
