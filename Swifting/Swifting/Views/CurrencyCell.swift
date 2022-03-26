@@ -74,6 +74,7 @@ class CurrencyCell: UITableViewCell {
     
     func updateCellUI(with currency: Crypto) {
 //        print("Cell UI UPDATED ‼️")
+        /// Create dummy modle / UL and display to user when populating cell fails.
         currencyRank.text = currency.rank
         name.text = currency.name
         let convertedPrice = Float(currency.priceUsd)

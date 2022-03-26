@@ -264,7 +264,7 @@
             </objects>
             <point key="canvasLocation" x="3791.3043478260875" y="42.857142857142854"/>
         </scene>
-        <!--Ms View Controller-->
+        <!--atm-->
         <scene sceneID="0DE-nQ-Pqk">
             <objects>
                 <viewController id="OeJ-h3-Qoi" customClass="ATMsViewController" customModule="Swifting" customModuleProvider="target" sceneMemberID="viewController">
@@ -296,7 +296,7 @@
                             <constraint firstItem="sBz-Ta-CHP" firstAttribute="centerX" secondItem="m9p-ag-eq4" secondAttribute="centerX" id="cpE-6R-0JB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="atm" selectedImage="atm" id="jkf-qF-0yq"/>
+                    <tabBarItem key="tabBarItem" title="atm" image="atm" selectedImage="atm" id="jkf-qF-0yq"/>
                     <navigationItem key="navigationItem" id="jHw-FA-05T"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -531,11 +531,13 @@
             </objects>
             <point key="canvasLocation" x="1971.0144927536232" y="42.857142857142854"/>
         </scene>
-        <!--Item-->
+        <!--curriencies-->
         <scene sceneID="BCx-TJ-Luc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5a8-Ti-Pwn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="chart" selectedImage="chart" id="oy9-si-TdU"/>
+                    <tabBarItem key="tabBarItem" title="curriencies" image="chart" selectedImage="chart" id="oy9-si-TdU">
+                        <color key="badgeColor" red="0.29018829340000002" green="0.70125287039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UbS-hh-8NI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

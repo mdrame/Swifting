@@ -23,7 +23,7 @@ class DashBoardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.title = "Crypto Currencies"
+        self.title = "Currencies"
         navigationController?.navigationBar.prefersLargeTitles = true
         print("View didLoad Finished")
 //        fetchMethod()
@@ -32,10 +32,7 @@ class DashBoardVC: UIViewController {
         spinner.startAnimating()
     }
     
-    @objc func refreshPrice() {
-        cryptoCurrencies = []
-        fetchMethod()
-    }
+   
     override func viewWillAppear(_ animated: Bool) {
         print("View will appear called ")
         fetchMethod()
@@ -110,6 +107,11 @@ class DashBoardVC: UIViewController {
             currencyTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             currencyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+    }
+    
+    @objc func refreshPrice() {
+        cryptoCurrencies = []
+        fetchMethod()
     }
     
     lazy var spinner : UIActivityIndicatorView = {
