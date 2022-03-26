@@ -35,14 +35,17 @@
 - Pull down TableView to refresh DashBoard.
 - Adopte MVVM pattern 
 - compress Logo/Video. 🟢
+- Handle Networking (RESPOND, ERROR) properly. 🟢
+- Check user network connection before fetching data.
 - Set Dashboard as initialVC after onBoardingVC.
+- Group constants in New/Custom Class.
+  
 
 
 ### 🐞:
-- Handle Networking (RESPOND, ERROR) properly. 🟢
-- Map don't center on first trigger of ViewDidAppear. 📌
-- Check user network connection before fetching data.
-- Group constants in New/Custom Class.
+
+- Map don't center on first trigger of ViewDidAppear.✅
+
 
 ### Got an idea for a project?
 Reach out to me on [LinkedIn](https://www.linkedin.com/in/mohammed-drame-273b17191/) 
