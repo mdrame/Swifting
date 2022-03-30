@@ -29,7 +29,7 @@
 - create crypto detail view. 🟢
 - Auto Update prices ever 3 seconds. 🟢
 - Implement atm near by feature. 🟢
-- Refactor Code ( handling optionals properly, write a generic neworking layout ).
+- Refactor Code ( handling optionals properly, write a generic neworking layout 🟢 ).
 - Add UIActivity Indicator. 🟢
 - Add Typing Animation to CRYPTON Lable in OnboardingVC. 🟢
 - Adopte MVVM pattern 
@@ -38,6 +38,10 @@
 - Check user network connection before fetching data.
 - Set Dashboard as initialVC after onBoardingVC.
 - Group constants in New/Custom Class.
+- handle locationDidUpdate method.
+- Nil data after atmVenue networking call.
+- add call & direction feature. 
+- add indicator to mapVC.
   
 
 
