@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CloudKit
 
 public enum URLSessionError: String, Error {
     case badURL
@@ -19,6 +20,32 @@ public enum URLSessionError: String, Error {
 }
 
 public class Networking {
+    
+    func fetchData<Element:Codable>(with url: endPoints, completion: @escaping (Result<Element,Error>)->Void) {
+        guard let baseURL = URL(string: "\(url.rawValue)") else {
+            print("Badd URL")
+            return
+        }
+        var request = URLRequest(url: baseURL)
+        URLSession.shared.dataTask(with: request) { apiData , response , networkingError in
+            if networkingError != nil {
+                print(networkingError?.localizedDescription)
+                request
+            }
+            do {
+                let decodedData = try? JSONDecoder().decode(Element.self, from: apiData!)
+                guard let data = decodedData else {
+                    print("No data after downnloading")
+                    return
+                }
+                completion(.success(data))
+                print(String(data: data as! Data, encoding: .utf8))
+            } catch {
+                print("Unable to decode data")
+            }
+        }.resume()
+    }
+    
     func fetch_cryptos(completion: @escaping (Result<Currency, URLSessionError>)->Void) {
         guard let url = URL(string: "https://api.coincap.io/v2/assets") else {
             completion(.failure(.badURL))
@@ -112,7 +139,7 @@ public class Networking {
             //                    print("Good respond")
             do {
                 let decodedData = try? JSONDecoder().decode(AtmVenue.self, from: atm!)
-                print(decodedData)
+                print("Data:", decodedData)
                 guard let atm = decodedData else {
                     print("No data after decoding")
                     return

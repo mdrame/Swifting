@@ -17,10 +17,10 @@ class ATMDetailVC: UIViewController {
         // Do any additional setup after loading the view.
         viewLayerStuff()
         viewGesuture()
-        
+        fetchAtm()
     }
     override func viewWillAppear(_ animated: Bool) {
-        fetchAtm()
+        
     }
     private func viewGesuture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissAtmDetailView))
