@@ -41,6 +41,7 @@
 - handle locationDidUpdate method.
 - Nil data after atmVenue networking call.
 - add call & direction feature. 
+- add indicator to mapVC.
   
 
 
