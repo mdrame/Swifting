@@ -35,7 +35,7 @@ class DashBoardVC: UIViewController {
    
     override func viewWillAppear(_ animated: Bool) {
         print("View will appear called ")
-        fetchMethod()
+//        fetchMethod()
         spinner.startAnimating()
         timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
     }
@@ -43,11 +43,13 @@ class DashBoardVC: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         cryptoCurrencies = []
         timer.invalidate()
+        
+    
     }
     
     func fetchMethod() {
         networking.fetch_cryptos { [self] (completed) in
-            
+
             print("Fetching Data")
             DispatchQueue.main.async {
                 switch completed {
@@ -72,9 +74,9 @@ class DashBoardVC: UIViewController {
                     print("Unable to bring data back to VC")
                 }
             }
-            
         }
     }
+        
     
     func subviews() {
         print("Subviews added")

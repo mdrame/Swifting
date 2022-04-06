@@ -11,6 +11,8 @@ class ATMDetailVC: UIViewController {
     // Instances
     var atmID: String?
     fileprivate let networking = Networking()
+    var venueAtm: AtmVenue?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         atmDetailsWrapView.layer.cornerRadius = 10
@@ -18,6 +20,7 @@ class ATMDetailVC: UIViewController {
         viewLayerStuff()
         viewGesuture()
         fetchAtm()
+        upateVenueUI(instance: venueAtm)
     }
     override func viewWillAppear(_ animated: Bool) {
         
@@ -34,14 +37,6 @@ class ATMDetailVC: UIViewController {
     // MARK: UIKit Stuff
     @IBOutlet weak var atmDetailsWrapView: UIView!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var operationHrs: UILabel!
-    @IBOutlet weak var contact: UILabel!
-    @IBOutlet weak var atmOperator: UILabel!
-    @IBOutlet weak var operatorEmail: UILabel!
-    @IBOutlet weak var operatorWebsite: UILabel!
-    @IBOutlet weak var longitudeAndlatitude: UILabel!
-    @IBOutlet weak var since: UILabel!
     @IBOutlet weak var call: UIButton!
     @IBOutlet weak var direction: UIButton!
     
@@ -52,9 +47,7 @@ class ATMDetailVC: UIViewController {
         direction.layer.cornerRadius = 5
     }
     
-    
-    
-    
+
     // Business Name
     // -------------------
     // Address
@@ -72,19 +65,27 @@ class ATMDetailVC: UIViewController {
         print("atmID :", idInt)
         let converIdToDouble = Double(idInt) ?? 1.0
         let convertIdToInt = Int(converIdToDouble) ?? 1
-        networking.fetchATM(with: .atm, at: convertIdToInt, completion: { (completed) in
+        networking.fetchATM(with: .atm, at: convertIdToInt) { (completed ) in
             DispatchQueue.main.async {
-                
                 switch completed {
-                case .success(let atm):
-                    print(atm)
-                    print("Suceeded ✅")
-                    
-                case .failure(let failed):
-                    print("Failed to fetch ")
+                case .success(let venue):
+                    self.venueAtm = venue.venue
+                    print("Venue downloaded  ✅")
+                case .failure(let error):
+                    print("No venue after networking ‼️")
                 }
+               
             }
-        })
+        }
+//        self.atmDetailsWrapView.reloadInputViews()
+    }
+    
+    private func upateVenueUI(instance: AtmVenue? ) {
+        if let venue = instance {
+            name.text = "📇: \(venue.name!)"
+        } else {
+            print("Modle don't exist")
+        }
     }
     
     @IBAction func callAtmLocation(_ sender: UIButton) {

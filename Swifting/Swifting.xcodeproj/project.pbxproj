@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7712989227FD2654002976AC /* VenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7712989127FD2654002976AC /* VenueVC.swift */; };
 		771FB160271F77C100A1B82D /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771FB15F271F77C100A1B82D /* CurrencyCell.swift */; };
 		771FB164271F786B00A1B82D /* CurrencyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771FB163271F786B00A1B82D /* CurrencyTableView.swift */; };
 		771FB167271F7AB500A1B82D /* CurrencyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771FB166271F7AB500A1B82D /* CurrencyDetailView.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7712989127FD2654002976AC /* VenueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueVC.swift; sourceTree = "<group>"; };
 		771FB15F271F77C100A1B82D /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		771FB163271F786B00A1B82D /* CurrencyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableView.swift; sourceTree = "<group>"; };
 		771FB166271F7AB500A1B82D /* CurrencyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetailView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				774176AF271E8AB800CCEB5A /* FavoritesVC.swift */,
 				774176B2271E8AF800CCEB5A /* ATMsViewController.swift */,
 				77A23E722751F48C0054304D /* ATMDetailVC.swift */,
+				7712989127FD2654002976AC /* VenueVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				77584F80271FC8460055164D /* Currency.swift in Sources */,
 				77D58C9927E67CD8007B4F38 /* CryptonLabelAnimation.swift in Sources */,
 				771FB160271F77C100A1B82D /* CurrencyCell.swift in Sources */,
+				7712989227FD2654002976AC /* VenueVC.swift in Sources */,
 				7763B29F2718BE6B007229E1 /* SceneDelegate.swift in Sources */,
 				77789C8427348718001BB05D /* LocationDelegate.swift in Sources */,
 				7768D1942737A2DE003CDB26 /* URLs.swift in Sources */,

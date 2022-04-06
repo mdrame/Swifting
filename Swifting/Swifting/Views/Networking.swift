@@ -17,21 +17,24 @@ public enum URLSessionError: String, Error {
     case errorDecodingJson
     case UnknowRespondCode
     case clientError
+    case serverError
 }
 
 public class Networking {
     
-    func fetchData<Element:Codable>(with url: endPoints, completion: @escaping (Result<Element,Error>)->Void) {
+    func fetchData<Element:Codable>(with url: endPoints, completion: @escaping (Result<Element,URLSessionError>)->Void) {
         guard let baseURL = URL(string: "\(url.rawValue)") else {
             print("Badd URL")
             return
         }
-        var request = URLRequest(url: baseURL)
+        let request = URLRequest(url: baseURL)
         URLSession.shared.dataTask(with: request) { apiData , response , networkingError in
             if networkingError != nil {
-                print(networkingError?.localizedDescription)
-                request
+                print(networkingError?.localizedDescription as Any)
+                return
             }
+            
+            // Handle response case here
             do {
                 let decodedData = try? JSONDecoder().decode(Element.self, from: apiData!)
                 guard let data = decodedData else {
@@ -61,7 +64,8 @@ public class Networking {
                 case 200:
                     do {
                         var data = currencyDecoder(data: data)
-                        completion(.success(data!))
+                        guard let decodedData = data else { return }
+                        completion(.success(decodedData))
                     } catch {
                         print("Unbale to decode JSON")
                         completion(.failure(.unableToDecodeJSON))
@@ -85,6 +89,7 @@ public class Networking {
             }
         } catch {
             print("Unable to decode data")
+            return nil
         }
         return nil
     }
@@ -120,8 +125,8 @@ public class Networking {
         }.resume()
     }
     
-    func fetchATM(with endpoint: endPoints, at coordinate: Int, completion: @escaping (Result<AtmVenue, Error>)->Void ) {
-        guard let url = URL(string: "\(endpoint.rawValue)\(coordinate)") else {
+    func fetchATM(with endpoint: endPoints, at coordinate: Int, completion: @escaping (Result<Welcome8, URLSessionError>)->Void ) {
+        guard let url = URL(string: "\(endpoint.rawValue)/\(coordinate)") else {
             print("Badd URL")
             return
         }
@@ -131,6 +136,7 @@ public class Networking {
         URLSession.shared.dataTask(with: request) { atm , networkRespond, networkError  in
             if networkError != nil {
                 print(networkError?.localizedDescription)
+                completion(.failure(.serverError))
                 return
             }
             //            if let respond = networkRespond as? HTTPURLResponse {
@@ -138,7 +144,7 @@ public class Networking {
             //                case 200:
             //                    print("Good respond")
             do {
-                let decodedData = try? JSONDecoder().decode(AtmVenue.self, from: atm!)
+                let decodedData = try? JSONDecoder().decode(Welcome8.self, from: atm!)
                 print("Data:", decodedData)
                 guard let atm = decodedData else {
                     print("No data after decoding")

@@ -316,91 +316,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnY-MP-O0b">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VnY-MP-O0b">
                                 <rect key="frame" x="31" y="247" width="352" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Crypton Connect " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-xC-ljd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cud-xC-ljd">
                                         <rect key="frame" x="10" y="14" width="332" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.96558672189999994" green="0.78037995100000002" blue="0.78037899730000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="dsD-Fp-Lv3"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
                                         <color key="textColor" red="0.29018829340000002" green="0.70125287039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="📇: 263 Broad Street | Newark | NJ | 07108" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbT-wq-IyW">
-                                        <rect key="frame" x="10" y="56" width="332" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⏱: Opening hours:  5:00am - 10:00 pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s0-PU-klG">
-                                        <rect key="frame" x="10" y="119" width="332" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ATM Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-tF-buT">
-                                        <rect key="frame" x="10" y="93" width="332" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="________________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLI-sw-UU5">
-                                        <rect key="frame" x="9" y="70" width="334" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="📱: 862-738-3729" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzB-vO-cH2">
-                                        <rect key="frame" x="10" y="152" width="332" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="👨🏽‍🔧: ATM operator : CoinFlip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66Z-1F-UNm">
-                                        <rect key="frame" x="11" y="187" width="332" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="📧: Operator email : support@coinflip.tech" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTJ-kQ-Fa5">
-                                        <rect key="frame" x="11" y="223" width="332" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🌐: Ope website : https://www.coinflip.tech/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPu-QO-UWD">
-                                        <rect key="frame" x="11" y="258" width="332" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="📍: 72 W, 34 N" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avf-M2-c9g">
-                                        <rect key="frame" x="11" y="290" width="146" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Since: 2/10/2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mf-fM-TTg">
-                                        <rect key="frame" x="203" y="290" width="113" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YB-1f-r1f">
-                                        <rect key="frame" x="77" y="332" width="198" height="61"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YB-1f-r1f">
+                                        <rect key="frame" x="77" y="248" width="200" height="94"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.097714149759999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="94" id="5UH-Uk-prP"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="📞">
                                             <fontDescription key="titleFontDescription" name="ArialMT" family="Arial" pointSize="51"/>
@@ -409,10 +343,12 @@
                                             <action selector="callAtmLocation:" destination="acq-Yg-iyA" eventType="touchUpInside" id="vpM-Lh-nRd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtS-VC-GKe">
-                                        <rect key="frame" x="77" y="401" width="198" height="64"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtS-VC-GKe">
+                                        <rect key="frame" x="77" y="350" width="200" height="115"/>
                                         <color key="backgroundColor" red="0.46878095910000001" green="0.80107400340000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="115" id="mmb-Tn-js4"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="🧭">
                                             <fontDescription key="titleFontDescription" name="ArialMT" family="Arial" pointSize="51.5"/>
@@ -424,30 +360,54 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9YB-1f-r1f" secondAttribute="trailing" constant="75" id="5Sx-c0-dXq"/>
+                                    <constraint firstItem="9YB-1f-r1f" firstAttribute="trailing" secondItem="XtS-VC-GKe" secondAttribute="trailing" id="Aqb-5t-8Iy"/>
+                                    <constraint firstItem="cud-xC-ljd" firstAttribute="top" secondItem="VnY-MP-O0b" secondAttribute="top" constant="14" id="BRY-vV-7TQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="XtS-VC-GKe" secondAttribute="bottom" constant="15" id="D2t-tv-JWu"/>
+                                    <constraint firstItem="9YB-1f-r1f" firstAttribute="leading" secondItem="VnY-MP-O0b" secondAttribute="leading" constant="77" id="Gp9-kA-Dpi"/>
+                                    <constraint firstItem="XtS-VC-GKe" firstAttribute="top" secondItem="9YB-1f-r1f" secondAttribute="bottom" constant="8" symbolic="YES" id="HoF-Qa-knA"/>
+                                    <constraint firstItem="cud-xC-ljd" firstAttribute="leading" secondItem="VnY-MP-O0b" secondAttribute="leading" constant="10" id="wpZ-ID-bSe"/>
+                                    <constraint firstItem="9YB-1f-r1f" firstAttribute="leading" secondItem="XtS-VC-GKe" secondAttribute="leading" id="ycP-Jb-Aki"/>
+                                    <constraint firstItem="cud-xC-ljd" firstAttribute="centerX" secondItem="VnY-MP-O0b" secondAttribute="centerX" id="ygZ-pF-tKu"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="scU-TU-45p"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="scU-TU-45p" firstAttribute="bottom" secondItem="VnY-MP-O0b" secondAttribute="bottom" constant="135" id="Ia0-Ln-q0d"/>
+                            <constraint firstItem="VnY-MP-O0b" firstAttribute="top" secondItem="scU-TU-45p" secondAttribute="top" constant="203" id="g6p-iB-oRF"/>
+                            <constraint firstItem="VnY-MP-O0b" firstAttribute="centerX" secondItem="4av-Il-sMc" secondAttribute="centerX" id="jeO-lm-FiE"/>
+                            <constraint firstItem="VnY-MP-O0b" firstAttribute="leading" secondItem="scU-TU-45p" secondAttribute="leading" constant="31" id="xGq-24-kIU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qfv-b8-ugJ"/>
                     <connections>
-                        <outlet property="address" destination="mLI-sw-UU5" id="OMQ-ek-jVK"/>
                         <outlet property="atmDetailsWrapView" destination="VnY-MP-O0b" id="fiM-Zv-wHO"/>
-                        <outlet property="atmOperator" destination="66Z-1F-UNm" id="eiU-hR-lEs"/>
                         <outlet property="call" destination="9YB-1f-r1f" id="BhJ-5a-BVn"/>
-                        <outlet property="contact" destination="PzB-vO-cH2" id="gR7-Te-CCA"/>
                         <outlet property="direction" destination="XtS-VC-GKe" id="cjp-zf-4Io"/>
-                        <outlet property="longitudeAndlatitude" destination="avf-M2-c9g" id="c0O-E6-zys"/>
                         <outlet property="name" destination="cud-xC-ljd" id="GYm-AB-hNJ"/>
-                        <outlet property="operationHrs" destination="8s0-PU-klG" id="ZT0-J9-acw"/>
-                        <outlet property="operatorEmail" destination="tTJ-kQ-Fa5" id="kVi-Vq-V5z"/>
-                        <outlet property="operatorWebsite" destination="jPu-QO-UWD" id="rvZ-mz-t9I"/>
-                        <outlet property="since" destination="2Mf-fM-TTg" id="vVk-Yy-eBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpn-pl-Vee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4853.6231884057979" y="771.42857142857144"/>
+        </scene>
+        <!--VenueVC-->
+        <scene sceneID="N8D-Q3-Ibw">
+            <objects>
+                <viewController storyboardIdentifier="venuevc" id="qUy-7k-k1q" customClass="VenueVC" customModule="Swifting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qLA-ee-ecC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="D6f-Q2-daY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYx-8h-8Ju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5677" y="773"/>
         </scene>
         <!--Currency Detail View-->
         <scene sceneID="Vuu-AZ-mq0">

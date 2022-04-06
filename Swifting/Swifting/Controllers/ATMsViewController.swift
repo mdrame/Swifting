@@ -42,7 +42,29 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         print("Map vc appear")
         getAtms()
-      
+//        fetchAtm()
+        
+    }
+    
+    func fetchAtm() {
+        print("Featching venue  📡")
+//        guard let idInt = atmID else { return }
+        print("atmID :", 10)
+//        let converIdToDouble = Double(idInt) ?? 1.0
+        let convertIdToInt = 10
+        networkingLayout.fetchATM(with: .atmNearby, at: convertIdToInt, completion: { (completed) in
+            DispatchQueue.main.async {
+                
+                switch completed {
+                case .success(let atm):
+                    print(atm)
+                    print("Suceeded ✅")
+                    
+                case .failure(let failed):
+                    print("Failed to fetch ")
+                }
+            }
+        })
     }
     
      func getAtms() {
