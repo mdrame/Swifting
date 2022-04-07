@@ -1,6 +1,7 @@
 # Crypton Connect | Swifting 
 
-<p align="left"><img src="ReadMeAssets/onboarding&home.gif" width="200"><p>
+<!--<p align="left"><img src="ReadMeAssets/onboarding&home.gif" width="200"><p>-->
+/Users/mohammeddrame/Documents/dev/swift/personal/Swifting/ReadMeAssets/2.080.mp4
 <!-- # Read me Credit 💪🏾: [Erick Sanchez](https://github.com/mdrame/My-Simple-App) -->
 <!-- # Welcome to Crypton!
 <img src="/assets/V1.1.png" width="300px" height="600px" align="left">
