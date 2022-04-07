@@ -45,6 +45,7 @@
 - Nil data after atmVenue networking call. 🟢
 - implement call & direction feature. 
 - add indicator to mapVC. 🟢
+- Add tradable coins to Venue.
 - Implement search by city feature in MapVC. coinpmap api don't got a city query parameter 📌.
   
 
