@@ -158,7 +158,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         for location in listOfAtms {
 //            print(location)
             let annotation = MKPointAnnotation()
-            annotation.title = "\(location.id!)"
+//            annotation.title = "\(location.id!)"
 //            annotation.subtitle = "Business info"
             annotation.coordinate = CLLocationCoordinate2D(latitude: Double(location.lat), longitude: Double(location.lon))
             //            annotation.coordinate = CLLocationCoordinate2D(latitude: 40.718983, longitude: -74.190154)

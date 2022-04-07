@@ -100,11 +100,11 @@ class ATMDetailVC: UIViewController {
     }
     
     private func upateVenueUI(object: AtmVenue ) {
-        name.text = object.name ?? "Unavailable"
-//        address.text = "\(object.street,object.city,object.state,object.postcode)" ?? "Unavailable"
-        phone.text = object.phone ?? "Unavailable"
-        website.text = object.website ?? "Unavailable"
-        email.text = object.email ?? "Unavailable"
+        name.text = object.name ?? "Not available"
+        address.text = object.street ?? "Not available"
+        phone.text = object.phone ?? "Not available"
+        website.text = object.website ?? "Not available"
+        email.text = object.email ?? "Not available"
     }
     
     @IBAction func callAtmLocation(_ sender: UIButton) {
