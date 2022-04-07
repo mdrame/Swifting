@@ -5,7 +5,7 @@
 <!-- # Welcome to Crypton!
 <img src="/assets/V1.1.png" width="300px" height="600px" align="left">
 <img src="/assets/V1.1DarkMode.png" width="300px" height="600px" > -->
-### All in one Crpto Currency app.( BlockChain Trading |  ATM near by | Dashboard | Favorite | News  )
+### All in one Crpto Currency app.( BlockChain Wallet |  ATM near by | Dashboard | Favorite | News  )
 
 ### Usage:
 * Run app on IOS Simulator only.
@@ -42,6 +42,7 @@
 - Nil data after atmVenue networking call. 🟢
 - implement call & direction feature. 
 - add indicator to mapVC. 🟢
+- Implement search by city feature in MapVC. coinpmap api don't got a city query parameter 📌.
   
 
 
