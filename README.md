@@ -39,9 +39,9 @@
 - Set Dashboard as initialVC after onBoardingVC.
 - Group constants in New/Custom Class.
 - handle locationDidUpdate method.
-- Nil data after atmVenue networking call.
-- add call & direction feature. 
-- add indicator to mapVC.
+- Nil data after atmVenue networking call. 🟢
+- implement call & direction feature. 
+- add indicator to mapVC. 🟢
   
 
 
