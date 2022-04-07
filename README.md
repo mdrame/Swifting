@@ -5,7 +5,7 @@
 <!-- # Welcome to Crypton!
 <img src="/assets/V1.1.png" width="300px" height="600px" align="left">
 <img src="/assets/V1.1DarkMode.png" width="300px" height="600px" > -->
-### All in one Crpto Currency app.( BlockChain Trading |  ATM near by | Dashboard | Favorite | News  )
+### All in one Crpto Currency app.( BlockChain Wallet |  ATM near by | Dashboard | Favorite | News  )
 
 ### Usage:
 * Run app on IOS Simulator only.
