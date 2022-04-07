@@ -145,13 +145,15 @@ public class Networking {
             //                    print("Good respond")
             do {
                 let decodedData = try? JSONDecoder().decode(Welcome8.self, from: atm!)
-                print("Data:", decodedData)
+                print("Decoded Data:", decodedData)
                 guard let atm = decodedData else {
                     print("No data after decoding")
+                    completion(.failure(.noDataAfterDecoding))
                     return
                 }
                 completion(.success(atm))
             } catch {
+                completion(.failure(.unableToDecodeJSON))
                 print("Unable to decode JSON")
             }
             //                default:

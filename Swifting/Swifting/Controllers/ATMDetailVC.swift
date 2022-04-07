@@ -20,7 +20,6 @@ class ATMDetailVC: UIViewController {
         viewLayerStuff()
         viewGesuture()
         fetchAtm()
-        upateVenueUI(instance: venueAtm)
     }
     override func viewWillAppear(_ animated: Bool) {
         
@@ -65,11 +64,11 @@ class ATMDetailVC: UIViewController {
         print("atmID :", idInt)
         let converIdToDouble = Double(idInt) ?? 1.0
         let convertIdToInt = Int(converIdToDouble) ?? 1
-        networking.fetchATM(with: .atm, at: convertIdToInt) { (completed ) in
+        networking.fetchATM(with: .atm, at: convertIdToInt) { [self] (completed) in
             DispatchQueue.main.async {
                 switch completed {
                 case .success(let venue):
-                    self.venueAtm = venue.venue
+                    self.upateVenueUI(object: venue.venue)
                     print("Venue downloaded  ✅")
                 case .failure(let error):
                     print("No venue after networking ‼️")
@@ -80,12 +79,9 @@ class ATMDetailVC: UIViewController {
 //        self.atmDetailsWrapView.reloadInputViews()
     }
     
-    private func upateVenueUI(instance: AtmVenue? ) {
-        if let venue = instance {
-            name.text = "📇: \(venue.name!)"
-        } else {
-            print("Modle don't exist")
-        }
+    private func upateVenueUI(object: AtmVenue? ) {
+        name.text = "🏧: \(object!.name!)"
+      
     }
     
     @IBAction func callAtmLocation(_ sender: UIButton) {

@@ -41,9 +41,10 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         print("Map vc appear")
+        view.addSubview(spinner)
+        spinnerConstraint()
+        spinner.startAnimating()
         getAtms()
-//        fetchAtm()
-        
     }
     
     func fetchAtm() {
@@ -72,7 +73,7 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
         
              self.networkingLayout.fetchATMNearBy(withurl: .coinMap) { [self] atmsNearby in
                  DispatchQueue.main.async {
-                print("Fetching atms near by")
+                     spinner.stopAnimating()
                 for i in atmsNearby.venues {
 //                    print("Name:", i.name)
 //                    print("Lat:", i.lat)
@@ -114,6 +115,20 @@ class ATMsViewController: UIViewController, MKMapViewDelegate {
     
     @objc func resignKeyboard() {
         cityName.resignFirstResponder()
+    }
+    
+    lazy var spinner : UIActivityIndicatorView = {
+        let spinner =  UIActivityIndicatorView(frame: .zero)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.style = .large
+        return spinner
+    }()
+    
+    func spinnerConstraint() {
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     let atmsMap: MKMapView = {
