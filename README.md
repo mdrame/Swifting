@@ -23,6 +23,7 @@
 * CoreData
 * Coinmap REST API: https://coinmap.org/ ( Near by ATMs )
 * CoreLoction
+* CallKit
 
 ### Development:
 * MVC
