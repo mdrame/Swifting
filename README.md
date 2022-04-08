@@ -20,7 +20,7 @@
 * UIKit 
 * MapKit
 * URLSession
-* CoreData
+* UserDefault
 * Coinmap REST API: https://coinmap.org/ ( Near by ATMs )
 * CoreLoction
 * CallKit
