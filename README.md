@@ -20,9 +20,12 @@
 * UIKit 
 * MapKit
 * URLSession
-* CoreData
+* UserDefault
 * Coinmap REST API: https://coinmap.org/ ( Near by ATMs )
 * CoreLoction
+
+### Backend
+* https://github.com/mdrame/Backend-DeFi-Exchange-Swifting
 
 ### Development:
 * MVC
