@@ -8,7 +8,7 @@
 <!-- # Welcome to Crypton!
 <img src="/assets/V1.1.png" width="300px" height="600px" align="left">
 <img src="/assets/V1.1DarkMode.png" width="300px" height="600px" > -->
-### All in one open source blackchain app.(Wallet |  ATM near by | Dashboard | Favorite | News  )
+### All in one open source iOS Dex.(Exchange | Wallet | ATM near by | Dashboard | Favorite | News | etc  )
 
 ### Usage:
 * Run app on IOS Simulator only.
