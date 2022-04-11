@@ -8,7 +8,7 @@
 <!-- # Welcome to Crypton!
 <img src="/assets/V1.1.png" width="300px" height="600px" align="left">
 <img src="/assets/V1.1DarkMode.png" width="300px" height="600px" > -->
-### All in one open source iOS Dex platform .(Exchange | Wallet | ATM near by | Dashboard | Favorite | News | etc  )
+### Open source iOS Dex platform .(Eth exchange | Wallet | ATM near by | Dashboard | Favorite | News | etc )
 
 ### Usage:
 * Run app on IOS Simulator only.
@@ -50,6 +50,7 @@
 - add indicator to mapVC. 🟢
 - add chart/graph for currency in detailView.
 - Add tradable coins to Venue.
+- Add marker % under price. 
 - Implement search by city feature in MapVC. coinpmap api don't got a city query parameter 📌.
   
 
