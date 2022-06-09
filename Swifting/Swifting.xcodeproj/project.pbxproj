@@ -26,7 +26,6 @@
 		7763B2A42718BE6B007229E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A22718BE6B007229E1 /* Main.storyboard */; };
 		7763B2A62718BE73007229E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A52718BE73007229E1 /* Assets.xcassets */; };
 		7763B2A92718BE73007229E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7763B2A72718BE73007229E1 /* LaunchScreen.storyboard */; };
-		7766DB8A27EEDB8800FB51D5 /* cryptonmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 7766DB8927EEDB8800FB51D5 /* cryptonmap.png */; };
 		7768D1942737A2DE003CDB26 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7768D1932737A2DE003CDB26 /* URLs.swift */; };
 		776EEF742730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */; };
 		776F92B627EFC11100227104 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776F92B527EFC11100227104 /* Venue.swift */; };
@@ -62,7 +61,6 @@
 		7763B2A52718BE73007229E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7763B2A82718BE73007229E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7763B2AA2718BE73007229E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7766DB8927EEDB8800FB51D5 /* cryptonmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cryptonmap.png; path = ../../../../../../../Desktop/cryptonmap.png; sourceTree = "<group>"; };
 		7768D1932737A2DE003CDB26 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		776EEF732730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteCurrencyDataBase.xcdatamodel; sourceTree = "<group>"; };
 		776EEF792730F1130096FC19 /* Cryptoo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cryptoo+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				774176A3271E71DC00CCEB5A /* Extensions */,
 				776EEF722730EAB70096FC19 /* FavoriteCurrencyDataBase.xcdatamodeld */,
 				7763B2A52718BE73007229E1 /* Assets.xcassets */,
-				7766DB8927EEDB8800FB51D5 /* cryptonmap.png */,
 				7741769C271E294D00CCEB5A /* crypton.mov */,
 				7763B2A72718BE73007229E1 /* LaunchScreen.storyboard */,
 				7763B2AA2718BE73007229E1 /* Info.plist */,
@@ -260,7 +257,6 @@
 				7763B2A92718BE73007229E1 /* LaunchScreen.storyboard in Resources */,
 				7763B2A62718BE73007229E1 /* Assets.xcassets in Resources */,
 				7763B2A42718BE6B007229E1 /* Main.storyboard in Resources */,
-				7766DB8A27EEDB8800FB51D5 /* cryptonmap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
