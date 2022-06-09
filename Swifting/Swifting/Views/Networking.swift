@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CloudKit
+import AVFoundation
 
 public enum URLSessionError: String, Error {
     case badURL
@@ -162,6 +163,45 @@ public class Networking {
             //            }
         }.resume()
         
+    }
+    
+    //
+    
+    func uploadVideo(video: [String: String], completed: @escaping (Result<Currency, URLSessionError>)->Void) {
+        // pretend url is Database(Firebase)
+//        guard let url = URL(string: "https://api.coincap.io/v2/assets") else {
+//            completed(.failure(.badURL))
+//            return
+//        }
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        // convert dic to data and assing to reuest body.
+////        request.httpBody = ["Header": "Message body (Video)"]
+//        let defaultSesson = URLSession(configuration: .default)
+//        defaultSesson.uploadTask(with: request, from: nil) { data,response,error in [self] in
+//            if error != nil {
+//                print(error?.localizedDescription)
+//                return
+//            }
+//            if let respond = response as? HTTPURLResponse {
+//                switch respond.statusCode {
+//                case 200:
+//                    do {
+//                        var data = currencyDecoder(data: data)
+//                        guard let decodedData = data else { return }
+//                        completed(.success(decodedData))
+//                    } catch {
+//                        print("Unbale to decode JSON")
+//                        completed(.failure(.unableToDecodeJSON))
+//                    }
+//                case 400...417:
+//                    print("Client Error")
+//                    completed(.failure(.clientError))
+//                default:
+//                    print("No response")
+//                }
+//            }
+//        }.resume()
     }
     
     

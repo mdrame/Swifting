@@ -26,7 +26,7 @@ class DashBoardVC: UIViewController {
         self.title = "Currencies"
         navigationController?.navigationBar.prefersLargeTitles = true
         print("View didLoad Finished")
-//        fetchMethod()
+        fetchMethod()
         view.addSubview(spinner)
         spinnerConstraint()
         spinner.startAnimating()
@@ -35,14 +35,14 @@ class DashBoardVC: UIViewController {
    
     override func viewWillAppear(_ animated: Bool) {
         print("View will appear called ")
-//        fetchMethod()
-        spinner.startAnimating()
-        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
+        fetchMethod()
+//        spinner.startAnimating()
+//        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(refreshPrice), userInfo: nil, repeats: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         cryptoCurrencies = []
-        timer.invalidate()
+//        timer.invalidate()
         
     
     }
